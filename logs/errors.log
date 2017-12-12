@@ -1,0 +1,6 @@
+[17:46:49] [plugins/mysql] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'samp6244'@'host42-50-dynamic.17-79-r.retail.telecomitalia.it' (using password: YES)'
+[17:46:49] [plugins/mysql] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'samp6244'@'host42-50-dynamic.17-79-r.retail.telecomitalia.it' (using password: YES)'
+[17:46:50] [plugins/mysql] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'samp6244'@'host42-50-dynamic.17-79-r.retail.telecomitalia.it' (using password: YES)'
+[17:46:50] [plugins/mysql] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'samp6244'@'host42-50-dynamic.17-79-r.retail.telecomitalia.it' (using password: YES)'
+[17:47:18] [plugins/mysql] mysql_format: can't escape string 'Dave' (C:\Users\dclsi\Desktop\Pawn\Pawno\gamemodes\cnr.pwn:975)
+[17:47:59] [plugins/mysql] mysql_format: can't escape string 'Dave' (C:\Users\dclsi\Desktop\Pawn\Pawno\gamemodes\cnr.pwn:975)

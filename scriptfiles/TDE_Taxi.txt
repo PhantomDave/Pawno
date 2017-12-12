@@ -1,0 +1,38 @@
+//Player TextDraws: 
+
+
+new PlayerText:TDEditor_PTD[MAX_PLAYERS][2];
+
+TDEditor_PTD[playerid][0] = CreatePlayerTextDraw(playerid, 44.999992, 156.814727, "Tassista:_Tsukiko_Tsutsukakushi");
+PlayerTextDrawLetterSize(playerid, TDEditor_PTD[playerid][0], 0.151333, 1.135407);
+PlayerTextDrawTextSize(playerid, TDEditor_PTD[playerid][0], 0.000000, 89.000000);
+PlayerTextDrawAlignment(playerid, TDEditor_PTD[playerid][0], 2);
+PlayerTextDrawColor(playerid, TDEditor_PTD[playerid][0], -1);
+PlayerTextDrawUseBox(playerid, TDEditor_PTD[playerid][0], 1);
+PlayerTextDrawBoxColor(playerid, TDEditor_PTD[playerid][0], 120);
+PlayerTextDrawSetShadow(playerid, TDEditor_PTD[playerid][0], 0);
+PlayerTextDrawSetOutline(playerid, TDEditor_PTD[playerid][0], 0);
+PlayerTextDrawBackgroundColor(playerid, TDEditor_PTD[playerid][0], 255);
+PlayerTextDrawFont(playerid, TDEditor_PTD[playerid][0], 1);
+PlayerTextDrawSetProportional(playerid, TDEditor_PTD[playerid][0], 1);
+PlayerTextDrawSetShadow(playerid, TDEditor_PTD[playerid][0], 0);
+
+TDEditor_PTD[playerid][1] = CreatePlayerTextDraw(playerid, 44.999992, 170.200759, "Tariffa:_20$._Dovuto:_20000$");
+PlayerTextDrawLetterSize(playerid, TDEditor_PTD[playerid][1], 0.157000, 1.127110);
+PlayerTextDrawTextSize(playerid, TDEditor_PTD[playerid][1], 0.000000, 89.000000);
+PlayerTextDrawAlignment(playerid, TDEditor_PTD[playerid][1], 2);
+PlayerTextDrawColor(playerid, TDEditor_PTD[playerid][1], -1);
+PlayerTextDrawUseBox(playerid, TDEditor_PTD[playerid][1], 1);
+PlayerTextDrawBoxColor(playerid, TDEditor_PTD[playerid][1], 120);
+PlayerTextDrawSetShadow(playerid, TDEditor_PTD[playerid][1], 0);
+PlayerTextDrawSetOutline(playerid, TDEditor_PTD[playerid][1], 0);
+PlayerTextDrawBackgroundColor(playerid, TDEditor_PTD[playerid][1], 255);
+PlayerTextDrawFont(playerid, TDEditor_PTD[playerid][1], 1);
+PlayerTextDrawSetProportional(playerid, TDEditor_PTD[playerid][1], 1);
+PlayerTextDrawSetShadow(playerid, TDEditor_PTD[playerid][1], 0);
+
+
+
+
+//Total textdraws exported: 2 (0 global textdraws / 2 player textdraws) ~ 23/4/2017 ~ 19:0:18
+TDEditor V1.17 BY ADRI1

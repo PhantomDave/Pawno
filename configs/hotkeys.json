@@ -1,0 +1,10 @@
+{
+  "SaveHotkey": "S|Control",
+  "SaveAllHotkey": "S|Shift, Control",
+  "GotoHotkey": "G|Control",
+  "SearchHotkey": "F|Control",
+  "ReplaceHotkey": "H|Control",
+  "GotoNextHotkey": "F3|None",
+  "GotoBeforeHotkey": "F4|None",
+  "BuildHotkey": "F5|None"
+}

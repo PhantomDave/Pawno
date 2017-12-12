@@ -1,0 +1,11 @@
+This server folder is an example of how your folder should look like (in terms of):
+- /filterscripts/iTD.amx
+- /plugins/iTD.dll
+- /plugins/sscanf.dll
+- /MSVCR100.dll
+
+If any one of the above are missing, it won't work.
+Oh and don't forget to add the plugin names to the "server.cfg"
+
+It should look like this under filterscripts line:
+plugins sscanf iTD

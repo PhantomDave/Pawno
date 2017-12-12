@@ -1,0 +1,35 @@
+//Global TextDraws: 
+
+
+new Text:TDEditor_TD[2];
+
+TDEditor_TD[0] = TextDrawCreate(139.000061, 358.415130, "_~n~_~n~_~n~_~n~_~n~_");
+TextDrawLetterSize(TDEditor_TD[0], 0.400000, 1.600000);
+TextDrawTextSize(TDEditor_TD[0], 404.000000, 0.000000);
+TextDrawAlignment(TDEditor_TD[0], 1);
+TextDrawColor(TDEditor_TD[0], -1);
+TextDrawUseBox(TDEditor_TD[0], 1);
+TextDrawBoxColor(TDEditor_TD[0], 100);
+TextDrawSetShadow(TDEditor_TD[0], 0);
+TextDrawSetOutline(TDEditor_TD[0], 0);
+TextDrawBackgroundColor(TDEditor_TD[0], 255);
+TextDrawFont(TDEditor_TD[0], 1);
+TextDrawSetProportional(TDEditor_TD[0], 1);
+TextDrawSetShadow(TDEditor_TD[0], 0);
+
+TDEditor_TD[1] = TextDrawCreate(141.333297, 361.318481, "DIOCANEINCALADASUDHAUDHASUDHUASDHUASHDUASHDAUDUHDSUDHAD~n~");
+TextDrawLetterSize(TDEditor_TD[1], 0.222000, 0.952889);
+TextDrawAlignment(TDEditor_TD[1], 1);
+TextDrawColor(TDEditor_TD[1], -1);
+TextDrawSetShadow(TDEditor_TD[1], 0);
+TextDrawSetOutline(TDEditor_TD[1], 0);
+TextDrawBackgroundColor(TDEditor_TD[1], 255);
+TextDrawFont(TDEditor_TD[1], 1);
+TextDrawSetProportional(TDEditor_TD[1], 1);
+TextDrawSetShadow(TDEditor_TD[1], 0);
+
+
+
+
+//Total textdraws exported: 2 (2 global textdraws / 0 player textdraws) ~ 8/12/2017 ~ 0:32:12
+TDEditor V1.17 BY ADRI1

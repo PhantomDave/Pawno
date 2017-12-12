@@ -1,0 +1,87 @@
+//Global TextDraws: 
+
+
+new Text:TDEditor_TD[3];
+
+TDEditor_TD[0] = TextDrawCreate(1.000015, 261.763000, "Suspect:_Tsukiko_Tsutsukakushi");
+TextDrawLetterSize(TDEditor_TD[0], 0.152000, 1.147852);
+TextDrawTextSize(TDEditor_TD[0], 85.000000, 0.000000);
+TextDrawAlignment(TDEditor_TD[0], 1);
+TextDrawColor(TDEditor_TD[0], -16776961);
+TextDrawUseBox(TDEditor_TD[0], 1);
+TextDrawBoxColor(TDEditor_TD[0], 156);
+TextDrawSetShadow(TDEditor_TD[0], 0);
+TextDrawSetOutline(TDEditor_TD[0], 1);
+TextDrawBackgroundColor(TDEditor_TD[0], 255);
+TextDrawFont(TDEditor_TD[0], 1);
+TextDrawSetProportional(TDEditor_TD[0], 1);
+TextDrawSetShadow(TDEditor_TD[0], 0);
+
+TDEditor_TD[1] = TextDrawCreate(42.466678, 302.765441, "Cops remaning: 13");
+TextDrawLetterSize(TDEditor_TD[1], 0.152000, 1.147852);
+TextDrawTextSize(TDEditor_TD[1], 0.000000, 85.000000);
+TextDrawAlignment(TDEditor_TD[1], 2);
+TextDrawColor(TDEditor_TD[1], 16777215);
+TextDrawUseBox(TDEditor_TD[1], 1);
+TextDrawBoxColor(TDEditor_TD[1], 156);
+TextDrawSetShadow(TDEditor_TD[1], 0);
+TextDrawSetOutline(TDEditor_TD[1], 1);
+TextDrawBackgroundColor(TDEditor_TD[1], 255);
+TextDrawFont(TDEditor_TD[1], 1);
+TextDrawSetProportional(TDEditor_TD[1], 1);
+TextDrawSetShadow(TDEditor_TD[1], 0);
+
+TDEditor_TD[2] = TextDrawCreate(42.466678, 316.466278, "Time remaning: 10 min");
+TextDrawLetterSize(TDEditor_TD[2], 0.152000, 1.147852);
+TextDrawTextSize(TDEditor_TD[2], 0.000000, 85.000000);
+TextDrawAlignment(TDEditor_TD[2], 2);
+TextDrawColor(TDEditor_TD[2], -1);
+TextDrawUseBox(TDEditor_TD[2], 1);
+TextDrawBoxColor(TDEditor_TD[2], 156);
+TextDrawSetShadow(TDEditor_TD[2], 0);
+TextDrawSetOutline(TDEditor_TD[2], 1);
+TextDrawBackgroundColor(TDEditor_TD[2], 255);
+TextDrawFont(TDEditor_TD[2], 1);
+TextDrawSetProportional(TDEditor_TD[2], 1);
+TextDrawSetShadow(TDEditor_TD[2], 0);
+
+
+
+//Player TextDraws: 
+
+
+new PlayerText:TDEditor_PTD[MAX_PLAYERS][2];
+
+TDEditor_PTD[playerid][0] = CreatePlayerTextDraw(playerid, 1.000015, 275.463836, "Officer: Tsukiko Tsutsukakushi");
+PlayerTextDrawLetterSize(playerid, TDEditor_PTD[playerid][0], 0.152000, 1.147852);
+PlayerTextDrawTextSize(playerid, TDEditor_PTD[playerid][0], 85.000000, 0.000000);
+PlayerTextDrawAlignment(playerid, TDEditor_PTD[playerid][0], 1);
+PlayerTextDrawColor(playerid, TDEditor_PTD[playerid][0], 65535);
+PlayerTextDrawUseBox(playerid, TDEditor_PTD[playerid][0], 1);
+PlayerTextDrawBoxColor(playerid, TDEditor_PTD[playerid][0], 156);
+PlayerTextDrawSetShadow(playerid, TDEditor_PTD[playerid][0], 0);
+PlayerTextDrawSetOutline(playerid, TDEditor_PTD[playerid][0], 1);
+PlayerTextDrawBackgroundColor(playerid, TDEditor_PTD[playerid][0], 255);
+PlayerTextDrawFont(playerid, TDEditor_PTD[playerid][0], 1);
+PlayerTextDrawSetProportional(playerid, TDEditor_PTD[playerid][0], 1);
+PlayerTextDrawSetShadow(playerid, TDEditor_PTD[playerid][0], 0);
+
+TDEditor_PTD[playerid][1] = CreatePlayerTextDraw(playerid, 42.466678, 289.164611, "Map Blip: Not Visible");
+PlayerTextDrawLetterSize(playerid, TDEditor_PTD[playerid][1], 0.152000, 1.147852);
+PlayerTextDrawTextSize(playerid, TDEditor_PTD[playerid][1], 0.000000, 85.000000);
+PlayerTextDrawAlignment(playerid, TDEditor_PTD[playerid][1], 2);
+PlayerTextDrawColor(playerid, TDEditor_PTD[playerid][1], -1378294017);
+PlayerTextDrawUseBox(playerid, TDEditor_PTD[playerid][1], 1);
+PlayerTextDrawBoxColor(playerid, TDEditor_PTD[playerid][1], 156);
+PlayerTextDrawSetShadow(playerid, TDEditor_PTD[playerid][1], 0);
+PlayerTextDrawSetOutline(playerid, TDEditor_PTD[playerid][1], 1);
+PlayerTextDrawBackgroundColor(playerid, TDEditor_PTD[playerid][1], 255);
+PlayerTextDrawFont(playerid, TDEditor_PTD[playerid][1], 1);
+PlayerTextDrawSetProportional(playerid, TDEditor_PTD[playerid][1], 1);
+PlayerTextDrawSetShadow(playerid, TDEditor_PTD[playerid][1], 0);
+
+
+
+
+//Total textdraws exported: 5 (3 global textdraws / 2 player textdraws) ~ 19/5/2017 ~ 20:18:47
+TDEditor V1.17 BY ADRI1
