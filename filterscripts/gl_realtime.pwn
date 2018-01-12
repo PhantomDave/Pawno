@@ -14,7 +14,7 @@
 
 // Used to override the time in this script
 new worldtime_override = 0;
-new worldtime_overridehour = 9;
+new worldtime_overridehour = 0;
 new worldtime_overridemin  = 0;
 
 new Text:txtTimeDisp;

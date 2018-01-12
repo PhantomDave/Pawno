@@ -1,0 +1,9 @@
+{
+    "version": "2.0.0", 
+    "type": "shell",
+    "args": ["${relativeFile}", "-d3", "-Z+"], 
+    "windows": 
+    { 
+        "command": "${workspaceRoot}\\pawno\\pawncc.exe" 
+    }
+}  

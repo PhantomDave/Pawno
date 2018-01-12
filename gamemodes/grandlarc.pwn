@@ -10,7 +10,6 @@
 #include <float>
 #include "../include/gl_common.inc"
 #include "../include/gl_spawns.inc"
-#include "../include/vehicleutil.inc"
 
 #pragma tabsize 0
 
@@ -49,14 +48,6 @@ main()
 
 //----------------------------------------------------------
 
-public OnPlayerFinishedDownloading(playerid, virtualworld)
-{
-    //SendClientMessage(playerid,COLOR_WHITE,"Downloads finished.");
-	return 1;
-}
-
-//----------------------------------------------------------
-
 public OnPlayerConnect(playerid)
 {
 	GameTextForPlayer(playerid,"~w~Grand Larceny",3000,4);
@@ -78,6 +69,11 @@ public OnPlayerConnect(playerid)
 	RemoveBuildingForPlayer(playerid, 1776, 0.0, 0.0, 0.0, 6000.0);
 	*/
 	
+	/*
+	new ClientVersion[32];
+	GetPlayerVersion(playerid, ClientVersion, 32);
+	printf("Player %d reports client version: %s", playerid, ClientVersion);*/
+
  	return 1;
 }
 
@@ -134,8 +130,9 @@ public OnPlayerSpawn(playerid)
     SetPlayerSkillLevel(playerid,WEAPONSKILL_M4,200);
     SetPlayerSkillLevel(playerid,WEAPONSKILL_SNIPERRIFLE,200);*/
     
-    //GivePlayerWeapon(playerid,WEAPON_COLT45,100);
+    GivePlayerWeapon(playerid,WEAPON_COLT45,100);
 	//GivePlayerWeapon(playerid,WEAPON_MP5,100);
+	TogglePlayerClock(playerid, 0);
 
 	return 1;
 }
@@ -367,6 +364,7 @@ public OnGameModeInit()
 	ClassSel_InitTextDraws();
 
 	// Player Class
+	AddPlayerClass(298,1759.0189,-1898.1260,13.5622,266.4503,-1,-1,-1,-1,-1,-1);
 	AddPlayerClass(299,1759.0189,-1898.1260,13.5622,266.4503,-1,-1,-1,-1,-1,-1);
 	AddPlayerClass(300,1759.0189,-1898.1260,13.5622,266.4503,-1,-1,-1,-1,-1,-1);
 	AddPlayerClass(301,1759.0189,-1898.1260,13.5622,266.4503,-1,-1,-1,-1,-1,-1);
@@ -478,65 +476,6 @@ public OnGameModeInit()
 
 	return 1;
 }
-
-//----------------------------------------------------------
-
-ProcessVehicleCommands(playerid, cmdtext[])
-{
-    new cmd[256+1];
-	new	idx;
-
-	cmd = strtok(cmdtext, idx);
-
-	if(!strcmp(cmd, "/engine",true)) {
-        new vid = GetPlayerVehicleID(playerid);
-	  	if(vid != INVALID_VEHICLE_ID) {
-			ToggleVehicleEngine(vid);
-		}
-	    return 1;
-	}
-	if(!strcmp(cmd, "/lights",true)) {
-        new vid = GetPlayerVehicleID(playerid);
-	  	if(vid != INVALID_VEHICLE_ID) {
-			ToggleVehicleLights(vid);
-		}
-	    return 1;
-	}
-	if(!strcmp(cmd, "/hood",true) || !strcmp(cmd, "/bonnet",true)) {
-        new vid = GetPlayerVehicleID(playerid);
-	  	if(vid != INVALID_VEHICLE_ID) {
-			ToggleVehicleHood(vid);
-		}
-	    return 1;
-	}
-	if(!strcmp(cmd, "/trunk",true) || !strcmp(cmd, "/boot",true)) {
-        new vid = GetPlayerVehicleID(playerid);
-	  	if(vid != INVALID_VEHICLE_ID) {
-			ToggleVehicleTrunk(vid);
-		}
-	    return 1;
-	}
-	if(!strcmp(cmd, "/lock",true)) {
-        new vid = GetPlayerVehicleID(playerid);
-	  	if(vid != INVALID_VEHICLE_ID) {
-			ToggleVehicleDoorsLocked(vid);
-		}
-	    return 1;
-	}
-
-	return 0;
-}
-
-//----------------------------------------------------------
-
-public OnPlayerCommandText(playerid, cmdtext[])
-{
-	if(ProcessVehicleCommands(playerid,cmdtext)) {
-	    return 1;
-	}
-	return 0;
-}
-
 
 //----------------------------------------------------------
 

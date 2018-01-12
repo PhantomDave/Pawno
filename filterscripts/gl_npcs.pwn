@@ -11,13 +11,12 @@
 
 public OnFilterScriptInit()
 {
+	ConnectNPC("TrainDriverLV","train_lv");
 	ConnectNPC("TrainDriverLS","train_ls");
-	/*
-	ConnectNPC("TrainDriverLV","train_lv");	
 	ConnectNPC("TrainDriverSF","train_sf");
 	ConnectNPC("PilotLV","at400_lv");
 	ConnectNPC("PilotSF","at400_sf");
-	ConnectNPC("PilotLS","at400_ls");*/
+	ConnectNPC("PilotLS","at400_ls");
 	
 	// Testing
 	//ConnectNPC("OnfootTest","onfoot_test");
@@ -115,15 +114,15 @@ public OnPlayerSpawn(playerid)
 	new playername[64];
 	GetPlayerName(playerid,playername,64);
 
-	if(!strcmp(playername,"TrainDriverLS",true)) {
-	    PutPlayerInVehicle(playerid,1,0);
-	    SetPlayerColor(playerid,0xFFFFFFFF);
-	}
-	else if(!strcmp(playername,"TrainDriverLV",true)) {
-        PutPlayerInVehicle(playerid,5,0);
+	if(!strcmp(playername,"TrainDriverLV",true)) {
+        PutPlayerInVehicle(playerid,1,0);
         SetPlayerColor(playerid,0xFFFFFFFF);
  	}
 	else if(!strcmp(playername,"TrainDriverSF",true)) {
+	    PutPlayerInVehicle(playerid,5,0);
+	    SetPlayerColor(playerid,0xFFFFFFFF);
+	}
+	else if(!strcmp(playername,"TrainDriverLS",true)) {
 	    PutPlayerInVehicle(playerid,9,0);
 	    SetPlayerColor(playerid,0xFFFFFFFF);
 	}

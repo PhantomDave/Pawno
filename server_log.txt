@@ -116271,3 +116271,1011 @@ v0.3.8-RC4-1, (C)2005-2017 SA-MP Team
 [17:47:34] [part] Dave has left the server (0:1)
 [17:47:57] [connection] incoming connection: 192.168.1.105:62888 id: 0
 [17:47:57] [join] Dave has joined the server (0:192.168.1.105)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.8-RC4-1, (C)2005-2017 SA-MP Team
+
+[18:20:22] filterscripts = ""  (string)
+[18:20:22] 
+[18:20:22] Server Plugins
+[18:20:22] --------------
+[18:20:22]  Loading plugin: mysql
+[18:20:22]  >> plugin.mysql: R41-2 successfully loaded.
+[18:20:22]   Loaded.
+[18:20:22]  Loading plugin: sscanf
+[18:20:22] 
+
+[18:20:22]  ===============================
+
+[18:20:22]       sscanf plugin loaded.     
+
+[18:20:22]    (c) 2009 Alex "Y_Less" Cole
+
+[18:20:22]    0.3d-R2 500 Players "dnee"
+
+[18:20:22]  ===============================
+
+[18:20:22]   Loaded.
+[18:20:22]  Loading plugin: crashdetect
+[18:20:22]   CrashDetect v4.18.1 is OK.
+[18:20:22]   Loaded.
+[18:20:22]  Loading plugin: streamer
+[18:20:22] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[18:20:22]   Loaded.
+[18:20:22]  Loading plugin: tde
+[18:20:22] 
+TDEditor Plugin loaded, thank you for using.
+
+[18:20:22]   Loaded.
+[18:20:22]  Loaded 5 plugins.
+
+[18:20:22] [artwork:crc] lvpdpc2.dff CRC = 0xFBD1EA7C
+[18:20:22] [artwork:crc] lvpdpc2.txd CRC = 0xDC92731E
+[18:20:22] [artwork:crc] lapdpd2.dff CRC = 0xA558D422
+[18:20:22] [artwork:crc] lapdpd2.txd CRC = 0xA442E2DA
+[18:20:22] [artwork:crc] misami.dff CRC = 0xD1D68395
+[18:20:22] [artwork:crc] misami.txd CRC = 0xB2549C30
+[18:20:22] [artwork:crc] swmyhp2.dff CRC = 0x50DE01E3
+[18:20:22] [artwork:crc] swmyhp2.txd CRC = 0x10C40391
+[18:20:22] [artwork:crc] wallzzz.dff CRC = 0x4BC6EDFF
+[18:20:22] [artwork:crc] wallzzz.txd CRC = 0x235E3EEB
+[18:20:22] 
+[18:20:22] Filterscripts
+[18:20:22] ---------------
+[18:20:22]   Loaded 0 filterscripts.
+
+[18:20:22]  
+[18:20:22]  
+[18:20:22]  
+[18:20:22]  ======================================= 
+[18:20:22]  |                                     | 
+[18:20:22]  |        YSI version 4.00.0001        | 
+[18:20:22]  |        By Alex "Y_Less" Cole        | 
+[18:20:22]  |                                     | 
+[18:20:22]  ======================================= 
+[18:20:22]  
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:21:34] Error: Your password must be changed from the default password, please change it.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:21:35] Error: Your password must be changed from the default password, please change it.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:21:36] Error: Your password must be changed from the default password, please change it.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:21:37] Error: Your password must be changed from the default password, please change it.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:23:26] 
+[18:23:26] Server Plugins
+[18:23:26] --------------
+[18:23:26]  Loading plugin: tde
+[18:23:26] 
+TDEditor Plugin loaded, thank you for using.
+
+[18:23:26]   Loaded.
+[18:23:26]  Loading plugin: mysql
+[18:23:26]  >> plugin.mysql: R41-2 successfully loaded.
+[18:23:26]   Loaded.
+[18:23:26]  Loading plugin: sscanf
+[18:23:26] 
+
+[18:23:26]  ===============================
+
+[18:23:26]       sscanf plugin loaded.     
+
+[18:23:26]    (c) 2009 Alex "Y_Less" Cole
+
+[18:23:26]    0.3d-R2 500 Players "dnee"
+
+[18:23:26]  ===============================
+
+[18:23:26]   Loaded.
+[18:23:26]  Loading plugin: crashdetect
+[18:23:26]   CrashDetect v4.18.1 is OK.
+[18:23:26]   Loaded.
+[18:23:26]  Loaded 4 plugins.
+
+[18:23:26] I couldn't load any gamemode scripts. Please verify your server.cfg
+[18:23:26] It needs a gamemode0 line at the very least.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:23:45] 
+[18:23:45] Server Plugins
+[18:23:45] --------------
+[18:23:45]  Loading plugin: tde
+[18:23:45] 
+TDEditor Plugin loaded, thank you for using.
+
+[18:23:45]   Loaded.
+[18:23:45]  Loading plugin: mysql
+[18:23:45]  >> plugin.mysql: R41-2 successfully loaded.
+[18:23:45]   Loaded.
+[18:23:45]  Loading plugin: sscanf
+[18:23:45] 
+
+[18:23:45]  ===============================
+
+[18:23:45]       sscanf plugin loaded.     
+
+[18:23:45]    (c) 2009 Alex "Y_Less" Cole
+
+[18:23:45]    0.3d-R2 500 Players "dnee"
+
+[18:23:45]  ===============================
+
+[18:23:45]   Loaded.
+[18:23:45]  Loading plugin: crashdetect
+[18:23:45]   CrashDetect v4.18.1 is OK.
+[18:23:45]   Loaded.
+[18:23:45]  Loaded 4 plugins.
+
+[18:23:45] [connection] 79.20.179.71:65490 requests connection cookie.
+[18:23:45] 
+[18:23:45] Filterscripts
+[18:23:45] ---------------
+[18:23:45]   Loading filterscript 'tde.amx'...
+[18:23:45]  
+[18:23:45]  
+[18:23:45]  
+[18:23:45]  
+[18:23:45] ___ __  __
+[18:23:45]  | |  \|_  _|.|_ _  _		
+[18:23:45]  | |__/|__(_|||_(_)|			
+[18:23:45]  
+[18:23:45] TDEditor V1.17 by adri1
+[18:23:45] TDEditor loaded
+[18:23:45]  
+[18:23:45]   Loaded 1 filterscripts.
+
+[18:23:45] [debug] Run time error 19: "File or function is not found"
+[18:23:45] [debug]  CreateDynamicMapIcon
+[18:23:45] [debug]  CreateDynamicPickup
+[18:23:45] [debug]  CreateDynamicCP
+[18:23:45] [debug]  CreateDynamicObject
+[18:23:45] [debug]  CreateDynamic3DTextLabel
+[18:23:45] [debug]  TogglePlayerAllDynamicCPs
+[18:23:45] [debug]  TogglePlayerDynamicCP
+[18:23:45] [debug]  DestroyDynamic3DTextLabel
+[18:23:45] [debug]  Streamer_UpdateEx
+[18:23:45] [debug]  DestroyDynamicRaceCP
+[18:23:45] [debug]  DestroyDynamicCP
+[18:23:45] [debug]  IsPlayerInDynamicCP
+[18:23:45] [debug]  UpdateDynamic3DTextLabelText
+[18:23:45] [debug]  DestroyDynamicMapIcon
+[18:23:45] [debug]  DestroyDynamicObject
+[18:23:45] [debug]  CreateDynamicRaceCP
+[18:23:45] [debug]  DestroyDynamicPickup
+[18:23:45] [debug] Run time error 19: "File or function is not found"
+[18:23:45] [debug]  CreateDynamicMapIcon
+[18:23:45] [debug]  CreateDynamicPickup
+[18:23:45] [debug]  CreateDynamicCP
+[18:23:45] [debug]  CreateDynamicObject
+[18:23:45] [debug]  CreateDynamic3DTextLabel
+[18:23:45] [debug]  TogglePlayerAllDynamicCPs
+[18:23:45] [debug]  TogglePlayerDynamicCP
+[18:23:45] [debug]  DestroyDynamic3DTextLabel
+[18:23:45] [debug]  Streamer_UpdateEx
+[18:23:45] [debug]  DestroyDynamicRaceCP
+[18:23:45] [debug]  DestroyDynamicCP
+[18:23:45] [debug]  IsPlayerInDynamicCP
+[18:23:45] [debug]  UpdateDynamic3DTextLabelText
+[18:23:45] [debug]  DestroyDynamicMapIcon
+[18:23:45] [debug]  DestroyDynamicObject
+[18:23:45] [debug]  CreateDynamicRaceCP
+[18:23:45] [debug]  DestroyDynamicPickup
+[18:23:45] Script[gamemodes/cnr.amx]: Run time error 19: "File or function is not found"
+[18:23:45] Number of vehicle models: 0
+[18:23:46] [connection] incoming connection: 79.20.179.71:65490 id: 0
+[18:23:46] [join] Dave_Dev has joined the server (0:79.20.179.71)
+[18:23:46] [debug] Run time error 19: "File or function is not found"
+[18:23:46] [debug]  CreateDynamicMapIcon
+[18:23:46] [debug]  CreateDynamicPickup
+[18:23:46] [debug]  CreateDynamicCP
+[18:23:46] [debug]  CreateDynamicObject
+[18:23:46] [debug]  CreateDynamic3DTextLabel
+[18:23:46] [debug]  TogglePlayerAllDynamicCPs
+[18:23:46] [debug]  TogglePlayerDynamicCP
+[18:23:46] [debug]  DestroyDynamic3DTextLabel
+[18:23:46] [debug]  Streamer_UpdateEx
+[18:23:46] [debug]  DestroyDynamicRaceCP
+[18:23:46] [debug]  DestroyDynamicCP
+[18:23:46] [debug]  IsPlayerInDynamicCP
+[18:23:46] [debug]  UpdateDynamic3DTextLabelText
+[18:23:46] [debug]  DestroyDynamicMapIcon
+[18:23:46] [debug]  DestroyDynamicObject
+[18:23:46] [debug]  CreateDynamicRaceCP
+[18:23:46] [debug]  DestroyDynamicPickup
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:24:00] 
+[18:24:00] Server Plugins
+[18:24:00] --------------
+[18:24:00]  Loading plugin: tde
+[18:24:00] 
+TDEditor Plugin loaded, thank you for using.
+
+[18:24:00]   Loaded.
+[18:24:00]  Loading plugin: mysql
+[18:24:00]  >> plugin.mysql: R41-2 successfully loaded.
+[18:24:00]   Loaded.
+[18:24:00]  Loading plugin: sscanf
+[18:24:00] 
+
+[18:24:00]  ===============================
+
+[18:24:00]       sscanf plugin loaded.     
+
+[18:24:00]    (c) 2009 Alex "Y_Less" Cole
+
+[18:24:00]    0.3d-R2 500 Players "dnee"
+
+[18:24:00]  ===============================
+
+[18:24:00]   Loaded.
+[18:24:00]  Loading plugin: crashdetect
+[18:24:00]   CrashDetect v4.18.1 is OK.
+[18:24:00]   Loaded.
+[18:24:00]  Loading plugin: streamer
+[18:24:00] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[18:24:00]   Loaded.
+[18:24:00]  Loaded 5 plugins.
+
+[18:24:00] 
+[18:24:00] Filterscripts
+[18:24:00] ---------------
+[18:24:00]   Loading filterscript 'tde.amx'...
+[18:24:00]  
+[18:24:00]  
+[18:24:00]  
+[18:24:00]  
+[18:24:00] ___ __  __
+[18:24:00]  | |  \|_  _|.|_ _  _		
+[18:24:00]  | |__/|__(_|||_(_)|			
+[18:24:00]  
+[18:24:00] TDEditor V1.17 by adri1
+[18:24:00] TDEditor loaded
+[18:24:00]  
+[18:24:00]   Loaded 1 filterscripts.
+
+[18:24:00]  
+[18:24:00]  
+[18:24:00]  
+[18:24:00]  ======================================= 
+[18:24:00]  |                                     | 
+[18:24:00]  |        YSI version 4.00.0001        | 
+[18:24:00]  |        By Alex "Y_Less" Cole        | 
+[18:24:00]  |                                     | 
+[18:24:00]  ======================================= 
+[18:24:00]  
+[18:24:02] [connection] 79.20.179.71:65491 requests connection cookie.
+[18:24:02] Store: Well Stacked Pizza [ID: 0]
+[18:24:02] Store: Cluckin' Bell [ID: 1]
+[18:24:02] Store: Cluckin' Bell [ID: 2]
+[18:24:02] Store: Burger Shot [ID: 3]
+[18:24:02] Store: Ciambellaio [ID: 4]
+[18:24:02] Store: Prolaps [ID: 5]
+[18:24:02] Store: Victim [ID: 6]
+[18:24:02] Store: DS [ID: 7]
+[18:24:02] Store: Binco [ID: 8]
+[18:24:02] Store: Suburban [ID: 9]
+[18:24:02] Store: 24/7 [ID: 10]
+[18:24:02] Store: 24/7 [ID: 11]
+[18:24:02] Store: 24/7 [ID: 12]
+[18:24:02] Store: 24/7 [ID: 13]
+[18:24:02] Store: Ammunation [ID: 14]
+[18:24:02] Store: Ammunation [ID: 15]
+[18:24:02] Store: Ten Green Bottles [ID: 16]
+[18:24:02] Store: Centro Scommesse [ID: 17]
+[18:24:02] Store: Barbiere [ID: 18]
+[18:24:02] Store: Tattoo [ID: 19]
+[18:24:02] Store: Sexy Shop [ID: 20]
+[18:24:02] Store: Alhambra [ID: 21]
+[18:24:02] Store: Palestra [ID: 22]
+[18:24:02] Store: Burger Shot [ID: 23]
+[18:24:02] Store: Barbiere [ID: 24]
+[18:24:02] Store: Cluckin Bell [ID: 25]
+[18:24:02] Store: 24/7 [ID: 26]
+[18:24:02] Store: Liquor Bar [ID: 27]
+[18:24:02] Store: 98$ Store [ID: 28]
+[18:24:02] Store: Sexy Shop [ID: 29]
+[18:24:02] Store: Zip [ID: 30]
+[18:24:02] Store: 69$ Store [ID: 31]
+[18:24:02] Store: Bar [ID: 32]
+[18:24:02] Store: Sexy Shop [ID: 33]
+[18:24:02] Building Caricati: 34
+[18:24:02] 
+----------------------------------
+[18:24:02]  Los Santos Cops and Robbers by Code, Edit by Dave
+[18:24:02] ----------------------------------
+
+[18:24:02] Number of vehicle models: 33
+[18:24:03] [connection] incoming connection: 79.20.179.71:65491 id: 0
+[18:24:03] [join] Dave_Dev has joined the server (0:79.20.179.71)
+[18:24:14] [part] Dave_Dev has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:25:04] 
+[18:25:04] Server Plugins
+[18:25:04] --------------
+[18:25:04]  Loading plugin: tde
+[18:25:04] 
+TDEditor Plugin loaded, thank you for using.
+
+[18:25:04]   Loaded.
+[18:25:04]  Loading plugin: mysql
+[18:25:04]  >> plugin.mysql: R41-2 successfully loaded.
+[18:25:04]   Loaded.
+[18:25:04]  Loading plugin: sscanf
+[18:25:04] 
+
+[18:25:04]  ===============================
+
+[18:25:04]       sscanf plugin loaded.     
+
+[18:25:04]    (c) 2009 Alex "Y_Less" Cole
+
+[18:25:04]    0.3d-R2 500 Players "dnee"
+
+[18:25:04]  ===============================
+
+[18:25:04]   Loaded.
+[18:25:04]  Loading plugin: crashdetect
+[18:25:04]   CrashDetect v4.18.1 is OK.
+[18:25:04]   Loaded.
+[18:25:04]  Loading plugin: streamer
+[18:25:04] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[18:25:04]   Loaded.
+[18:25:04]  Loaded 5 plugins.
+
+[18:25:04] 
+[18:25:04] Filterscripts
+[18:25:04] ---------------
+[18:25:04]   Loading filterscript 'tde.amx'...
+[18:25:04]  
+[18:25:04]  
+[18:25:04]  
+[18:25:04]  
+[18:25:04] ___ __  __
+[18:25:04]  | |  \|_  _|.|_ _  _		
+[18:25:04]  | |__/|__(_|||_(_)|			
+[18:25:04]  
+[18:25:04] TDEditor V1.17 by adri1
+[18:25:04] TDEditor loaded
+[18:25:04]  
+[18:25:04]   Loaded 1 filterscripts.
+
+[18:25:04]  
+[18:25:04]  
+[18:25:04]  
+[18:25:04]  ======================================= 
+[18:25:04]  |                                     | 
+[18:25:04]  |        YSI version 4.00.0001        | 
+[18:25:04]  |        By Alex "Y_Less" Cole        | 
+[18:25:04]  |                                     | 
+[18:25:04]  ======================================= 
+[18:25:04]  
+[18:25:06] Store: Well Stacked Pizza [ID: 0]
+[18:25:06] Store: Cluckin' Bell [ID: 1]
+[18:25:06] Store: Cluckin' Bell [ID: 2]
+[18:25:06] Store: Burger Shot [ID: 3]
+[18:25:06] Store: Ciambellaio [ID: 4]
+[18:25:06] Store: Prolaps [ID: 5]
+[18:25:06] Store: Victim [ID: 6]
+[18:25:06] Store: DS [ID: 7]
+[18:25:06] Store: Binco [ID: 8]
+[18:25:06] Store: Suburban [ID: 9]
+[18:25:06] Store: 24/7 [ID: 10]
+[18:25:06] Store: 24/7 [ID: 11]
+[18:25:06] Store: 24/7 [ID: 12]
+[18:25:06] Store: 24/7 [ID: 13]
+[18:25:06] Store: Ammunation [ID: 14]
+[18:25:06] Store: Ammunation [ID: 15]
+[18:25:06] Store: Ten Green Bottles [ID: 16]
+[18:25:06] Store: Centro Scommesse [ID: 17]
+[18:25:06] Store: Barbiere [ID: 18]
+[18:25:06] Store: Tattoo [ID: 19]
+[18:25:06] Store: Sexy Shop [ID: 20]
+[18:25:06] Store: Alhambra [ID: 21]
+[18:25:06] Store: Palestra [ID: 22]
+[18:25:06] Store: Burger Shot [ID: 23]
+[18:25:06] Store: Barbiere [ID: 24]
+[18:25:06] Store: Cluckin Bell [ID: 25]
+[18:25:06] Store: 24/7 [ID: 26]
+[18:25:06] Store: Liquor Bar [ID: 27]
+[18:25:06] Store: 98$ Store [ID: 28]
+[18:25:06] Store: Sexy Shop [ID: 29]
+[18:25:06] Store: Zip [ID: 30]
+[18:25:06] Store: 69$ Store [ID: 31]
+[18:25:06] Store: Bar [ID: 32]
+[18:25:06] Store: Sexy Shop [ID: 33]
+[18:25:06] Building Caricati: 34
+[18:25:06] 
+----------------------------------
+[18:25:06]  Los Santos Cops and Robbers by Code, Edit by Dave
+[18:25:06] ----------------------------------
+
+[18:25:06] Number of vehicle models: 33
+[18:25:20] [connection] 79.20.179.71:65296 requests connection cookie.
+[18:25:21] [connection] incoming connection: 79.20.179.71:65296 id: 0
+[18:25:21] [join] Dave_Dev has joined the server (0:79.20.179.71)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:25:48] 
+[18:25:48] Server Plugins
+[18:25:48] --------------
+[18:25:48]  Loading plugin: tde
+[18:25:48] 
+TDEditor Plugin loaded, thank you for using.
+
+[18:25:48]   Loaded.
+[18:25:48]  Loading plugin: mysql
+[18:25:48]  >> plugin.mysql: R41-2 successfully loaded.
+[18:25:48]   Loaded.
+[18:25:48]  Loading plugin: sscanf
+[18:25:48] 
+
+[18:25:48]  ===============================
+
+[18:25:48]       sscanf plugin loaded.     
+
+[18:25:48]    (c) 2009 Alex "Y_Less" Cole
+
+[18:25:48]    0.3d-R2 500 Players "dnee"
+
+[18:25:48]  ===============================
+
+[18:25:48]   Loaded.
+[18:25:48]  Loading plugin: crashdetect
+[18:25:48]   CrashDetect v4.18.1 is OK.
+[18:25:48]   Loaded.
+[18:25:48]  Loading plugin: streamer
+[18:25:48] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[18:25:48]   Loaded.
+[18:25:48]  Loaded 5 plugins.
+
+[18:25:48] 
+[18:25:48] Filterscripts
+[18:25:48] ---------------
+[18:25:48]   Loading filterscript 'tde.amx'...
+[18:25:48]  
+[18:25:48]  
+[18:25:48]  
+[18:25:48]  
+[18:25:48] ___ __  __
+[18:25:48]  | |  \|_  _|.|_ _  _		
+[18:25:48]  | |__/|__(_|||_(_)|			
+[18:25:48]  
+[18:25:48] TDEditor V1.17 by adri1
+[18:25:48] TDEditor loaded
+[18:25:48]  
+[18:25:48]   Loaded 1 filterscripts.
+
+[18:25:48] AllowAdminTeleport() : function is deprecated. Please see OnPlayerClickMap()
+[18:25:48] 
+----------------------------------
+[18:25:48]   Bare Script
+
+[18:25:48] ----------------------------------
+
+[18:25:48] Number of vehicle models: 0
+[18:25:56] [connection] 79.20.179.71:50042 requests connection cookie.
+[18:25:57] [connection] incoming connection: 79.20.179.71:50042 id: 0
+[18:25:57] [join] Dave_Dev has joined the server (0:79.20.179.71)
+[18:32:07] [part] Dave_Dev has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:44:26] 
+[19:44:26] Server Plugins
+[19:44:26] --------------
+[19:44:26]  Loading plugin: tde
+[19:44:27] 
+TDEditor Plugin loaded, thank you for using.
+
+[19:44:27]   Loaded.
+[19:44:27]  Loading plugin: mysql
+[19:44:27]  >> plugin.mysql: R41-2 successfully loaded.
+[19:44:27]   Loaded.
+[19:44:27]  Loading plugin: sscanf
+[19:44:27] 
+
+[19:44:27]  ===============================
+
+[19:44:27]       sscanf plugin loaded.     
+
+[19:44:27]    (c) 2009 Alex "Y_Less" Cole
+
+[19:44:27]    0.3d-R2 500 Players "dnee"
+
+[19:44:27]  ===============================
+
+[19:44:27]   Loaded.
+[19:44:27]  Loading plugin: crashdetect
+[19:44:27]   CrashDetect v4.18.1 is OK.
+[19:44:27]   Loaded.
+[19:44:27]  Loading plugin: streamer
+[19:44:27] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[19:44:27]   Loaded.
+[19:44:27]  Loaded 5 plugins.
+
+[19:44:27] 
+[19:44:27] Filterscripts
+[19:44:27] ---------------
+[19:44:27]   Loading filterscript 'tde.amx'...
+[19:44:29]  
+[19:44:29]  
+[19:44:29]  
+[19:44:29]  
+[19:44:29] ___ __  __
+[19:44:29]  | |  \|_  _|.|_ _  _		
+[19:44:29]  | |__/|__(_|||_(_)|			
+[19:44:29]  
+[19:44:29] TDEditor V1.17 by adri1
+[19:44:29] TDEditor loaded
+[19:44:29]  
+[19:44:29]   Loaded 1 filterscripts.
+
+[19:44:29] AllowAdminTeleport() : function is deprecated. Please see OnPlayerClickMap()
+[19:44:29] 
+----------------------------------
+[19:44:29]   Bare Script
+
+[19:44:29] ----------------------------------
+
+[19:44:29] Number of vehicle models: 0
+Console input: loadfs fsdebug
+[19:44:34] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[19:44:34]   * By Simon Campbell *
+  *********************
+[19:44:34]   * Version: 0.5d      *
+  *********************
+[19:44:34]   * -- LOADED         *
+  *********************
+
+[19:44:34]   Filterscript 'fsdebug.amx' loaded.
+[19:44:58] [connection] 79.35.145.186:53869 requests connection cookie.
+[19:44:59] [connection] incoming connection: 79.35.145.186:53869 id: 0
+[19:45:00] [join] Dave_Dev has joined the server (0:79.35.145.186)
+[19:45:11] [connection] 82.58.232.238:58187 requests connection cookie.
+[19:45:12] [connection] incoming connection: 82.58.232.238:58187 id: 1
+[19:45:13] [join] Leroy_Test has joined the server (1:82.58.232.238)
+[19:45:41] [connection] 5.86.176.128:54995 requests connection cookie.
+[19:45:42] [connection] incoming connection: 5.86.176.128:54995 id: 2
+[19:45:42] [join] Maxel_Dev has joined the server (2:5.86.176.128)
+[19:46:40] [connection] 82.61.76.138:57484 requests connection cookie.
+[19:46:41] [connection] incoming connection: 82.61.76.138:57484 id: 3
+[19:46:41] [join] France_Adm has joined the server (3:82.61.76.138)
+[19:46:52] [part] Dave_Dev has left the server (0:1)
+[19:47:02] RCON (In-Game): Player #2 (Maxel_Dev) failed login.
+[19:47:08] RCON (In-Game): Player #2 (Maxel_Dev) failed login.
+Console input: unloadfs 
+Console input: unlosd fsdebug
+Console input: unloadfs fsdebug
+[19:47:16] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[19:47:16]   * -- SHUTDOWN       *
+  *********************
+
+[19:47:16]   Filterscript 'fsdebug.amx' unloaded.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:48:36] 
+[19:48:36] Server Plugins
+[19:48:36] --------------
+[19:48:36]  Loading plugin: tde
+[19:48:36] 
+TDEditor Plugin loaded, thank you for using.
+
+[19:48:36]   Loaded.
+[19:48:36]  Loading plugin: mysql
+[19:48:36]  >> plugin.mysql: R41-2 successfully loaded.
+[19:48:36]   Loaded.
+[19:48:36]  Loading plugin: sscanf
+[19:48:36] 
+
+[19:48:36]  ===============================
+
+[19:48:36]       sscanf plugin loaded.     
+
+[19:48:36]    (c) 2009 Alex "Y_Less" Cole
+
+[19:48:36]    0.3d-R2 500 Players "dnee"
+
+[19:48:36]  ===============================
+
+[19:48:36]   Loaded.
+[19:48:36]  Loading plugin: crashdetect
+[19:48:36]   CrashDetect v4.18.1 is OK.
+[19:48:36]   Loaded.
+[19:48:36]  Loading plugin: streamer
+[19:48:36] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[19:48:36]   Loaded.
+[19:48:36]  Loaded 5 plugins.
+
+[19:48:36] 
+[19:48:36] Filterscripts
+[19:48:36] ---------------
+[19:48:36]   Loading filterscript 'tde.amx'...
+[19:48:36]  
+[19:48:36]  
+[19:48:36]  
+[19:48:36]  
+[19:48:36] ___ __  __
+[19:48:36]  | |  \|_  _|.|_ _  _		
+[19:48:36]  | |__/|__(_|||_(_)|			
+[19:48:36]  
+[19:48:36] TDEditor V1.17 by adri1
+[19:48:36] TDEditor loaded
+[19:48:36]  
+[19:48:36]   Loaded 1 filterscripts.
+
+[19:48:36] AllowAdminTeleport() : function is deprecated. Please see OnPlayerClickMap()
+[19:48:36] 
+----------------------------------
+[19:48:36]   Bare Script
+
+[19:48:36] ----------------------------------
+
+[19:48:36] Number of vehicle models: 0
+[19:48:51] [connection] 79.35.145.186:57337 requests connection cookie.
+[19:48:52] [connection] incoming connection: 79.35.145.186:57337 id: 0
+[19:48:52] [join] Dave_Dev has joined the server (0:79.35.145.186)
+[19:49:15] [connection] 5.86.176.128:51439 requests connection cookie.
+[19:49:16] [connection] incoming connection: 5.86.176.128:51439 id: 1
+[19:49:17] [join] Maxel_Dev has joined the server (1:5.86.176.128)
+[19:49:26] [connection] 82.58.232.238:61659 requests connection cookie.
+[19:49:27] [connection] incoming connection: 82.58.232.238:61659 id: 2
+[19:49:27] [join] Leroy_Test has joined the server (2:82.58.232.238)
+[19:49:31] [connection] 82.61.76.138:58683 requests connection cookie.
+[19:49:32] [connection] incoming connection: 82.61.76.138:58683 id: 3
+[19:49:32] [join] France_Adm has joined the server (3:82.61.76.138)
+[19:49:47] RCON (In-Game): Player #0 (Dave_Dev) failed login.
+[19:49:49] RCON (In-Game): Player #0 (Dave_Dev) failed login.
+Console input: loadfs fsdebug
+[19:51:35] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[19:51:35]   * By Simon Campbell *
+  *********************
+[19:51:35]   * Version: 0.5d      *
+  *********************
+[19:51:35]   * -- LOADED         *
+  *********************
+
+[19:51:35]   Filterscript 'fsdebug.amx' loaded.
+[19:54:38] [part] France_Adm has left the server (3:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:58:44] 
+[19:58:44] Server Plugins
+[19:58:44] --------------
+[19:58:44]  Loading plugin: tde
+[19:58:44] 
+TDEditor Plugin loaded, thank you for using.
+
+[19:58:44]   Loaded.
+[19:58:44]  Loading plugin: mysql
+[19:58:44]  >> plugin.mysql: R41-2 successfully loaded.
+[19:58:44]   Loaded.
+[19:58:44]  Loading plugin: sscanf
+[19:58:44] 
+
+[19:58:44]  ===============================
+
+[19:58:44]       sscanf plugin loaded.     
+
+[19:58:44]    (c) 2009 Alex "Y_Less" Cole
+
+[19:58:44]    0.3d-R2 500 Players "dnee"
+
+[19:58:44]  ===============================
+
+[19:58:44]   Loaded.
+[19:58:44]  Loading plugin: crashdetect
+[19:58:44]   CrashDetect v4.18.1 is OK.
+[19:58:44]   Loaded.
+[19:58:44]  Loading plugin: streamer
+[19:58:44] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[19:58:44]   Loaded.
+[19:58:44]  Loaded 5 plugins.
+
+[19:58:44] 
+[19:58:44] Filterscripts
+[19:58:44] ---------------
+[19:58:44]   Loading filterscript 'tde.amx'...
+[19:58:44]  
+[19:58:44]  
+[19:58:44]  
+[19:58:44]  
+[19:58:44] ___ __  __
+[19:58:44]  | |  \|_  _|.|_ _  _		
+[19:58:44]  | |__/|__(_|||_(_)|			
+[19:58:44]  
+[19:58:44] TDEditor V1.17 by adri1
+[19:58:44] TDEditor loaded
+[19:58:44]  
+[19:58:44]   Loaded 1 filterscripts.
+
+[19:58:45] AllowAdminTeleport() : function is deprecated. Please see OnPlayerClickMap()
+[19:58:45] 
+----------------------------------
+[19:58:45]   Bare Script
+
+[19:58:45] ----------------------------------
+
+[19:58:45] Number of vehicle models: 0
+[19:58:45] [connection] 79.35.145.186:58522 requests connection cookie.
+[19:58:45] [connection] 5.86.176.128:62495 requests connection cookie.
+[19:58:46] [connection] incoming connection: 79.35.145.186:58522 id: 0
+[19:58:46] [join] Dave_Dev has joined the server (0:79.35.145.186)
+[19:58:47] [connection] incoming connection: 5.86.176.128:62496 id: 1
+[19:58:48] [join] Maxel_Dev has joined the server (1:5.86.176.128)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:59:27] 
+[19:59:27] Server Plugins
+[19:59:27] --------------
+[19:59:27]  Loading plugin: tde
+[19:59:27] 
+TDEditor Plugin loaded, thank you for using.
+
+[19:59:27]   Loaded.
+[19:59:27]  Loading plugin: mysql
+[19:59:27]  >> plugin.mysql: R41-2 successfully loaded.
+[19:59:27]   Loaded.
+[19:59:27]  Loading plugin: sscanf
+[19:59:27] 
+
+[19:59:27]  ===============================
+
+[19:59:27]       sscanf plugin loaded.     
+
+[19:59:27]    (c) 2009 Alex "Y_Less" Cole
+
+[19:59:27]    0.3d-R2 500 Players "dnee"
+
+[19:59:27]  ===============================
+
+[19:59:27]   Loaded.
+[19:59:27]  Loading plugin: crashdetect
+[19:59:27]   CrashDetect v4.18.1 is OK.
+[19:59:27]   Loaded.
+[19:59:27]  Loading plugin: streamer
+[19:59:27] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[19:59:27]   Loaded.
+[19:59:27]  Loaded 5 plugins.
+
+[19:59:27] [connection] 82.58.232.238:54573 requests connection cookie.
+[19:59:27] 
+[19:59:27] Filterscripts
+[19:59:27] ---------------
+[19:59:27]   Loading filterscript 'tde.amx'...
+[19:59:27] [connection] 79.35.145.186:59525 requests connection cookie.
+[19:59:27]  
+[19:59:27]  
+[19:59:27]  
+[19:59:27]  
+[19:59:27] ___ __  __
+[19:59:27]  | |  \|_  _|.|_ _  _		
+[19:59:27]  | |__/|__(_|||_(_)|			
+[19:59:27]  
+[19:59:27] TDEditor V1.17 by adri1
+[19:59:27] TDEditor loaded
+[19:59:27]  
+[19:59:27]   Loaded 1 filterscripts.
+
+[19:59:28] AllowAdminTeleport() : function is deprecated. Please see OnPlayerClickMap()
+[19:59:28] 
+----------------------------------
+[19:59:28]   Bare Script
+
+[19:59:28] ----------------------------------
+
+[19:59:28] Number of vehicle models: 0
+[19:59:28] [connection] 5.86.176.128:58002 requests connection cookie.
+[19:59:28] [connection] incoming connection: 82.58.232.238:53234 id: 0
+[19:59:28] [connection] incoming connection: 79.35.145.186:59525 id: 1
+[19:59:29] [join] Leroy_Test has joined the server (0:82.58.232.238)
+[19:59:29] [connection] incoming connection: 5.86.176.128:58002 id: 1
+[19:59:29] [join] Maxel_Dev has joined the server (1:5.86.176.128)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[20:00:17] 
+[20:00:17] Server Plugins
+[20:00:17] --------------
+[20:00:17]  Loading plugin: tde
+[20:00:17] 
+TDEditor Plugin loaded, thank you for using.
+
+[20:00:17]   Loaded.
+[20:00:17]  Loading plugin: mysql
+[20:00:17]  >> plugin.mysql: R41-2 successfully loaded.
+[20:00:17]   Loaded.
+[20:00:17]  Loading plugin: sscanf
+[20:00:17] 
+
+[20:00:17]  ===============================
+
+[20:00:17]       sscanf plugin loaded.     
+
+[20:00:17]    (c) 2009 Alex "Y_Less" Cole
+
+[20:00:17]    0.3d-R2 500 Players "dnee"
+
+[20:00:17]  ===============================
+
+[20:00:17]   Loaded.
+[20:00:17]  Loading plugin: crashdetect
+[20:00:17]   CrashDetect v4.18.1 is OK.
+[20:00:17]   Loaded.
+[20:00:17]  Loading plugin: streamer
+[20:00:17] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[20:00:17]   Loaded.
+[20:00:17]  Loaded 5 plugins.
+
+[20:00:17] 
+[20:00:17] Filterscripts
+[20:00:17] ---------------
+[20:00:17]   Loading filterscript 'tde.amx'...
+[20:00:17]  
+[20:00:17]  
+[20:00:17]  
+[20:00:17]  
+[20:00:17] ___ __  __
+[20:00:17]  | |  \|_  _|.|_ _  _		
+[20:00:17]  | |__/|__(_|||_(_)|			
+[20:00:17]  
+[20:00:17] TDEditor V1.17 by adri1
+[20:00:17] TDEditor loaded
+[20:00:17]  
+[20:00:17]   Loaded 1 filterscripts.
+
+[20:00:17] AllowAdminTeleport() : function is deprecated. Please see OnPlayerClickMap()
+[20:00:17] 
+----------------------------------
+[20:00:17]   Bare Script
+
+[20:00:17] ----------------------------------
+
+[20:00:17] Number of vehicle models: 0
+[20:00:17] [connection] 5.86.176.128:58005 requests connection cookie.
+[20:00:18] [connection] 82.58.232.238:52912 requests connection cookie.
+[20:00:18] [connection] incoming connection: 5.86.176.128:58005 id: 0
+[20:00:19] [connection] incoming connection: 82.58.232.238:52704 id: 1
+[20:00:19] [join] Maxel_Dev has joined the server (0:5.86.176.128)
+[20:00:19] [join] Leroy_Test has joined the server (1:82.58.232.238)

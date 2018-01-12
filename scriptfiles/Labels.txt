@@ -1,0 +1,29 @@
+// Dynamic 3dLabels Format = Description, X, Y, Z
+Los Santos Police Department (/enterpd),1553.95,-1675.76,16.19
+Servizio (/servizio),255.43,74.30,1003.64
+Armeria Dipartimentale (/armeria),252.69,86.95,1002.44
+Los Santos Police Department (/exitpd),246.75,64.51,1003.64
+Los Santos Prison (/exitprison),1779.26,-1576.54,1734.94
+Los Santos Prison (/enterprison),1799.18,-1577.86,14.07
+Los Santos Prison,1788.40,-1592.20,13.48
+Alhambra,1834.54,-1682.51,13.42
+24/7,1833.02,-1842.50,13.57
+Bar di Unity,1846.55,-1871.92,13.57
+Punto di incontro,1723.47,-1863.92,13.57
+Ristorante di Lusso,1567.94,-1896.86,13.56
+Agenzia Pubblicitaria,1412.43,-1700.35,13.53
+Farmacia,1420.24,-1623.74,13.54
+Garage dei Sequestri,1531.19,-1448.50,13.38
+Teatro,1323.54,-1713.72,13.53
+Elettronica (/enterelettronica),1081.20,-1698.54,13.54
+Elettronica (/exitelettronica),1005.03,52.14,55.32
+Ospedale,1173.30,-1323.30,15.39
+Ammunation Centrale,1367.68,-1280.05,13.54
+Scuola Guida,1310.11,-1368.59,13.55
+Idlegas,1930.05,-1776.21,13.54
+69 Store,2001.85,-1760.69,13.53
+Well Pizza Stacked,2104.05,-1806.60,13.55
+El Corona's Bar,1952.51,-2041.45,13.54
+Palestra,2228.66,-1722.11,13.56
+Binco,2244.69,-1664.54,15.47
+Distretto Est,2497.47,-1750.09,13.45

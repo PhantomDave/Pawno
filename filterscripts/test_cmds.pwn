@@ -76,28 +76,6 @@ SpawnVehicle_InfrontOfPlayer(playerid, vehiclemodel, color1, color2)
 	return CreateVehicle(vehiclemodel, x, y, z + (size_z * 0.25), facing, color1, color2, -1);
 }
 
-//------------------------------------------------
-
-SpawnObject_InfrontOfPlayer(playerid, model)
-{
-	new Float:x,Float:y,Float:z;
-	new Float:facing;
-	new Float:distance;
-
-    GetPlayerPos(playerid, x, y, z);
-    GetPlayerFacingAngle(playerid, facing);
-
-    distance = 5.0;
-
-  	x += (distance * floatsin(-facing, degrees));
-    y += (distance * floatcos(-facing, degrees));
-
-	facing += 90.0;
-	if(facing > 360.0) facing -= 360.0;
-
-	return CreateObject(model, x, y, z, 0.0, 0.0, 0.0, 300.0);
-}
-
 //-------------------------------------------------
 
 stock CreateExplosionEx(Float:X, Float:Y, Float:Z, type, Float:Radius, virtualworld)
@@ -306,7 +284,6 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	{
         new tmp[256];
 		tmp = strtok(cmdtext,idx);
-		SetPlayerPos(playerid, 0.0, 0.0, 15.0);
 		SetPlayerVirtualWorld(playerid,strval(tmp));
 	    return 1;
 	}
@@ -595,23 +572,6 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	    return 1;
 	}
 	
-	if(strcmp(cmd, "/getskin", true) == 0) {
-        new tmp[256+1];
-		new custskin = GetPlayerSkin(playerid);
-		format(tmp,256,"Skin: %d",custskin);
-		SendClientMessage(playerid,0xFFFFFFFF,tmp);
-	    return 1;
-	}
-	
-
-	if(strcmp(cmd, "/getcskin", true) == 0) {
-        new tmp[256+1];
-		new custskin = GetPlayerCustomSkin(playerid);
-		format(tmp,256,"Custom skin: %d",custskin);
-		SendClientMessage(playerid,0xFFFFFFFF,tmp);
-	    return 1;
-	}
-	
 	if(strcmp(cmd, "/setvars", true) == 0) {
 		SetPVarInt(playerid,"num_test",7001);
 		SetPVarString(playerid,"additional_tag","Hello World");
@@ -836,10 +796,9 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	if(strcmp(cmd, "/crobj",true) == 0) {
 	    new Float:X, Float:Y, Float:Z;
 	   	new tmp[256];
-	   	tmp = strtok(cmdtext,idx);
-	   	SpawnObject_InfrontOfPlayer(playerid, strval(tmp));
- 		//GetPlayerPos(playerid, X, Y, Z);
-		//CreateObject(strval(tmp),X+1.0,Y+1.0,Z,0.0,0.0,0.0,200.0);
+ 		GetPlayerPos(playerid, X, Y, Z);
+ 		tmp = strtok(cmdtext,idx);
+		CreateObject(strval(tmp),X+1.0,Y+1.0,Z+0.5,0.0,0.0,0.0,200.0);
 		return 1;
 	}
 
@@ -958,7 +917,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	
 	if(strcmp(cmd, "/editattach",true) == 0) {
 	    if(!IsPlayerAttachedObjectSlotUsed(playerid, 0)) {
-			SetPlayerAttachedObject(playerid,0,-4006,2); // red sunglasses to head bone
+			SetPlayerAttachedObject(playerid,0,19006,2); // red sunglasses to head bone
 		}
 		SendClientMessage(playerid, 0xFFFFFFFF, "Hint: Use {FFFF00}~k~~PED_SPRINT~{FFFFFF} to look around.");
 		EditAttachedObject(playerid, 0);
@@ -1500,7 +1459,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	  	new Float:X, Float:Y, Float:Z, Float:fang;
 	    GetPlayerPos(playerid, X, Y, Z);
 	    GetPlayerFacingAngle(playerid, fang);
-		test_actor_id = CreateActor(25000, X+1.0, Y+1.0, Z+0.5, fang);
+		test_actor_id = CreateActor(305, X+1.0, Y+1.0, Z+0.5, fang);
 		//SetActorInvulnerable(test_actor_id);
 		SetActorVirtualWorld(test_actor_id, GetPlayerVirtualWorld(playerid));
 		return 1;

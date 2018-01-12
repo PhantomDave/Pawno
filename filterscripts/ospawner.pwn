@@ -404,7 +404,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 		DestroySelectionMenu(playerid);
 
 	    SetPVarInt(playerid, "ospawner_active", 1);
-	    //SetPVarInt(playerid, "ospawner_page", 1);
+	    SetPVarInt(playerid, "ospawner_page", 1);
 	    
 	    CreateSelectionMenu(playerid);
 	    SelectTextDraw(playerid, 0xACCBF1FF);
