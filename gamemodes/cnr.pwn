@@ -305,7 +305,7 @@ enum wType
 	Price
 };
 
-new WeaponDealerArray[][wType] = 
+new WeaponDealerArray[][wType] =
 {
 	{WEAPON_COLT45, 300, 500},
 	{WEAPON_SILENCED,  150, 750},
@@ -4595,7 +4595,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			SendClientMessage(playerid, COLOR_GREEN, string);
 			PutPlayerInVehicle(playerid, id, 0);
 			GivePlayerMoneyEx(playerid, -ShowroomVehicle[sid][cid][sPrice]);
-			return 1;			
+			return 1;
 		}
 	}
 	return 1;
@@ -4889,7 +4889,7 @@ public LoadPlayerVehicles(playerid)
 		VehicleInfo[vid][vA] = Pos[3];
 		VehicleInfo[vid][vColor1] = c1;
 		VehicleInfo[vid][vColor2] = c2;
-		VehicleInfo[vid][vClosed] = vclosed;	
+		VehicleInfo[vid][vClosed] = vclosed;
 		new idvc = PlayerVehicle[playerid][i][vID];
 		sscanf(modstring, "p<,>iiiiiiiiiiiiiiiiii", VehicleInfo[idvc][vMod][0], VehicleInfo[idvc][vMod][1], VehicleInfo[idvc][vMod][2], VehicleInfo[idvc][vMod][3],
 			VehicleInfo[idvc][vMod][4], VehicleInfo[idvc][vMod][5], VehicleInfo[idvc][vMod][6], VehicleInfo[idvc][vMod][7],

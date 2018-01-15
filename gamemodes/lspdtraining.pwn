@@ -5,6 +5,7 @@
 //      2015 - Ultima modifica: Gennaio 2015
 // -------------------------------------------------------
 
+#pragma tabsize 0
 
 #include <a_samp>
 #include <streamer>
@@ -32,8 +33,8 @@
 // -------------------------------------------------------
 
 #define GM_SVILUPPATORE "Maxel"
-#define GM_RIGHE "3800 "
-#define GM_VERSION "1.0 "
+#define GM_RIGHE "3800"
+#define GM_VERSION "1.0"
 #define GM_TEXTVERSION "PD Training 1.0"
 #define GM_LASTUPDATE "25 Gennaio 2015"
 
@@ -1425,7 +1426,7 @@ CMD:armeria(playerid, params[])
 		ShowPlayerDialog(playerid, DIALOG_ARMI, DIALOG_STYLE_LIST, "Armeria Dipartimentale", "Manganello\nSpray\nColtello\n{FFF6DA}Colt45\n{FFF6DA}Colt45 Silenziata\n{FFF6DA}Desert Eagle\n{FFB189}Fucile a Pompa\n{FFB189}Spass 12\n{FF9789}MP5\n{FF9789}M4A1\n{FF4646}Fucile Semi-Automatico\n{FF4646}Fucile da Cecchino\n{DFDFDF}Fotocamera\n{DFDFDF}Lacrimogeno", "Seleziona", "Esci");	
 
 	}
-	else return SendClientMessage(playerid, COLOR_RED, "[Errore] Devi essere vicino al pickup per poter usare l'armeria."); }
+	else return SendClientMessage(playerid, COLOR_RED, "[Errore] Devi essere vicino al pickup per poter usare l'armeria."); 
 }
 
 
@@ -1439,9 +1440,8 @@ CMD:servizio(playerid, params[]){
 
 		ShowPlayerDialog(playerid, DIALOG_ONDUTY, DIALOG_STYLE_LIST, "Servizio", "Agente normale\nAgente Swat\nAgente Riot\n{FF0000}Criminale", "Seleziona", "Esci");
 
-	else return SendClientMessage(playerid, COLOR_RED, "[Errore] Devi essere vicino al pickup per poter andare in servizio."); }
+	}else return SendClientMessage(playerid, COLOR_RED, "[Errore] Devi essere vicino al pickup per poter andare in servizio.");
 
-	return 1;
 }
 
 
@@ -2019,95 +2019,68 @@ CMD:rrball(playerid, params[])
 
 CMD:me(playerid, params[])
 {
-	if(Simulazione == true)
-	{
+	if(Simulazione == true){
 		new string[128], testo[128];
 		if(sscanf(params,"s", testo)) return SendClientMessage(playerid, -1,"[Uso] /me <azione>");
 		format(string, sizeof(string), "* %s %s *", NameRP(playerid), testo);
 		SendLocalMessage(playerid, string, 20.0, COLOR_ACTION, COLOR_ACTION);
-	}
-	else
-	{ 
-		ErroreSim2(playerid);
-		 }
+	}else{ ErroreSim2(playerid); }
 	return 1;
 }
 
 CMD:ame(playerid, params[])
 {
-	if(Simulazione == true)
-	{
+	if(Simulazione == true){
 		new string[128], testo[128];
 		if(sscanf(params,"s", testo)) return SendClientMessage(playerid, -1,"[Uso] /ame <azione>");
 		format(string, sizeof(string), "* %s *", testo);
 		SetPlayerChatBubble(playerid, string, COLOR_AME, 10.0, 7000);
 		SendClientMessage(playerid, COLOR_AME, string);
-	}
-	else
-	{ ErroreSim2(playerid); 
-	}
+	}else{ ErroreSim2(playerid); }
 	return 1;
 }
 
 CMD:do(playerid, params[])
 {
-	if(Simulazione == true)
-	{
+	if(Simulazione == true){
 		new string[128], testo[128];
 		if(sscanf(params,"s", testo)) return SendClientMessage(playerid, -1,"[Uso] /do <descrizione>");
 		format(string, sizeof(string), "* %s (( %s )) *", testo, NameRP(playerid));
 		SendLocalMessage(playerid, string, 20.0, COLOR_ACTION, COLOR_ACTION);
-	}
-	else
-	{ ErroreSim2(playerid);
-	 }
+	}else{ ErroreSim2(playerid); }
 	return 1;
 }
 
 CMD:s(playerid, params[])
 {
-	if(Simulazione == true)
-	{
+	if(Simulazione == true){
 		new string[128], testo[128];
 		if(sscanf(params,"s", testo)) return SendClientMessage(playerid, -1,"[Uso] /s <testo urlato>");
 		format(string, sizeof(string), "%s grida: %s!", NameRP(playerid), testo);
 		SendLocalMessage(playerid, string, 40.0, COLOR_WHITE, COLOR_WHITE);
-	}
-	else
-	{ ErroreSim2(playerid);
-	 }
+	}else{ ErroreSim2(playerid); }
 	return 1;
 }
 
 CMD:low(playerid, params[])
 {
-	if(Simulazione == true)
-	{
+	if(Simulazione == true){
 		new string[128], testo[128];
 		if(sscanf(params,"s", testo)) return SendClientMessage(playerid, -1,"[Uso] /low <testo sottovoce>");
 		format(string, sizeof(string), "%s dice a bassa voce: %s", NameRP(playerid), testo);
 		SendLocalMessage(playerid, string, 3.0, COLOR_GRAD1, COLOR_GRAD1);
-	}
-	else
-	{ 
-		ErroreSim2(playerid);
-		 }
+	}else{ ErroreSim2(playerid); }
 	return 1;
 }
 
 CMD:m(playerid, params[])
 {
-	if(Simulazione == true)
-	{
+	if(Simulazione == true){
 		new string[128], testo[128];
 		if(sscanf(params,"s", testo)) return SendClientMessage(playerid, -1,"[Uso] /m <testo megafono>");
 		format(string, sizeof(string), "[MEGAFONO] %s: %s", NameRP(playerid), testo);
 		SendLocalMessage(playerid, string, 60.0, COLOR_GIALLO, COLOR_GIALLO);
-	}
-	else
-	{ 
-		ErroreSim2(playerid); 
-		}
+	}else{ ErroreSim2(playerid); }
 	return 1;
 }
 
@@ -2118,29 +2091,20 @@ CMD:b(playerid, params[])
 		if(sscanf(params,"s", testo)) return SendClientMessage(playerid, -1,"[Uso] /b <testo ooc>");
 		format(string, sizeof(string), "(( %s [%i]: %s ))", NameRP(playerid), playerid, testo);
 		SendLocalMessage(playerid, string, 20.0, COLOR_GRAD1, COLOR_GRAD1);
-	}
-	else
-	{ 
-		ErroreSim2(playerid); 
-		}
+	}else{ ErroreSim2(playerid); }
 	return 1;
 }
 
 
 CMD:r(playerid, params[])
 {
-	if(Simulazione == true)
-	{
+	if(Simulazione == true){
 		new string[128], testo[128], Title[24];
 		if(sscanf(params,"s", testo)) return SendClientMessage(playerid, -1,"[Uso] /me <azione>");
 		if(GetPlayerTeam(playerid) == 1){ Title = "Criminale"; } else { Title = "Agente"; }
 		format(string, sizeof(string), "[RADIO] %s %s: %s", Title, NameRP(playerid), testo);
 		SendTeamMessage(GetPlayerTeam(playerid), COLOR_BLUE, string);
-	}
-	else
-	{ 
-		ErroreSim2(playerid);
-	 }
+	}else{ ErroreSim2(playerid); }
 	return 1;
 }
 
@@ -2157,8 +2121,7 @@ CMD:carspawn(playerid, params[])
 			CarSpawn = false;
 			SendClientMessageToAll(COLOR_GIALLO, "[SERVER] Lo spawn delle auto con /car � stato disattivato per gli utenti.");
 		}
-		else
-		{
+		else{
 			CarSpawn = true;
 			SendClientMessageToAll(COLOR_GIALLO, "[SERVER] Lo spawn delle auto con /car � stato attivato per gli utenti.");
 		}
@@ -2186,9 +2149,7 @@ CMD:car(playerid, params[])
 			{
 				return SendClientMessage(playerid, COLOR_RED, "[Errore] Veicolo non riconosciuto.");
 
-			}
-			else
-			{
+			}else{
 
 				GetPlayerPos(playerid, vx, vy, vz);
 				new veicolo = CreateVehicle(vid, vx + random(9) - 4, vy + random(9) - 4, vz, 0, -1, -1, 1200);
@@ -2203,9 +2164,7 @@ CMD:car(playerid, params[])
 
 			}
 
-		}
-		else
-		{ 
+		}else{ 
 
 			ErroreSpa(playerid);
 			return 1;
@@ -2216,8 +2175,7 @@ CMD:car(playerid, params[])
 	CMD:tazer(playerid, params[])
 	{
 		
-		if(Simulazione == true)
-		{
+		if(Simulazione == true){
 			
 	    if(GetPlayerTeam(playerid) == 0) // For cops
 	    {
@@ -2245,22 +2203,21 @@ CMD:car(playerid, params[])
 	        
 	    }
 	    
-	}
-	else ErroreSim2(playerid);
+	}else{	ErroreSim2(playerid); }
+	
+	return 1;
 }
 
 
 CMD:skin(playerid, params[])
 {
-	if(pRank[playerid]>=2)
-	{
+	if(pRank[playerid]>=2){
 		new skin;
 		if(sscanf(params, "i", skin)) return SendClientMessage(playerid, -1, "[Uso] /skin <id>");
 		if(skin > 299 || skin < 0) return SendClientMessage(playerid, COLOR_RED,"[Errore] Skin Invalida!");
 		SetPlayerSkin(playerid, skin);
 		pSkin[playerid] = skin;
-	}
-	else return SendClientMessage(playerid, COLOR_RED, "[Errore] Devi loggare come agente per usare questo comando.");
+	}else{ return SendClientMessage(playerid, COLOR_RED, "[Errore] Devi loggare come agente per usare questo comando."); }
 	return 1;
 }
 

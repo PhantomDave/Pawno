@@ -25,8 +25,6 @@
 #define GivePlayerCash(%0,%1) GivePlayerMoney(%0,%1)
 #define RELEASED(%0) \
 	(((newkeys & (%0)) != (%0)) && ((oldkeys & (%0)) == (%0)))
-#define strcpy(%0,%1,%2) \
-	strcat((%0[0] = '\0', %0), %1, %2)
 
 #define HOST "localhost"
 #define PSW ""
