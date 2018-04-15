@@ -117279,3 +117279,3643 @@ TDEditor Plugin loaded, thank you for using.
 [20:00:19] [connection] incoming connection: 82.58.232.238:52704 id: 1
 [20:00:19] [join] Maxel_Dev has joined the server (0:5.86.176.128)
 [20:00:19] [join] Leroy_Test has joined the server (1:82.58.232.238)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[13:30:00] 
+[13:30:00] Server Plugins
+[13:30:00] --------------
+[13:30:00]  Loading plugin: tde
+[13:30:00] 
+TDEditor Plugin loaded, thank you for using.
+
+[13:30:00]   Loaded.
+[13:30:00]  Loading plugin: mysql
+[13:30:00]  >> plugin.mysql: R41-2 successfully loaded.
+[13:30:00]   Loaded.
+[13:30:00]  Loading plugin: sscanf
+[13:30:00] 
+
+[13:30:00]  ===============================
+
+[13:30:00]       sscanf plugin loaded.     
+
+[13:30:00]    (c) 2009 Alex "Y_Less" Cole
+
+[13:30:00]    0.3d-R2 500 Players "dnee"
+
+[13:30:00]  ===============================
+
+[13:30:00]   Loaded.
+[13:30:00]  Loading plugin: crashdetect
+[13:30:00]   CrashDetect v4.18.1 is OK.
+[13:30:00]   Loaded.
+[13:30:00]  Loading plugin: streamer
+[13:30:00] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[13:30:00]   Loaded.
+[13:30:00]  Loaded 5 plugins.
+
+[13:30:00] 
+[13:30:00] Filterscripts
+[13:30:00] ---------------
+[13:30:00]   Loading filterscript 'tde.amx'...
+[13:30:00]  
+[13:30:00]  
+[13:30:00]  
+[13:30:00]  
+[13:30:00] ___ __  __
+[13:30:00]  | |  \|_  _|.|_ _  _		
+[13:30:00]  | |__/|__(_|||_(_)|			
+[13:30:00]  
+[13:30:00] TDEditor V1.17 by adri1
+[13:30:00] TDEditor loaded
+[13:30:00]  
+[13:30:00]   Loaded 1 filterscripts.
+
+[13:30:00]  
+[13:30:00]  
+[13:30:00]  
+[13:30:00]  ======================================= 
+[13:30:00]  |                                     | 
+[13:30:00]  |        YSI version 4.00.0001        | 
+[13:30:00]  |        By Alex "Y_Less" Cole        | 
+[13:30:00]  |                                     | 
+[13:30:00]  ======================================= 
+[13:30:00]  
+[13:30:10] Store: Well Stacked Pizza [ID: 0]
+[13:30:10] Store: Cluckin' Bell [ID: 1]
+[13:30:10] Store: Cluckin' Bell [ID: 2]
+[13:30:10] Store: Burger Shot [ID: 3]
+[13:30:10] Store: Ciambellaio [ID: 4]
+[13:30:10] Store: Prolaps [ID: 5]
+[13:30:10] Store: Victim [ID: 6]
+[13:30:10] Store: DS [ID: 7]
+[13:30:10] Store: Binco [ID: 8]
+[13:30:10] Store: Suburban [ID: 9]
+[13:30:10] Store: 24/7 [ID: 10]
+[13:30:10] Store: 24/7 [ID: 11]
+[13:30:10] Store: 24/7 [ID: 12]
+[13:30:10] Store: 24/7 [ID: 13]
+[13:30:10] Store: Ammunation [ID: 14]
+[13:30:10] Store: Ammunation [ID: 15]
+[13:30:10] Store: Ten Green Bottles [ID: 16]
+[13:30:10] Store: Centro Scommesse [ID: 17]
+[13:30:10] Store: Barbiere [ID: 18]
+[13:30:10] Store: Tattoo [ID: 19]
+[13:30:10] Store: Sexy Shop [ID: 20]
+[13:30:10] Store: Alhambra [ID: 21]
+[13:30:10] Store: Palestra [ID: 22]
+[13:30:10] Store: Burger Shot [ID: 23]
+[13:30:10] Store: Barbiere [ID: 24]
+[13:30:10] Store: Cluckin Bell [ID: 25]
+[13:30:10] Store: 24/7 [ID: 26]
+[13:30:10] Store: Liquor Bar [ID: 27]
+[13:30:10] Store: 98$ Store [ID: 28]
+[13:30:10] Store: Sexy Shop [ID: 29]
+[13:30:10] Store: Zip [ID: 30]
+[13:30:10] Store: 69$ Store [ID: 31]
+[13:30:10] Store: Bar [ID: 32]
+[13:30:10] Store: Sexy Shop [ID: 33]
+[13:30:10] Building Caricati: 34
+[13:30:10] 
+----------------------------------
+[13:30:10]  Los Santos Cops and Robbers by Code, Edit by Dave
+[13:30:10] ----------------------------------
+
+[13:30:10] Number of vehicle models: 32
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[13:33:13] filterscripts = ""  (string)
+[13:33:13] 
+[13:33:13] Server Plugins
+[13:33:13] --------------
+[13:33:13]  Loading plugin: tde
+[13:33:13] 
+TDEditor Plugin loaded, thank you for using.
+
+[13:33:13]   Loaded.
+[13:33:13]  Loading plugin: mysql
+[13:33:13]  >> plugin.mysql: R41-2 successfully loaded.
+[13:33:13]   Loaded.
+[13:33:13]  Loading plugin: sscanf
+[13:33:13] 
+
+[13:33:13]  ===============================
+
+[13:33:13]       sscanf plugin loaded.     
+
+[13:33:13]    (c) 2009 Alex "Y_Less" Cole
+
+[13:33:13]    0.3d-R2 500 Players "dnee"
+
+[13:33:13]  ===============================
+
+[13:33:13]   Loaded.
+[13:33:13]  Loading plugin: crashdetect
+[13:33:13]   CrashDetect v4.18.1 is OK.
+[13:33:13]   Loaded.
+[13:33:13]  Loading plugin: streamer
+[13:33:13] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[13:33:13]   Loaded.
+[13:33:13]  Loaded 5 plugins.
+
+[13:33:13] 
+[13:33:13] Filterscripts
+[13:33:13] ---------------
+[13:33:13]   Loaded 0 filterscripts.
+
+[13:33:13]  
+[13:33:13]  
+[13:33:13]  
+[13:33:13]  ======================================= 
+[13:33:13]  |                                     | 
+[13:33:13]  |        YSI version 4.00.0001        | 
+[13:33:13]  |        By Alex "Y_Less" Cole        | 
+[13:33:13]  |                                     | 
+[13:33:13]  ======================================= 
+[13:33:13]  
+[13:33:19] Store: Well Stacked Pizza [ID: 0]
+[13:33:19] Store: Cluckin' Bell [ID: 1]
+[13:33:19] Store: Cluckin' Bell [ID: 2]
+[13:33:19] Store: Burger Shot [ID: 3]
+[13:33:19] Store: Ciambellaio [ID: 4]
+[13:33:19] Store: Prolaps [ID: 5]
+[13:33:19] Store: Victim [ID: 6]
+[13:33:19] Store: DS [ID: 7]
+[13:33:19] Store: Binco [ID: 8]
+[13:33:19] Store: Suburban [ID: 9]
+[13:33:19] Store: 24/7 [ID: 10]
+[13:33:19] Store: 24/7 [ID: 11]
+[13:33:19] Store: 24/7 [ID: 12]
+[13:33:19] Store: 24/7 [ID: 13]
+[13:33:19] Store: Ammunation [ID: 14]
+[13:33:19] Store: Ammunation [ID: 15]
+[13:33:19] Store: Ten Green Bottles [ID: 16]
+[13:33:19] Store: Centro Scommesse [ID: 17]
+[13:33:19] Store: Barbiere [ID: 18]
+[13:33:19] Store: Tattoo [ID: 19]
+[13:33:19] Store: Sexy Shop [ID: 20]
+[13:33:19] Store: Alhambra [ID: 21]
+[13:33:19] Store: Palestra [ID: 22]
+[13:33:19] Store: Burger Shot [ID: 23]
+[13:33:19] Store: Barbiere [ID: 24]
+[13:33:19] Store: Cluckin Bell [ID: 25]
+[13:33:19] Store: 24/7 [ID: 26]
+[13:33:19] Store: Liquor Bar [ID: 27]
+[13:33:19] Store: 98$ Store [ID: 28]
+[13:33:19] Store: Sexy Shop [ID: 29]
+[13:33:19] Store: Zip [ID: 30]
+[13:33:19] Store: 69$ Store [ID: 31]
+[13:33:19] Store: Bar [ID: 32]
+[13:33:19] Store: Sexy Shop [ID: 33]
+[13:33:19] Building Caricati: 34
+[13:33:19] 
+----------------------------------
+[13:33:19]  Los Santos Cops and Robbers by Code, Edit by Dave
+[13:33:19] ----------------------------------
+
+[13:33:19] Number of vehicle models: 31
+[13:33:20] Loaded 0 Houses
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[13:35:01] filterscripts = ""  (string)
+[13:35:01] 
+[13:35:01] Server Plugins
+[13:35:01] --------------
+[13:35:01]  Loading plugin: tde
+[13:35:01] 
+TDEditor Plugin loaded, thank you for using.
+
+[13:35:01]   Loaded.
+[13:35:01]  Loading plugin: mysql
+[13:35:01]  >> plugin.mysql: R41-2 successfully loaded.
+[13:35:01]   Loaded.
+[13:35:01]  Loading plugin: sscanf
+[13:35:01] 
+
+[13:35:01]  ===============================
+
+[13:35:01]       sscanf plugin loaded.     
+
+[13:35:01]    (c) 2009 Alex "Y_Less" Cole
+
+[13:35:01]    0.3d-R2 500 Players "dnee"
+
+[13:35:01]  ===============================
+
+[13:35:01]   Loaded.
+[13:35:01]  Loading plugin: crashdetect
+[13:35:01]   CrashDetect v4.18.1 is OK.
+[13:35:01]   Loaded.
+[13:35:01]  Loading plugin: streamer
+[13:35:01] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[13:35:01]   Loaded.
+[13:35:01]  Loaded 5 plugins.
+
+[13:35:01] 
+[13:35:01] Filterscripts
+[13:35:01] ---------------
+[13:35:01]   Loaded 0 filterscripts.
+
+[13:35:01]  
+[13:35:01]  
+[13:35:01]  
+[13:35:01]  ======================================= 
+[13:35:01]  |                                     | 
+[13:35:01]  |        YSI version 4.00.0001        | 
+[13:35:01]  |        By Alex "Y_Less" Cole        | 
+[13:35:01]  |                                     | 
+[13:35:01]  ======================================= 
+[13:35:01]  
+[13:35:07] Store: Well Stacked Pizza [ID: 0]
+[13:35:07] Store: Cluckin' Bell [ID: 1]
+[13:35:07] Store: Cluckin' Bell [ID: 2]
+[13:35:07] Store: Burger Shot [ID: 3]
+[13:35:07] Store: Ciambellaio [ID: 4]
+[13:35:07] Store: Prolaps [ID: 5]
+[13:35:07] Store: Victim [ID: 6]
+[13:35:07] Store: DS [ID: 7]
+[13:35:07] Store: Binco [ID: 8]
+[13:35:07] Store: Suburban [ID: 9]
+[13:35:07] Store: 24/7 [ID: 10]
+[13:35:07] Store: 24/7 [ID: 11]
+[13:35:07] Store: 24/7 [ID: 12]
+[13:35:07] Store: 24/7 [ID: 13]
+[13:35:07] Store: Ammunation [ID: 14]
+[13:35:07] Store: Ammunation [ID: 15]
+[13:35:07] Store: Ten Green Bottles [ID: 16]
+[13:35:07] Store: Centro Scommesse [ID: 17]
+[13:35:07] Store: Barbiere [ID: 18]
+[13:35:07] Store: Tattoo [ID: 19]
+[13:35:07] Store: Sexy Shop [ID: 20]
+[13:35:07] Store: Alhambra [ID: 21]
+[13:35:07] Store: Palestra [ID: 22]
+[13:35:07] Store: Burger Shot [ID: 23]
+[13:35:07] Store: Barbiere [ID: 24]
+[13:35:07] Store: Cluckin Bell [ID: 25]
+[13:35:07] Store: 24/7 [ID: 26]
+[13:35:07] Store: Liquor Bar [ID: 27]
+[13:35:07] Store: 98$ Store [ID: 28]
+[13:35:07] Store: Sexy Shop [ID: 29]
+[13:35:07] Store: Zip [ID: 30]
+[13:35:07] Store: 69$ Store [ID: 31]
+[13:35:07] Store: Bar [ID: 32]
+[13:35:07] Store: Sexy Shop [ID: 33]
+[13:35:07] Building Caricati: 34
+[13:35:07] 
+----------------------------------
+[13:35:07]  Los Santos Cops and Robbers by Code, Edit by Dave
+[13:35:07] ----------------------------------
+
+[13:35:07] Number of vehicle models: 32
+[13:35:07] Loaded 0 Houses
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[13:39:37] filterscripts = ""  (string)
+[13:39:37] 
+[13:39:37] Server Plugins
+[13:39:37] --------------
+[13:39:37]  Loading plugin: tde
+[13:39:37] 
+TDEditor Plugin loaded, thank you for using.
+
+[13:39:37]   Loaded.
+[13:39:37]  Loading plugin: mysql
+[13:39:37]  >> plugin.mysql: R41-2 successfully loaded.
+[13:39:37]   Loaded.
+[13:39:37]  Loading plugin: sscanf
+[13:39:37] 
+
+[13:39:37]  ===============================
+
+[13:39:37]       sscanf plugin loaded.     
+
+[13:39:37]    (c) 2009 Alex "Y_Less" Cole
+
+[13:39:37]    0.3d-R2 500 Players "dnee"
+
+[13:39:37]  ===============================
+
+[13:39:37]   Loaded.
+[13:39:37]  Loading plugin: crashdetect
+[13:39:38]   CrashDetect v4.18.1 is OK.
+[13:39:38]   Loaded.
+[13:39:38]  Loading plugin: streamer
+[13:39:38] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[13:39:38]   Loaded.
+[13:39:38]  Loaded 5 plugins.
+
+[13:39:38] 
+[13:39:38] Filterscripts
+[13:39:38] ---------------
+[13:39:38]   Loaded 0 filterscripts.
+
+[13:39:38]  
+[13:39:38]  
+[13:39:38]  
+[13:39:38]  ======================================= 
+[13:39:38]  |                                     | 
+[13:39:38]  |        YSI version 4.00.0001        | 
+[13:39:38]  |        By Alex "Y_Less" Cole        | 
+[13:39:38]  |                                     | 
+[13:39:38]  ======================================= 
+[13:39:38]  
+[13:39:44] Store: Well Stacked Pizza [ID: 0]
+[13:39:44] Store: Cluckin' Bell [ID: 1]
+[13:39:44] Store: Cluckin' Bell [ID: 2]
+[13:39:44] Store: Burger Shot [ID: 3]
+[13:39:44] Store: Ciambellaio [ID: 4]
+[13:39:44] Store: Prolaps [ID: 5]
+[13:39:44] Store: Victim [ID: 6]
+[13:39:44] Store: DS [ID: 7]
+[13:39:44] Store: Binco [ID: 8]
+[13:39:44] Store: Suburban [ID: 9]
+[13:39:44] Store: 24/7 [ID: 10]
+[13:39:44] Store: 24/7 [ID: 11]
+[13:39:44] Store: 24/7 [ID: 12]
+[13:39:44] Store: 24/7 [ID: 13]
+[13:39:44] Store: Ammunation [ID: 14]
+[13:39:44] Store: Ammunation [ID: 15]
+[13:39:44] Store: Ten Green Bottles [ID: 16]
+[13:39:44] Store: Centro Scommesse [ID: 17]
+[13:39:44] Store: Barbiere [ID: 18]
+[13:39:44] Store: Tattoo [ID: 19]
+[13:39:44] Store: Sexy Shop [ID: 20]
+[13:39:44] Store: Alhambra [ID: 21]
+[13:39:44] Store: Palestra [ID: 22]
+[13:39:44] Store: Burger Shot [ID: 23]
+[13:39:44] Store: Barbiere [ID: 24]
+[13:39:44] Store: Cluckin Bell [ID: 25]
+[13:39:44] Store: 24/7 [ID: 26]
+[13:39:44] Store: Liquor Bar [ID: 27]
+[13:39:44] Store: 98$ Store [ID: 28]
+[13:39:44] Store: Sexy Shop [ID: 29]
+[13:39:44] Store: Zip [ID: 30]
+[13:39:44] Store: 69$ Store [ID: 31]
+[13:39:44] Store: Bar [ID: 32]
+[13:39:44] Store: Sexy Shop [ID: 33]
+[13:39:44] Building Caricati: 34
+[13:39:44] 
+----------------------------------
+[13:39:44]  Los Santos Cops and Robbers by Code, Edit by Dave
+[13:39:44] ----------------------------------
+
+[13:39:44] Number of vehicle models: 33
+[13:39:44] Loaded 0 Houses
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[13:40:21] filterscripts = ""  (string)
+[13:40:21] 
+[13:40:21] Server Plugins
+[13:40:21] --------------
+[13:40:21]  Loading plugin: tde
+[13:40:21] 
+TDEditor Plugin loaded, thank you for using.
+
+[13:40:21]   Loaded.
+[13:40:21]  Loading plugin: mysql
+[13:40:21]  >> plugin.mysql: R41-2 successfully loaded.
+[13:40:21]   Loaded.
+[13:40:21]  Loading plugin: sscanf
+[13:40:21] 
+
+[13:40:21]  ===============================
+
+[13:40:21]       sscanf plugin loaded.     
+
+[13:40:21]    (c) 2009 Alex "Y_Less" Cole
+
+[13:40:21]    0.3d-R2 500 Players "dnee"
+
+[13:40:21]  ===============================
+
+[13:40:21]   Loaded.
+[13:40:21]  Loading plugin: crashdetect
+[13:40:21]   CrashDetect v4.18.1 is OK.
+[13:40:21]   Loaded.
+[13:40:21]  Loading plugin: streamer
+[13:40:21] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[13:40:21]   Loaded.
+[13:40:21]  Loaded 5 plugins.
+
+[13:40:21] 
+[13:40:21] Filterscripts
+[13:40:21] ---------------
+[13:40:21]   Loaded 0 filterscripts.
+
+[13:40:21]  
+[13:40:21]  
+[13:40:21]  
+[13:40:21]  ======================================= 
+[13:40:21]  |                                     | 
+[13:40:21]  |        YSI version 4.00.0001        | 
+[13:40:21]  |        By Alex "Y_Less" Cole        | 
+[13:40:21]  |                                     | 
+[13:40:21]  ======================================= 
+[13:40:21]  
+[13:40:27] Store: Well Stacked Pizza [ID: 0]
+[13:40:27] Store: Cluckin' Bell [ID: 1]
+[13:40:27] Store: Cluckin' Bell [ID: 2]
+[13:40:27] Store: Burger Shot [ID: 3]
+[13:40:27] Store: Ciambellaio [ID: 4]
+[13:40:27] Store: Prolaps [ID: 5]
+[13:40:27] Store: Victim [ID: 6]
+[13:40:27] Store: DS [ID: 7]
+[13:40:27] Store: Binco [ID: 8]
+[13:40:27] Store: Suburban [ID: 9]
+[13:40:27] Store: 24/7 [ID: 10]
+[13:40:27] Store: 24/7 [ID: 11]
+[13:40:27] Store: 24/7 [ID: 12]
+[13:40:27] Store: 24/7 [ID: 13]
+[13:40:27] Store: Ammunation [ID: 14]
+[13:40:27] Store: Ammunation [ID: 15]
+[13:40:27] Store: Ten Green Bottles [ID: 16]
+[13:40:27] Store: Centro Scommesse [ID: 17]
+[13:40:27] Store: Barbiere [ID: 18]
+[13:40:27] Store: Tattoo [ID: 19]
+[13:40:27] Store: Sexy Shop [ID: 20]
+[13:40:28] Store: Alhambra [ID: 21]
+[13:40:28] Store: Palestra [ID: 22]
+[13:40:28] Store: Burger Shot [ID: 23]
+[13:40:28] Store: Barbiere [ID: 24]
+[13:40:28] Store: Cluckin Bell [ID: 25]
+[13:40:28] Store: 24/7 [ID: 26]
+[13:40:28] Store: Liquor Bar [ID: 27]
+[13:40:28] Store: 98$ Store [ID: 28]
+[13:40:28] Store: Sexy Shop [ID: 29]
+[13:40:28] Store: Zip [ID: 30]
+[13:40:28] Store: 69$ Store [ID: 31]
+[13:40:28] Store: Bar [ID: 32]
+[13:40:28] Store: Sexy Shop [ID: 33]
+[13:40:28] Building Caricati: 34
+[13:40:28] DIOPORCO
+
+\n
+
+
+[13:40:28] CREATE TABLE IF NOT EXISTS `Players` (`ID` int(11) auto_increment PRIMARY KEY, `Name` varchar(30), `Password` varchar(128), `Money` int(11), `Bank` int(11), `Admin` int(11), `Skills` varchar(20), `JailTime` int(11), `PremiumTime` int(11), `Premium` int(11),`AccountBanned` int(11), `BanTime` int(11), `Rewards` int(11),`RewardMoney` int(11), `Drug` int(11), `Kills` int(11), `Deaths` int(11), `Gruppo` int(3), `Tickets` int(11),`RegisterDate` int(13),`LastLogin` int(13),`GainRobberies` int(11),`GainVehicleStolen` int(11),`GainWeaponsDealer` int(11))
+[13:40:28] CREATE TABLE IF NOT EXISTS `Players` (`ID` int(11) auto_increment PRIMARY KEY, `Name` varchar(30), `Password` varchar(128), `Money` int(11), `Bank` int(11), `Admin` int(11), `Skills` varchar(20), `JailTime` int(11), `PremiumTime` int(11), `Premium` int(11),`AccountBanned` int(11), `BanTime` int(11), `Rewards` int(11),`RewardMoney` int(11), `Drug` int(11), `Kills` int(11), `Deaths` int(11), `Gruppo` int(3), `Tickets` int(11),`RegisterDate` int(13),`LastLogin` int(13),`GainRobberies` int(11),`GainVehicleStolen` int(11),`GainWeaponsDealer` int(11))CREATE TABLE IF NOT EXISTS `payspray` (`ID` int(3) auto_increment PRIMARY KEY , `OwnerID` int(21), `OwnerName` varchar(24), `X` float, `Y` float, `Z` float, `Price` int(11), `Money` int(11))
+[13:40:28] CREATE TABLE IF NOT EXISTS `Players` (`ID` int(11) auto_increment PRIMARY KEY, `Name` varchar(30), `Password` varchar(128), `Money` int(11), `Bank` int(11), `Admin` int(11), `Skills` varchar(20), `JailTime` int(11), `PremiumTime` int(11), `Premium` int(11),`AccountBanned` int(11), `BanTime` int(11), `Rewards` int(11),`RewardMoney` int(11), `Drug` int(11), `Kills` int(11), `Deaths` int(11), `Gruppo` int(3), `Tickets` int(11),`RegisterDate` int(13),`LastLogin` int(13),`GainRobberies` int(11),`GainVehicleStolen` int(11),`GainWeaponsDealer` int(11))CREATE TABLE IF NOT EXISTS `payspray` (`ID` int(3) auto_increment PRIMARY KEY , `OwnerID` int(21), `OwnerName` varchar(24), `X` float, `Y` float, `Z` float, `Price` int(11), `Money` int(11))CREATE TABLE IF NOT EXISTS `serialbans` (`SerialID` varchar(128) PRIMARY KEY, `AccountBanned` int(11))
+[13:40:28] CREATE TABLE IF NOT EXISTS `Players` (`ID` int(11) auto_increment PRIMARY KEY, `Name` varchar(30), `Password` varchar(128), `Money` int(11), `Bank` int(11), `Admin` int(11), `Skills` varchar(20), `JailTime` int(11), `PremiumTime` int(11), `Premium` int(11),`AccountBanned` int(11), `BanTime` int(11), `Rewards` int(11),`RewardMoney` int(11), `Drug` int(11), `Kills` int(11), `Deaths` int(11), `Gruppo` int(3), `Tickets` int(11),`RegisterDate` int(13),`LastLogin` int(13),`GainRobberies` int(11),`GainVehicleStolen` int(11),`GainWeaponsDealer` int(11))CREATE TABLE IF NOT EXISTS `payspray` (`ID` int(3) auto_increment PRIMARY KEY , `OwnerID` int(21), `OwnerName` varchar(24), `X` float, `Y` float, `Z` float, `Price` int(11), `Money` int(11))CREATE TABLE IF NOT EXISTS `serialbans` (`SerialID` varchar(128) PRIMARY KEY, `AccountBanned` int(11))CREATE TABLE IF NOT EXISTS `PlayerStats` (`ID` int(11) P
+[13:40:28] 
+----------------------------------
+[13:40:28]  Los Santos Cops and Robbers by Code, Edit by Dave
+[13:40:28] ----------------------------------
+
+[13:40:28] Number of vehicle models: 32
+[13:40:28] ERROR: CREATE TABLE IF NOT EXISTS `Players` (`ID` int(11) auto_increment PRIMARY KEY, `Name` varchar(30), `Password` varchar(128), `Money` int(11), `Bank` int(11), `Admin` int(11), `Skills` varchar(20), `JailTime` int(11), `PremiumTime` int(11), `Premium` int(11),`AccountBanned` int(11), `BanTime` int(11), `Rewards` int(11),`RewardMoney` int(11), `Drug` int(11), `Kills` int(11), `Deaths` int(11), `Gruppo` int(3), `Tickets` int(11),`RegisterDate` int(13),`LastLogin` int(13),`GainRobberies` int(11),`GainVehicleStolen` int(11),`GainWeaponsDealer` int(11))CREATE TABLE IF NOT EXISTS `payspray` (`ID` int(3) auto_increment PRIMARY KEY , `OwnerID` int(21), `OwnerName` varchar(24), `X` float, `Y` float, `Z` float, `Price` int(11), `Money` int(11))
+[13:40:28] ERROR: CREATE TABLE IF NOT EXISTS `Players` (`ID` int(11) auto_increment PRIMARY KEY, `Name` varchar(30), `Password` varchar(128), `Money` int(11), `Bank` int(11), `Admin` int(11), `Skills` varchar(20), `JailTime` int(11), `PremiumTime` int(11), `Premium` int(11),`AccountBanned` int(11), `BanTime` int(11), `Rewards` int(11),`RewardMoney` int(11), `Drug` int(11), `Kills` int(11), `Deaths` int(11), `Gruppo` int(3), `Tickets` int(11),`RegisterDate` int(13),`LastLogin` int(13),`GainRobberies` int(11),`GainVehicleStolen` int(11),`GainWeaponsDealer` int(11))CREATE TABLE IF NOT EXISTS `payspray` (`ID` int(3) auto_increment PRIMARY KEY , `OwnerID` int(21), `OwnerName` varchar(24), `X` float, `Y` float, `Z` float, `Price` int(11), `Money` int(11))CREATE TABLE IF NOT EXISTS `serialbans` (`SerialID` varchar(128) PRIMARY KEY, `AccountBanned` int(11))
+[13:40:28] ERROR: CREATE TABLE IF NOT EXISTS `Players` (`ID` int(11) auto_increment PRIMARY KEY, `Name` varchar(30), `Password` varchar(128), `Money` int(11), `Bank` int(11), `Admin` int(11), `Skills` varchar(20), `JailTime` int(11), `PremiumTime` int(11), `Premium` int(11),`AccountBanned` int(11), `BanTime` int(11), `Rewards` int(11),`RewardMoney` int(11), `Drug` int(11), `Kills` int(11), `Deaths` int(11), `Gruppo` int(3), `Tickets` int(11),`RegisterDate` int(13),`LastLogin` int(13),`GainRobberies` int(11),`GainVehicleStolen` int(11),`GainWeaponsDealer` int(11))CREATE TABLE IF NOT EXISTS `payspray` (`ID` int(3) auto_increment PRIMARY KEY , `OwnerID` int(21), `OwnerName` varchar(24), `X` float, `Y` float, `Z` float, `Price` int(11), `Money` int(11))CREATE TABLE IF NOT EXISTS `serialbans` (`SerialID` varchar(128) PRIMARY KEY, `AccountBanned` int(11))CREATE TABLE IF NOT EXISTS `PlayerStats` (`ID` int(11) P
+[13:40:28] Loaded 0 Houses
+[13:40:28] ERROR: SELECT * FROM `showrooms`
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[13:41:26] filterscripts = ""  (string)
+[13:41:26] 
+[13:41:26] Server Plugins
+[13:41:26] --------------
+[13:41:26]  Loading plugin: tde
+[13:41:26] 
+TDEditor Plugin loaded, thank you for using.
+
+[13:41:26]   Loaded.
+[13:41:26]  Loading plugin: mysql
+[13:41:26]  >> plugin.mysql: R41-2 successfully loaded.
+[13:41:26]   Loaded.
+[13:41:26]  Loading plugin: sscanf
+[13:41:26] 
+
+[13:41:26]  ===============================
+
+[13:41:26]       sscanf plugin loaded.     
+
+[13:41:26]    (c) 2009 Alex "Y_Less" Cole
+
+[13:41:26]    0.3d-R2 500 Players "dnee"
+
+[13:41:26]  ===============================
+
+[13:41:26]   Loaded.
+[13:41:26]  Loading plugin: crashdetect
+[13:41:26]   CrashDetect v4.18.1 is OK.
+[13:41:26]   Loaded.
+[13:41:26]  Loading plugin: streamer
+[13:41:26] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[13:41:26]   Loaded.
+[13:41:26]  Loaded 5 plugins.
+
+[13:41:26] 
+[13:41:26] Filterscripts
+[13:41:26] ---------------
+[13:41:26]   Loaded 0 filterscripts.
+
+[13:41:26]  
+[13:41:26]  
+[13:41:26]  
+[13:41:26]  ======================================= 
+[13:41:26]  |                                     | 
+[13:41:26]  |        YSI version 4.00.0001        | 
+[13:41:26]  |        By Alex "Y_Less" Cole        | 
+[13:41:26]  |                                     | 
+[13:41:26]  ======================================= 
+[13:41:26]  
+[13:41:32] Store: Well Stacked Pizza [ID: 0]
+[13:41:32] Store: Cluckin' Bell [ID: 1]
+[13:41:32] Store: Cluckin' Bell [ID: 2]
+[13:41:32] Store: Burger Shot [ID: 3]
+[13:41:32] Store: Ciambellaio [ID: 4]
+[13:41:32] Store: Prolaps [ID: 5]
+[13:41:32] Store: Victim [ID: 6]
+[13:41:32] Store: DS [ID: 7]
+[13:41:32] Store: Binco [ID: 8]
+[13:41:32] Store: Suburban [ID: 9]
+[13:41:32] Store: 24/7 [ID: 10]
+[13:41:32] Store: 24/7 [ID: 11]
+[13:41:32] Store: 24/7 [ID: 12]
+[13:41:32] Store: 24/7 [ID: 13]
+[13:41:32] Store: Ammunation [ID: 14]
+[13:41:32] Store: Ammunation [ID: 15]
+[13:41:32] Store: Ten Green Bottles [ID: 16]
+[13:41:32] Store: Centro Scommesse [ID: 17]
+[13:41:32] Store: Barbiere [ID: 18]
+[13:41:32] Store: Tattoo [ID: 19]
+[13:41:32] Store: Sexy Shop [ID: 20]
+[13:41:32] Store: Alhambra [ID: 21]
+[13:41:32] Store: Palestra [ID: 22]
+[13:41:32] Store: Burger Shot [ID: 23]
+[13:41:32] Store: Barbiere [ID: 24]
+[13:41:32] Store: Cluckin Bell [ID: 25]
+[13:41:32] Store: 24/7 [ID: 26]
+[13:41:32] Store: Liquor Bar [ID: 27]
+[13:41:32] Store: 98$ Store [ID: 28]
+[13:41:32] Store: Sexy Shop [ID: 29]
+[13:41:32] Store: Zip [ID: 30]
+[13:41:32] Store: 69$ Store [ID: 31]
+[13:41:32] Store: Bar [ID: 32]
+[13:41:32] Store: Sexy Shop [ID: 33]
+[13:41:32] Building Caricati: 34
+[13:41:32] 
+----------------------------------
+[13:41:32]  Los Santos Cops and Robbers by Code, Edit by Dave
+[13:41:32] ----------------------------------
+
+[13:41:32] Number of vehicle models: 34
+[13:41:32] ERROR: CREATE TABLE IF NOT EXISTS `Players` (`ID` int(11) auto_increment PRIMARY KEY, `Name` varchar(30), `Password` varchar(128), `Money` int(11), `Bank` int(11), `Admin` int(11), `Skills` varchar(20), `JailTime` int(11), `PremiumTime` int(11), `Premium` int(11),`AccountBanned` int(11), `BanTime` int(11), `Rewards` int(11),`RewardMoney` int(11), `Drug` int(11), `Kills` int(11), `Deaths` int(11), `Gruppo` int(3), `Tickets` int(11),`RegisterDate` int(13),`LastLogin` int(13),`GainRobberies` int(11),`GainVehicleStolen` int(11),`GainWeaponsDealer` int(11))CREATE TABLE IF NOT EXISTS `payspray` (`ID` int(3) auto_increment PRIMARY KEY , `OwnerID` int(21), `OwnerName` varchar(24), `X` float, `Y` float, `Z` float, `Price` int(11), `Money` int(11))
+[13:41:32] ERROR: CREATE TABLE IF NOT EXISTS `Players` (`ID` int(11) auto_increment PRIMARY KEY, `Name` varchar(30), `Password` varchar(128), `Money` int(11), `Bank` int(11), `Admin` int(11), `Skills` varchar(20), `JailTime` int(11), `PremiumTime` int(11), `Premium` int(11),`AccountBanned` int(11), `BanTime` int(11), `Rewards` int(11),`RewardMoney` int(11), `Drug` int(11), `Kills` int(11), `Deaths` int(11), `Gruppo` int(3), `Tickets` int(11),`RegisterDate` int(13),`LastLogin` int(13),`GainRobberies` int(11),`GainVehicleStolen` int(11),`GainWeaponsDealer` int(11))CREATE TABLE IF NOT EXISTS `payspray` (`ID` int(3) auto_increment PRIMARY KEY , `OwnerID` int(21), `OwnerName` varchar(24), `X` float, `Y` float, `Z` float, `Price` int(11), `Money` int(11))CREATE TABLE IF NOT EXISTS `serialbans` (`SerialID` varchar(128) PRIMARY KEY, `AccountBanned` int(11))
+[13:41:32] ERROR: CREATE TABLE IF NOT EXISTS `Players` (`ID` int(11) auto_increment PRIMARY KEY, `Name` varchar(30), `Password` varchar(128), `Money` int(11), `Bank` int(11), `Admin` int(11), `Skills` varchar(20), `JailTime` int(11), `PremiumTime` int(11), `Premium` int(11),`AccountBanned` int(11), `BanTime` int(11), `Rewards` int(11),`RewardMoney` int(11), `Drug` int(11), `Kills` int(11), `Deaths` int(11), `Gruppo` int(3), `Tickets` int(11),`RegisterDate` int(13),`LastLogin` int(13),`GainRobberies` int(11),`GainVehicleStolen` int(11),`GainWeaponsDealer` int(11))CREATE TABLE IF NOT EXISTS `payspray` (`ID` int(3) auto_increment PRIMARY KEY , `OwnerID` int(21), `OwnerName` varchar(24), `X` float, `Y` float, `Z` float, `Price` int(11), `Money` int(11))CREATE TABLE IF NOT EXISTS `serialbans` (`SerialID` varchar(128) PRIMARY KEY, `AccountBanned` int(11))CREATE TABLE IF NOT EXISTS `PlayerStats` (`ID` int(11) P
+[13:41:32] Loaded 0 Houses
+[13:41:32] ERROR: SELECT * FROM `showrooms`
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[13:43:26] filterscripts = ""  (string)
+[13:43:26] 
+[13:43:26] Server Plugins
+[13:43:26] --------------
+[13:43:26]  Loading plugin: tde
+[13:43:26] 
+TDEditor Plugin loaded, thank you for using.
+
+[13:43:26]   Loaded.
+[13:43:26]  Loading plugin: mysql
+[13:43:26]  >> plugin.mysql: R41-2 successfully loaded.
+[13:43:26]   Loaded.
+[13:43:26]  Loading plugin: sscanf
+[13:43:26] 
+
+[13:43:26]  ===============================
+
+[13:43:26]       sscanf plugin loaded.     
+
+[13:43:26]    (c) 2009 Alex "Y_Less" Cole
+
+[13:43:26]    0.3d-R2 500 Players "dnee"
+
+[13:43:26]  ===============================
+
+[13:43:26]   Loaded.
+[13:43:26]  Loading plugin: crashdetect
+[13:43:26]   CrashDetect v4.18.1 is OK.
+[13:43:26]   Loaded.
+[13:43:26]  Loading plugin: streamer
+[13:43:26] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[13:43:26]   Loaded.
+[13:43:26]  Loaded 5 plugins.
+
+[13:43:26] 
+[13:43:26] Filterscripts
+[13:43:26] ---------------
+[13:43:26]   Loaded 0 filterscripts.
+
+[13:43:26]  
+[13:43:26]  
+[13:43:26]  
+[13:43:26]  ======================================= 
+[13:43:26]  |                                     | 
+[13:43:26]  |        YSI version 4.00.0001        | 
+[13:43:26]  |        By Alex "Y_Less" Cole        | 
+[13:43:26]  |                                     | 
+[13:43:26]  ======================================= 
+[13:43:26]  
+[13:43:32] Store: Well Stacked Pizza [ID: 0]
+[13:43:32] Store: Cluckin' Bell [ID: 1]
+[13:43:32] Store: Cluckin' Bell [ID: 2]
+[13:43:32] Store: Burger Shot [ID: 3]
+[13:43:32] Store: Ciambellaio [ID: 4]
+[13:43:32] Store: Prolaps [ID: 5]
+[13:43:32] Store: Victim [ID: 6]
+[13:43:32] Store: DS [ID: 7]
+[13:43:32] Store: Binco [ID: 8]
+[13:43:32] Store: Suburban [ID: 9]
+[13:43:32] Store: 24/7 [ID: 10]
+[13:43:32] Store: 24/7 [ID: 11]
+[13:43:32] Store: 24/7 [ID: 12]
+[13:43:32] Store: 24/7 [ID: 13]
+[13:43:32] Store: Ammunation [ID: 14]
+[13:43:32] Store: Ammunation [ID: 15]
+[13:43:32] Store: Ten Green Bottles [ID: 16]
+[13:43:32] Store: Centro Scommesse [ID: 17]
+[13:43:32] Store: Barbiere [ID: 18]
+[13:43:32] Store: Tattoo [ID: 19]
+[13:43:32] Store: Sexy Shop [ID: 20]
+[13:43:32] Store: Alhambra [ID: 21]
+[13:43:32] Store: Palestra [ID: 22]
+[13:43:32] Store: Burger Shot [ID: 23]
+[13:43:32] Store: Barbiere [ID: 24]
+[13:43:32] Store: Cluckin Bell [ID: 25]
+[13:43:32] Store: 24/7 [ID: 26]
+[13:43:32] Store: Liquor Bar [ID: 27]
+[13:43:32] Store: 98$ Store [ID: 28]
+[13:43:32] Store: Sexy Shop [ID: 29]
+[13:43:32] Store: Zip [ID: 30]
+[13:43:32] Store: 69$ Store [ID: 31]
+[13:43:32] Store: Bar [ID: 32]
+[13:43:32] Store: Sexy Shop [ID: 33]
+[13:43:32] Building Caricati: 34
+[13:43:32] 
+----------------------------------
+[13:43:32]  Los Santos Cops and Robbers by Code, Edit by Dave
+[13:43:32] ----------------------------------
+
+[13:43:32] Number of vehicle models: 31
+[13:43:33] Loaded 0 Houses
+[13:43:33] ERROR: SELECT * FROM `showrooms`
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:05:13] filterscripts = ""  (string)
+[18:05:13] 
+[18:05:13] Server Plugins
+[18:05:13] --------------
+[18:05:13]  Loading plugin: tde
+[18:05:13] 
+TDEditor Plugin loaded, thank you for using.
+
+[18:05:13]   Loaded.
+[18:05:13]  Loading plugin: mysql
+[18:05:13]  >> plugin.mysql: R41-2 successfully loaded.
+[18:05:13]   Loaded.
+[18:05:13]  Loading plugin: sscanf
+[18:05:13] 
+
+[18:05:13]  ===============================
+
+[18:05:13]       sscanf plugin loaded.     
+
+[18:05:13]    (c) 2009 Alex "Y_Less" Cole
+
+[18:05:13]    0.3d-R2 500 Players "dnee"
+
+[18:05:13]  ===============================
+
+[18:05:13]   Loaded.
+[18:05:13]  Loading plugin: crashdetect
+[18:05:13]   CrashDetect v4.18.1 is OK.
+[18:05:13]   Loaded.
+[18:05:13]  Loading plugin: streamer
+[18:05:13] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[18:05:13]   Loaded.
+[18:05:13]  Loaded 5 plugins.
+
+[18:05:13] 
+[18:05:13] Filterscripts
+[18:05:13] ---------------
+[18:05:13]   Loaded 0 filterscripts.
+
+[18:05:14]  
+[18:05:14]  
+[18:05:14]  
+[18:05:14]  ======================================= 
+[18:05:14]  |                                     | 
+[18:05:14]  |        YSI version 4.00.0001        | 
+[18:05:14]  |        By Alex "Y_Less" Cole        | 
+[18:05:14]  |                                     | 
+[18:05:14]  ======================================= 
+[18:05:14]  
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:35:36] filterscripts = ""  (string)
+[18:35:36] 
+[18:35:36] Server Plugins
+[18:35:36] --------------
+[18:35:36]  Loading plugin: tde
+[18:35:36] 
+TDEditor Plugin loaded, thank you for using.
+
+[18:35:36]   Loaded.
+[18:35:36]  Loading plugin: mysql
+[18:35:36]  >> plugin.mysql: R41-2 successfully loaded.
+[18:35:36]   Loaded.
+[18:35:36]  Loading plugin: sscanf
+[18:35:36] 
+
+[18:35:36]  ===============================
+
+[18:35:36]       sscanf plugin loaded.     
+
+[18:35:36]    (c) 2009 Alex "Y_Less" Cole
+
+[18:35:36]    0.3d-R2 500 Players "dnee"
+
+[18:35:36]  ===============================
+
+[18:35:36]   Loaded.
+[18:35:36]  Loading plugin: crashdetect
+[18:35:36]   CrashDetect v4.18.1 is OK.
+[18:35:36]   Loaded.
+[18:35:36]  Loading plugin: streamer
+[18:35:36] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[18:35:36]   Loaded.
+[18:35:36]  Loaded 5 plugins.
+
+[18:35:36] 
+[18:35:36] Filterscripts
+[18:35:36] ---------------
+[18:35:36]   Loaded 0 filterscripts.
+
+[18:35:36]  
+[18:35:36]  
+[18:35:36]  
+[18:35:36]  ======================================= 
+[18:35:36]  |                                     | 
+[18:35:36]  |        YSI version 4.00.0001        | 
+[18:35:36]  |        By Alex "Y_Less" Cole        | 
+[18:35:36]  |                                     | 
+[18:35:36]  ======================================= 
+[18:35:36]  
+[18:35:46] Store: Well Stacked Pizza [ID: 0]
+[18:35:46] Store: Cluckin' Bell [ID: 1]
+[18:35:46] Store: Cluckin' Bell [ID: 2]
+[18:35:46] Store: Burger Shot [ID: 3]
+[18:35:46] Store: Ciambellaio [ID: 4]
+[18:35:46] Store: Prolaps [ID: 5]
+[18:35:46] Store: Victim [ID: 6]
+[18:35:46] Store: DS [ID: 7]
+[18:35:46] Store: Binco [ID: 8]
+[18:35:46] Store: Suburban [ID: 9]
+[18:35:46] Store: 24/7 [ID: 10]
+[18:35:46] Store: 24/7 [ID: 11]
+[18:35:46] Store: 24/7 [ID: 12]
+[18:35:46] Store: 24/7 [ID: 13]
+[18:35:46] Store: Ammunation [ID: 14]
+[18:35:46] Store: Ammunation [ID: 15]
+[18:35:46] Store: Ten Green Bottles [ID: 16]
+[18:35:46] Store: Centro Scommesse [ID: 17]
+[18:35:46] Store: Barbiere [ID: 18]
+[18:35:46] Store: Tattoo [ID: 19]
+[18:35:46] Store: Sexy Shop [ID: 20]
+[18:35:46] Store: Alhambra [ID: 21]
+[18:35:46] Store: Palestra [ID: 22]
+[18:35:46] Store: Burger Shot [ID: 23]
+[18:35:46] Store: Barbiere [ID: 24]
+[18:35:46] Store: Cluckin Bell [ID: 25]
+[18:35:46] Store: 24/7 [ID: 26]
+[18:35:46] Store: Liquor Bar [ID: 27]
+[18:35:46] Store: 98$ Store [ID: 28]
+[18:35:46] Store: Sexy Shop [ID: 29]
+[18:35:46] Store: Zip [ID: 30]
+[18:35:46] Store: 69$ Store [ID: 31]
+[18:35:46] Store: Bar [ID: 32]
+[18:35:46] Store: Sexy Shop [ID: 33]
+[18:35:46] Building Caricati: 34
+[18:35:46] 
+----------------------------------
+[18:35:46]  Los Santos Cops and Robbers by Code, Edit by Dave
+[18:35:46] ----------------------------------
+
+[18:35:46] Number of vehicle models: 33
+[18:35:46] ERROR: CREATE TABLE IF NOT EXISTS `Players` (`ID` int(11) auto_increment PRIMARY KEY, `Name` varchar(30), `Password` varchar(128), `Money` int(11), `Bank` int(11), `Admin` int(11), `Skills` varchar(20), `JailTime` int(11), `PremiumTime` int(11), `Premium` int(11),`AccountBanned` int(11), `BanTime` int(11), `Rewards` int(11),`RewardMoney` int(11), `Drug` int(11), `Kills` int(11), `Deaths` int(11), `Gruppo` int(3), `Tickets` int(11),`RegisterDate` int(13),`LastLogin` int(13),`GainRobberies` int(11),`GainVehicleStolen` int(11),`GainWeaponsDealer` int(11))
+[18:35:46] ERROR: CREATE TABLE IF NOT EXISTS `houses` (`ID` int(11) PRIMARY KEY, `OwnerID` int(11), `OwnerName` varchar(26), `Closed` int(1), `X` float, `Y` float, `Z` float, `Xu` float, `Yu` float, `Zu` float, `Interior` int(11),`VirtualWorld` int(11), `Price` int(11))
+[18:35:46] ERROR: CREATE TABLE IF NOT EXISTS `playervehicle` (`ID` int(5) auto_increment PRIMARY KEY, `Slot` int(3), `OwnerID` int(11), `OwnerName` varchar(26), `Model` int(4), `X` float, `Y` float, `Z` float, `A` float, `Color1` int(11), `Color2` int(11), `Closed` int(11), `VehicleMod` varchar(256))
+[18:35:46] ERROR: CREATE TABLE IF NOT EXISTS `payspray` (`ID` int(3) auto_increment PRIMARY KEY , `OwnerID` int(21), `OwnerName` varchar(24), `X` float, `Y` float, `Z` float, `Price` int(11), `Money` int(11))
+[18:35:46] ERROR: CREATE TABLE IF NOT EXISTS `serialbans` (`SerialID` varchar(128) PRIMARY KEY, `AccountBanned` int(11))
+[18:35:46] ERROR: CREATE TABLE IF NOT EXISTS `PlayerStats` (`ID` int(11) PRIMARY KEY, `Name` varchar(24), `GainRobberies` int(11), `GainVehicleStolen` int(11), `GainWeaponsDealer` int(11), `GainDrugsDealer` int(11))
+[18:35:46] ERROR: SELECT * FROM `houses`
+[18:35:46] ERROR: SELECT * FROM `showrooms`
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:37:36] filterscripts = ""  (string)
+[18:37:36] 
+[18:37:36] Server Plugins
+[18:37:36] --------------
+[18:37:36]  Loading plugin: tde
+[18:37:36] 
+TDEditor Plugin loaded, thank you for using.
+
+[18:37:36]   Loaded.
+[18:37:36]  Loading plugin: mysql
+[18:37:36]  >> plugin.mysql: R41-2 successfully loaded.
+[18:37:36]   Loaded.
+[18:37:36]  Loading plugin: sscanf
+[18:37:36] 
+
+[18:37:36]  ===============================
+
+[18:37:36]       sscanf plugin loaded.     
+
+[18:37:36]    (c) 2009 Alex "Y_Less" Cole
+
+[18:37:36]    0.3d-R2 500 Players "dnee"
+
+[18:37:36]  ===============================
+
+[18:37:36]   Loaded.
+[18:37:36]  Loading plugin: crashdetect
+[18:37:36]   CrashDetect v4.18.1 is OK.
+[18:37:36]   Loaded.
+[18:37:36]  Loading plugin: streamer
+[18:37:36] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[18:37:36]   Loaded.
+[18:37:36]  Loaded 5 plugins.
+
+[18:37:36] 
+[18:37:36] Filterscripts
+[18:37:36] ---------------
+[18:37:36]   Loaded 0 filterscripts.
+
+[18:37:36]  
+[18:37:36]  
+[18:37:36]  
+[18:37:36]  ======================================= 
+[18:37:36]  |                                     | 
+[18:37:36]  |        YSI version 4.00.0001        | 
+[18:37:36]  |        By Alex "Y_Less" Cole        | 
+[18:37:36]  |                                     | 
+[18:37:36]  ======================================= 
+[18:37:36]  
+[18:37:46] Store: Well Stacked Pizza [ID: 0]
+[18:37:46] Store: Cluckin' Bell [ID: 1]
+[18:37:46] Store: Cluckin' Bell [ID: 2]
+[18:37:46] Store: Burger Shot [ID: 3]
+[18:37:46] Store: Ciambellaio [ID: 4]
+[18:37:46] Store: Prolaps [ID: 5]
+[18:37:46] Store: Victim [ID: 6]
+[18:37:46] Store: DS [ID: 7]
+[18:37:46] Store: Binco [ID: 8]
+[18:37:46] Store: Suburban [ID: 9]
+[18:37:46] Store: 24/7 [ID: 10]
+[18:37:46] Store: 24/7 [ID: 11]
+[18:37:46] Store: 24/7 [ID: 12]
+[18:37:46] Store: 24/7 [ID: 13]
+[18:37:46] Store: Ammunation [ID: 14]
+[18:37:46] Store: Ammunation [ID: 15]
+[18:37:46] Store: Ten Green Bottles [ID: 16]
+[18:37:46] Store: Centro Scommesse [ID: 17]
+[18:37:46] Store: Barbiere [ID: 18]
+[18:37:46] Store: Tattoo [ID: 19]
+[18:37:46] Store: Sexy Shop [ID: 20]
+[18:37:46] Store: Alhambra [ID: 21]
+[18:37:46] Store: Palestra [ID: 22]
+[18:37:46] Store: Burger Shot [ID: 23]
+[18:37:46] Store: Barbiere [ID: 24]
+[18:37:46] Store: Cluckin Bell [ID: 25]
+[18:37:46] Store: 24/7 [ID: 26]
+[18:37:46] Store: Liquor Bar [ID: 27]
+[18:37:46] Store: 98$ Store [ID: 28]
+[18:37:46] Store: Sexy Shop [ID: 29]
+[18:37:46] Store: Zip [ID: 30]
+[18:37:46] Store: 69$ Store [ID: 31]
+[18:37:46] Store: Bar [ID: 32]
+[18:37:46] Store: Sexy Shop [ID: 33]
+[18:37:46] Building Caricati: 34
+[18:37:46] 
+----------------------------------
+[18:37:46]  Los Santos Cops and Robbers by Code, Edit by Dave
+[18:37:46] ----------------------------------
+
+[18:37:46] Number of vehicle models: 33
+[18:37:46] ERROR: CREATE TABLE IF NOT EXISTS `Players` (`ID` int(11) auto_increment PRIMARY KEY, `Name` varchar(30), `Password` varchar(128), `Money` int(11), `Bank` int(11), `Admin` int(11), `Skills` varchar(20), `JailTime` int(11), `PremiumTime` int(11), `Premium` int(11),`AccountBanned` int(11), `BanTime` int(11), `Rewards` int(11),`RewardMoney` int(11), `Drug` int(11), `Kills` int(11), `Deaths` int(11), `Gruppo` int(3), `Tickets` int(11),`RegisterDate` int(13),`LastLogin` int(13),`GainRobberies` int(11),`GainVehicleStolen` int(11),`GainWeaponsDealer` int(11))
+[18:37:46] ERROR: CREATE TABLE IF NOT EXISTS `houses` (`ID` int(11) PRIMARY KEY, `OwnerID` int(11), `OwnerName` varchar(26), `Closed` int(1), `X` float, `Y` float, `Z` float, `Xu` float, `Yu` float, `Zu` float, `Interior` int(11),`VirtualWorld` int(11), `Price` int(11))
+[18:37:46] ERROR: CREATE TABLE IF NOT EXISTS `playervehicle` (`ID` int(5) auto_increment PRIMARY KEY, `Slot` int(3), `OwnerID` int(11), `OwnerName` varchar(26), `Model` int(4), `X` float, `Y` float, `Z` float, `A` float, `Color1` int(11), `Color2` int(11), `Closed` int(11), `VehicleMod` varchar(256))
+[18:37:46] ERROR: CREATE TABLE IF NOT EXISTS `payspray` (`ID` int(3) auto_increment PRIMARY KEY , `OwnerID` int(21), `OwnerName` varchar(24), `X` float, `Y` float, `Z` float, `Price` int(11), `Money` int(11))
+[18:37:46] ERROR: CREATE TABLE IF NOT EXISTS `serialbans` (`SerialID` varchar(128) PRIMARY KEY, `AccountBanned` int(11))
+[18:37:46] ERROR: CREATE TABLE IF NOT EXISTS `PlayerStats` (`ID` int(11) PRIMARY KEY, `Name` varchar(24), `GainRobberies` int(11), `GainVehicleStolen` int(11), `GainWeaponsDealer` int(11), `GainDrugsDealer` int(11))
+[18:37:46] ERROR: SELECT * FROM `houses`
+[18:37:46] ERROR: SELECT * FROM `showrooms`
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:37:59] filterscripts = ""  (string)
+[18:37:59] 
+[18:37:59] Server Plugins
+[18:37:59] --------------
+[18:37:59]  Loading plugin: tde
+[18:37:59] 
+TDEditor Plugin loaded, thank you for using.
+
+[18:37:59]   Loaded.
+[18:37:59]  Loading plugin: mysql
+[18:37:59]  >> plugin.mysql: R41-2 successfully loaded.
+[18:37:59]   Loaded.
+[18:37:59]  Loading plugin: sscanf
+[18:37:59] 
+
+[18:37:59]  ===============================
+
+[18:37:59]       sscanf plugin loaded.     
+
+[18:37:59]    (c) 2009 Alex "Y_Less" Cole
+
+[18:37:59]    0.3d-R2 500 Players "dnee"
+
+[18:37:59]  ===============================
+
+[18:37:59]   Loaded.
+[18:37:59]  Loading plugin: crashdetect
+[18:37:59]   CrashDetect v4.18.1 is OK.
+[18:37:59]   Loaded.
+[18:37:59]  Loading plugin: streamer
+[18:37:59] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[18:37:59]   Loaded.
+[18:37:59]  Loaded 5 plugins.
+
+[18:37:59] 
+[18:37:59] Filterscripts
+[18:37:59] ---------------
+[18:37:59]   Loaded 0 filterscripts.
+
+[18:37:59]  
+[18:37:59]  
+[18:37:59]  
+[18:37:59]  ======================================= 
+[18:37:59]  |                                     | 
+[18:37:59]  |        YSI version 4.00.0001        | 
+[18:37:59]  |        By Alex "Y_Less" Cole        | 
+[18:37:59]  |                                     | 
+[18:37:59]  ======================================= 
+[18:37:59]  
+[18:38:09] Store: Well Stacked Pizza [ID: 0]
+[18:38:09] Store: Cluckin' Bell [ID: 1]
+[18:38:09] Store: Cluckin' Bell [ID: 2]
+[18:38:09] Store: Burger Shot [ID: 3]
+[18:38:09] Store: Ciambellaio [ID: 4]
+[18:38:09] Store: Prolaps [ID: 5]
+[18:38:09] Store: Victim [ID: 6]
+[18:38:09] Store: DS [ID: 7]
+[18:38:09] Store: Binco [ID: 8]
+[18:38:09] Store: Suburban [ID: 9]
+[18:38:09] Store: 24/7 [ID: 10]
+[18:38:09] Store: 24/7 [ID: 11]
+[18:38:09] Store: 24/7 [ID: 12]
+[18:38:09] Store: 24/7 [ID: 13]
+[18:38:09] Store: Ammunation [ID: 14]
+[18:38:09] Store: Ammunation [ID: 15]
+[18:38:09] Store: Ten Green Bottles [ID: 16]
+[18:38:09] Store: Centro Scommesse [ID: 17]
+[18:38:09] Store: Barbiere [ID: 18]
+[18:38:09] Store: Tattoo [ID: 19]
+[18:38:09] Store: Sexy Shop [ID: 20]
+[18:38:09] Store: Alhambra [ID: 21]
+[18:38:09] Store: Palestra [ID: 22]
+[18:38:09] Store: Burger Shot [ID: 23]
+[18:38:09] Store: Barbiere [ID: 24]
+[18:38:09] Store: Cluckin Bell [ID: 25]
+[18:38:09] Store: 24/7 [ID: 26]
+[18:38:09] Store: Liquor Bar [ID: 27]
+[18:38:09] Store: 98$ Store [ID: 28]
+[18:38:09] Store: Sexy Shop [ID: 29]
+[18:38:09] Store: Zip [ID: 30]
+[18:38:09] Store: 69$ Store [ID: 31]
+[18:38:09] Store: Bar [ID: 32]
+[18:38:09] Store: Sexy Shop [ID: 33]
+[18:38:09] Building Caricati: 34
+[18:38:09] 
+----------------------------------
+[18:38:09]  Los Santos Cops and Robbers by Code, Edit by Dave
+[18:38:09] ----------------------------------
+
+[18:38:09] Number of vehicle models: 32
+[18:38:09] ERROR: CREATE TABLE IF NOT EXISTS `Players` (`ID` int(11) auto_increment PRIMARY KEY, `Name` varchar(30), `Password` varchar(128), `Money` int(11), `Bank` int(11), `Admin` int(11), `Skills` varchar(20), `JailTime` int(11), `PremiumTime` int(11), `Premium` int(11),`AccountBanned` int(11), `BanTime` int(11), `Rewards` int(11),`RewardMoney` int(11), `Drug` int(11), `Kills` int(11), `Deaths` int(11), `Gruppo` int(3), `Tickets` int(11),`RegisterDate` int(13),`LastLogin` int(13),`GainRobberies` int(11),`GainVehicleStolen` int(11),`GainWeaponsDealer` int(11))
+[18:38:09] ERROR: CREATE TABLE IF NOT EXISTS `houses` (`ID` int(11) PRIMARY KEY, `OwnerID` int(11), `OwnerName` varchar(26), `Closed` int(1), `X` float, `Y` float, `Z` float, `Xu` float, `Yu` float, `Zu` float, `Interior` int(11),`VirtualWorld` int(11), `Price` int(11))
+[18:38:09] ERROR: CREATE TABLE IF NOT EXISTS `playervehicle` (`ID` int(5) auto_increment PRIMARY KEY, `Slot` int(3), `OwnerID` int(11), `OwnerName` varchar(26), `Model` int(4), `X` float, `Y` float, `Z` float, `A` float, `Color1` int(11), `Color2` int(11), `Closed` int(11), `VehicleMod` varchar(256))
+[18:38:09] ERROR: CREATE TABLE IF NOT EXISTS `payspray` (`ID` int(3) auto_increment PRIMARY KEY , `OwnerID` int(21), `OwnerName` varchar(24), `X` float, `Y` float, `Z` float, `Price` int(11), `Money` int(11))
+[18:38:09] ERROR: CREATE TABLE IF NOT EXISTS `serialbans` (`SerialID` varchar(128) PRIMARY KEY, `AccountBanned` int(11))
+[18:38:09] ERROR: CREATE TABLE IF NOT EXISTS `PlayerStats` (`ID` int(11) PRIMARY KEY, `Name` varchar(24), `GainRobberies` int(11), `GainVehicleStolen` int(11), `GainWeaponsDealer` int(11), `GainDrugsDealer` int(11))
+[18:38:09] ERROR: SELECT * FROM `houses`
+[18:38:09] ERROR: SELECT * FROM `showrooms`
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:38:55] filterscripts = ""  (string)
+[18:38:55] 
+[18:38:55] Server Plugins
+[18:38:55] --------------
+[18:38:55]  Loading plugin: tde
+[18:38:55] 
+TDEditor Plugin loaded, thank you for using.
+
+[18:38:55]   Loaded.
+[18:38:55]  Loading plugin: mysql
+[18:38:55]  >> plugin.mysql: R41-2 successfully loaded.
+[18:38:55]   Loaded.
+[18:38:55]  Loading plugin: sscanf
+[18:38:55] 
+
+[18:38:55]  ===============================
+
+[18:38:55]       sscanf plugin loaded.     
+
+[18:38:55]    (c) 2009 Alex "Y_Less" Cole
+
+[18:38:55]    0.3d-R2 500 Players "dnee"
+
+[18:38:55]  ===============================
+
+[18:38:55]   Loaded.
+[18:38:55]  Loading plugin: crashdetect
+[18:38:55]   CrashDetect v4.18.1 is OK.
+[18:38:55]   Loaded.
+[18:38:55]  Loading plugin: streamer
+[18:38:55] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[18:38:55]   Loaded.
+[18:38:55]  Loaded 5 plugins.
+
+[18:38:55] 
+[18:38:55] Filterscripts
+[18:38:55] ---------------
+[18:38:55]   Loaded 0 filterscripts.
+
+[18:38:55]  
+[18:38:55]  
+[18:38:55]  
+[18:38:55]  ======================================= 
+[18:38:55]  |                                     | 
+[18:38:55]  |        YSI version 4.00.0001        | 
+[18:38:55]  |        By Alex "Y_Less" Cole        | 
+[18:38:55]  |                                     | 
+[18:38:55]  ======================================= 
+[18:38:55]  
+[18:39:05] Store: Well Stacked Pizza [ID: 0]
+[18:39:05] Store: Cluckin' Bell [ID: 1]
+[18:39:05] Store: Cluckin' Bell [ID: 2]
+[18:39:05] Store: Burger Shot [ID: 3]
+[18:39:05] Store: Ciambellaio [ID: 4]
+[18:39:05] Store: Prolaps [ID: 5]
+[18:39:05] Store: Victim [ID: 6]
+[18:39:05] Store: DS [ID: 7]
+[18:39:05] Store: Binco [ID: 8]
+[18:39:05] Store: Suburban [ID: 9]
+[18:39:05] Store: 24/7 [ID: 10]
+[18:39:05] Store: 24/7 [ID: 11]
+[18:39:05] Store: 24/7 [ID: 12]
+[18:39:05] Store: 24/7 [ID: 13]
+[18:39:05] Store: Ammunation [ID: 14]
+[18:39:05] Store: Ammunation [ID: 15]
+[18:39:05] Store: Ten Green Bottles [ID: 16]
+[18:39:05] Store: Centro Scommesse [ID: 17]
+[18:39:05] Store: Barbiere [ID: 18]
+[18:39:05] Store: Tattoo [ID: 19]
+[18:39:05] Store: Sexy Shop [ID: 20]
+[18:39:05] Store: Alhambra [ID: 21]
+[18:39:05] Store: Palestra [ID: 22]
+[18:39:05] Store: Burger Shot [ID: 23]
+[18:39:05] Store: Barbiere [ID: 24]
+[18:39:05] Store: Cluckin Bell [ID: 25]
+[18:39:05] Store: 24/7 [ID: 26]
+[18:39:05] Store: Liquor Bar [ID: 27]
+[18:39:05] Store: 98$ Store [ID: 28]
+[18:39:05] Store: Sexy Shop [ID: 29]
+[18:39:05] Store: Zip [ID: 30]
+[18:39:05] Store: 69$ Store [ID: 31]
+[18:39:05] Store: Bar [ID: 32]
+[18:39:05] Store: Sexy Shop [ID: 33]
+[18:39:05] Building Caricati: 34
+[18:39:05] 
+----------------------------------
+[18:39:05]  Los Santos Cops and Robbers by Code, Edit by Dave
+[18:39:05] ----------------------------------
+
+[18:39:05] Number of vehicle models: 32
+[18:39:27] [connection] 192.168.1.105:56649 requests connection cookie.
+[18:39:28] [connection] incoming connection: 192.168.1.105:56649 id: 0
+[18:39:28] [join] Evad96 has joined the server (0:192.168.1.105)
+[18:39:40] [part] Evad96 has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:40:04] filterscripts = ""  (string)
+[18:40:04] 
+[18:40:04] Server Plugins
+[18:40:04] --------------
+[18:40:04]  Loading plugin: tde
+[18:40:04] 
+TDEditor Plugin loaded, thank you for using.
+
+[18:40:04]   Loaded.
+[18:40:04]  Loading plugin: mysql
+[18:40:04]  >> plugin.mysql: R41-2 successfully loaded.
+[18:40:04]   Loaded.
+[18:40:04]  Loading plugin: sscanf
+[18:40:04] 
+
+[18:40:04]  ===============================
+
+[18:40:04]       sscanf plugin loaded.     
+
+[18:40:04]    (c) 2009 Alex "Y_Less" Cole
+
+[18:40:04]    0.3d-R2 500 Players "dnee"
+
+[18:40:04]  ===============================
+
+[18:40:04]   Loaded.
+[18:40:04]  Loading plugin: crashdetect
+[18:40:04]   CrashDetect v4.18.1 is OK.
+[18:40:04]   Loaded.
+[18:40:04]  Loading plugin: streamer
+[18:40:04] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[18:40:04]   Loaded.
+[18:40:04]  Loaded 5 plugins.
+
+[18:40:04] 
+[18:40:04] Filterscripts
+[18:40:04] ---------------
+[18:40:04]   Loaded 0 filterscripts.
+
+[18:40:04]  
+[18:40:04]  
+[18:40:04]  
+[18:40:04]  ======================================= 
+[18:40:04]  |                                     | 
+[18:40:04]  |        YSI version 4.00.0001        | 
+[18:40:04]  |        By Alex "Y_Less" Cole        | 
+[18:40:04]  |                                     | 
+[18:40:04]  ======================================= 
+[18:40:04]  
+[18:40:16] Store: Well Stacked Pizza [ID: 0]
+[18:40:16] Store: Cluckin' Bell [ID: 1]
+[18:40:16] Store: Cluckin' Bell [ID: 2]
+[18:40:16] Store: Burger Shot [ID: 3]
+[18:40:16] Store: Ciambellaio [ID: 4]
+[18:40:16] Store: Prolaps [ID: 5]
+[18:40:16] Store: Victim [ID: 6]
+[18:40:16] Store: DS [ID: 7]
+[18:40:16] Store: Binco [ID: 8]
+[18:40:16] Store: Suburban [ID: 9]
+[18:40:16] Store: 24/7 [ID: 10]
+[18:40:16] Store: 24/7 [ID: 11]
+[18:40:16] Store: 24/7 [ID: 12]
+[18:40:16] Store: 24/7 [ID: 13]
+[18:40:16] Store: Ammunation [ID: 14]
+[18:40:16] Store: Ammunation [ID: 15]
+[18:40:16] Store: Ten Green Bottles [ID: 16]
+[18:40:16] Store: Centro Scommesse [ID: 17]
+[18:40:16] Store: Barbiere [ID: 18]
+[18:40:16] Store: Tattoo [ID: 19]
+[18:40:16] Store: Sexy Shop [ID: 20]
+[18:40:16] Store: Alhambra [ID: 21]
+[18:40:16] Store: Palestra [ID: 22]
+[18:40:16] Store: Burger Shot [ID: 23]
+[18:40:16] Store: Barbiere [ID: 24]
+[18:40:16] Store: Cluckin Bell [ID: 25]
+[18:40:16] Store: 24/7 [ID: 26]
+[18:40:16] Store: Liquor Bar [ID: 27]
+[18:40:16] Store: 98$ Store [ID: 28]
+[18:40:16] Store: Sexy Shop [ID: 29]
+[18:40:16] Store: Zip [ID: 30]
+[18:40:16] Store: 69$ Store [ID: 31]
+[18:40:16] Store: Bar [ID: 32]
+[18:40:16] Store: Sexy Shop [ID: 33]
+[18:40:16] Building Caricati: 34
+[18:40:16] 
+----------------------------------
+[18:40:16]  Los Santos Cops and Robbers by Code, Edit by Dave
+[18:40:16] ----------------------------------
+
+[18:40:16] Number of vehicle models: 33
+[18:40:16] Loaded 0 Houses
+[18:40:16] Loaded 0 showrooms
+[18:40:21] [connection] 192.168.1.105:64543 requests connection cookie.
+[18:40:22] [connection] incoming connection: 192.168.1.105:64543 id: 0
+[18:40:22] [join] Evad96 has joined the server (0:192.168.1.105)
+[18:40:30] [part] Evad96 has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:41:35] filterscripts = ""  (string)
+[18:41:35] 
+[18:41:35] Server Plugins
+[18:41:35] --------------
+[18:41:35]  Loading plugin: tde
+[18:41:35] 
+TDEditor Plugin loaded, thank you for using.
+
+[18:41:35]   Loaded.
+[18:41:35]  Loading plugin: mysql
+[18:41:35]  >> plugin.mysql: R41-2 successfully loaded.
+[18:41:35]   Loaded.
+[18:41:35]  Loading plugin: sscanf
+[18:41:35] 
+
+[18:41:35]  ===============================
+
+[18:41:35]       sscanf plugin loaded.     
+
+[18:41:35]    (c) 2009 Alex "Y_Less" Cole
+
+[18:41:35]    0.3d-R2 500 Players "dnee"
+
+[18:41:35]  ===============================
+
+[18:41:35]   Loaded.
+[18:41:35]  Loading plugin: crashdetect
+[18:41:35]   CrashDetect v4.18.1 is OK.
+[18:41:35]   Loaded.
+[18:41:35]  Loading plugin: streamer
+[18:41:35] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[18:41:35]   Loaded.
+[18:41:35]  Loaded 5 plugins.
+
+[18:41:35] 
+[18:41:35] Filterscripts
+[18:41:35] ---------------
+[18:41:35]   Loaded 0 filterscripts.
+
+[18:41:36]  
+[18:41:36]  
+[18:41:36]  
+[18:41:36]  ======================================= 
+[18:41:36]  |                                     | 
+[18:41:36]  |        YSI version 4.00.0001        | 
+[18:41:36]  |        By Alex "Y_Less" Cole        | 
+[18:41:36]  |                                     | 
+[18:41:36]  ======================================= 
+[18:41:36]  
+[18:41:42] Store: Well Stacked Pizza [ID: 0]
+[18:41:42] Store: Cluckin' Bell [ID: 1]
+[18:41:42] Store: Cluckin' Bell [ID: 2]
+[18:41:42] Store: Burger Shot [ID: 3]
+[18:41:42] Store: Ciambellaio [ID: 4]
+[18:41:42] Store: Prolaps [ID: 5]
+[18:41:42] Store: Victim [ID: 6]
+[18:41:42] Store: DS [ID: 7]
+[18:41:42] Store: Binco [ID: 8]
+[18:41:42] Store: Suburban [ID: 9]
+[18:41:42] Store: 24/7 [ID: 10]
+[18:41:42] Store: 24/7 [ID: 11]
+[18:41:42] Store: 24/7 [ID: 12]
+[18:41:42] Store: 24/7 [ID: 13]
+[18:41:42] Store: Ammunation [ID: 14]
+[18:41:42] Store: Ammunation [ID: 15]
+[18:41:42] Store: Ten Green Bottles [ID: 16]
+[18:41:42] Store: Centro Scommesse [ID: 17]
+[18:41:42] Store: Barbiere [ID: 18]
+[18:41:42] Store: Tattoo [ID: 19]
+[18:41:42] Store: Sexy Shop [ID: 20]
+[18:41:42] Store: Alhambra [ID: 21]
+[18:41:42] Store: Palestra [ID: 22]
+[18:41:42] Store: Burger Shot [ID: 23]
+[18:41:42] Store: Barbiere [ID: 24]
+[18:41:42] Store: Cluckin Bell [ID: 25]
+[18:41:42] Store: 24/7 [ID: 26]
+[18:41:42] Store: Liquor Bar [ID: 27]
+[18:41:42] Store: 98$ Store [ID: 28]
+[18:41:42] Store: Sexy Shop [ID: 29]
+[18:41:42] Store: Zip [ID: 30]
+[18:41:42] Store: 69$ Store [ID: 31]
+[18:41:42] Store: Bar [ID: 32]
+[18:41:42] Store: Sexy Shop [ID: 33]
+[18:41:42] Building Caricati: 34
+[18:41:42] 
+----------------------------------
+[18:41:42]  Los Santos Cops and Robbers by Code, Edit by Dave
+[18:41:42] ----------------------------------
+
+[18:41:42] Number of vehicle models: 32
+[18:41:42] Loaded 0 Houses
+[18:41:42] Loaded 0 showrooms
+[18:41:54] [connection] 192.168.1.105:52001 requests connection cookie.
+[18:41:55] [connection] incoming connection: 192.168.1.105:52001 id: 0
+[18:41:56] [join] Evad96 has joined the server (0:192.168.1.105)
+[18:41:57] 
+
+
+[18:41:59] 
+INSERT INTO `Accounts` (`Name`, `Password`, `Money`, `Bank`, `Admin`, `JailTime`, `PremiumTime`, `AccountBanned`, `Skills`, `BanTime`, `Rewards`, `RewardMoney`, `Drug`, `Kills`, `Deaths`, `Premium`, `RegisterDate`, `LastLogin`) VALUES('Evad96',md5('123asd'), 20000, 0, 0, 0, 0, 0, 'asd.', 0, 0, 0, 0, 0, 0, 0, 'âk', 'Z\çç')
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:46:24] filterscripts = ""  (string)
+[18:46:24] 
+[18:46:24] Server Plugins
+[18:46:24] --------------
+[18:46:24]  Loading plugin: tde
+[18:46:24] 
+TDEditor Plugin loaded, thank you for using.
+
+[18:46:24]   Loaded.
+[18:46:24]  Loading plugin: mysql
+[18:46:24]  >> plugin.mysql: R41-2 successfully loaded.
+[18:46:24]   Loaded.
+[18:46:24]  Loading plugin: sscanf
+[18:46:24] 
+
+[18:46:24]  ===============================
+
+[18:46:24]       sscanf plugin loaded.     
+
+[18:46:24]    (c) 2009 Alex "Y_Less" Cole
+
+[18:46:24]    0.3d-R2 500 Players "dnee"
+
+[18:46:24]  ===============================
+
+[18:46:24]   Loaded.
+[18:46:24]  Loading plugin: crashdetect
+[18:46:24]   CrashDetect v4.18.1 is OK.
+[18:46:24]   Loaded.
+[18:46:24]  Loading plugin: streamer
+[18:46:24] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[18:46:24]   Loaded.
+[18:46:24]  Loaded 5 plugins.
+
+[18:46:24] 
+[18:46:24] Filterscripts
+[18:46:24] ---------------
+[18:46:24]   Loaded 0 filterscripts.
+
+[18:46:24]  
+[18:46:24]  
+[18:46:24]  
+[18:46:24]  ======================================= 
+[18:46:24]  |                                     | 
+[18:46:24]  |        YSI version 4.00.0001        | 
+[18:46:24]  |        By Alex "Y_Less" Cole        | 
+[18:46:24]  |                                     | 
+[18:46:24]  ======================================= 
+[18:46:24]  
+[18:46:25] [connection] 192.168.1.105:50418 requests connection cookie.
+[18:46:30] Store: Well Stacked Pizza [ID: 0]
+[18:46:30] Store: Cluckin' Bell [ID: 1]
+[18:46:30] Store: Cluckin' Bell [ID: 2]
+[18:46:30] Store: Burger Shot [ID: 3]
+[18:46:30] Store: Ciambellaio [ID: 4]
+[18:46:30] Store: Prolaps [ID: 5]
+[18:46:30] Store: Victim [ID: 6]
+[18:46:30] Store: DS [ID: 7]
+[18:46:30] Store: Binco [ID: 8]
+[18:46:30] Store: Suburban [ID: 9]
+[18:46:30] Store: 24/7 [ID: 10]
+[18:46:30] Store: 24/7 [ID: 11]
+[18:46:30] Store: 24/7 [ID: 12]
+[18:46:30] Store: 24/7 [ID: 13]
+[18:46:30] Store: Ammunation [ID: 14]
+[18:46:30] Store: Ammunation [ID: 15]
+[18:46:30] Store: Ten Green Bottles [ID: 16]
+[18:46:30] Store: Centro Scommesse [ID: 17]
+[18:46:30] Store: Barbiere [ID: 18]
+[18:46:30] Store: Tattoo [ID: 19]
+[18:46:30] Store: Sexy Shop [ID: 20]
+[18:46:30] Store: Alhambra [ID: 21]
+[18:46:30] Store: Palestra [ID: 22]
+[18:46:30] Store: Burger Shot [ID: 23]
+[18:46:30] Store: Barbiere [ID: 24]
+[18:46:30] Store: Cluckin Bell [ID: 25]
+[18:46:30] Store: 24/7 [ID: 26]
+[18:46:30] Store: Liquor Bar [ID: 27]
+[18:46:30] Store: 98$ Store [ID: 28]
+[18:46:30] Store: Sexy Shop [ID: 29]
+[18:46:30] Store: Zip [ID: 30]
+[18:46:30] Store: 69$ Store [ID: 31]
+[18:46:30] Store: Bar [ID: 32]
+[18:46:30] Store: Sexy Shop [ID: 33]
+[18:46:30] Building Caricati: 34
+[18:46:30] 
+----------------------------------
+[18:46:30]  Los Santos Cops and Robbers by Code, Edit by Dave
+[18:46:30] ----------------------------------
+
+[18:46:30] Number of vehicle models: 34
+[18:46:30] [connection] incoming connection: 192.168.1.105:50418 id: 0
+[18:46:30] [join] Evad96 has joined the server (0:192.168.1.105)
+[18:46:31] Loaded 0 Houses
+[18:46:31] Loaded 0 showrooms
+[18:46:31] 
+
+
+[18:46:33] 
+INSERT INTO `accounts` (`Name`, `Password`, `Money`, `Bank`, `Admin`, `JailTime`, `PremiumTime`, `AccountBanned`, `Skills`, `BanTime`, `Rewards`, `RewardMoney`, `Drug`, `Kills`, `Deaths`, `Premium`, `RegisterDate`, `LastLogin`) VALUES('Evad96',md5('123asd'), 20000, 0, 0, 0, 0, 0, 'asd.', 0, 0, 0, 0, 0, 0, 0, 'âk', 'Z\èù')
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:56:22] filterscripts = ""  (string)
+[18:56:22] 
+[18:56:22] Server Plugins
+[18:56:22] --------------
+[18:56:22]  Loading plugin: tde
+[18:56:22] 
+TDEditor Plugin loaded, thank you for using.
+
+[18:56:22]   Loaded.
+[18:56:22]  Loading plugin: mysql
+[18:56:22]  >> plugin.mysql: R41-2 successfully loaded.
+[18:56:22]   Loaded.
+[18:56:22]  Loading plugin: sscanf
+[18:56:22] 
+
+[18:56:22]  ===============================
+
+[18:56:22]       sscanf plugin loaded.     
+
+[18:56:22]    (c) 2009 Alex "Y_Less" Cole
+
+[18:56:22]    0.3d-R2 500 Players "dnee"
+
+[18:56:22]  ===============================
+
+[18:56:22]   Loaded.
+[18:56:22]  Loading plugin: crashdetect
+[18:56:22]   CrashDetect v4.18.1 is OK.
+[18:56:22]   Loaded.
+[18:56:22]  Loading plugin: streamer
+[18:56:22] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[18:56:22]   Loaded.
+[18:56:22]  Loaded 5 plugins.
+
+[18:56:22] 
+[18:56:22] Filterscripts
+[18:56:22] ---------------
+[18:56:22]   Loaded 0 filterscripts.
+
+[18:56:22]  
+[18:56:22]  
+[18:56:22]  
+[18:56:22]  ======================================= 
+[18:56:22]  |                                     | 
+[18:56:22]  |        YSI version 4.00.0001        | 
+[18:56:22]  |        By Alex "Y_Less" Cole        | 
+[18:56:22]  |                                     | 
+[18:56:22]  ======================================= 
+[18:56:22]  
+[18:56:28] Store: Well Stacked Pizza [ID: 0]
+[18:56:28] Store: Cluckin' Bell [ID: 1]
+[18:56:28] Store: Cluckin' Bell [ID: 2]
+[18:56:28] Store: Burger Shot [ID: 3]
+[18:56:28] Store: Ciambellaio [ID: 4]
+[18:56:28] Store: Prolaps [ID: 5]
+[18:56:28] Store: Victim [ID: 6]
+[18:56:28] Store: DS [ID: 7]
+[18:56:28] Store: Binco [ID: 8]
+[18:56:28] Store: Suburban [ID: 9]
+[18:56:28] Store: 24/7 [ID: 10]
+[18:56:28] Store: 24/7 [ID: 11]
+[18:56:28] Store: 24/7 [ID: 12]
+[18:56:28] Store: 24/7 [ID: 13]
+[18:56:28] Store: Ammunation [ID: 14]
+[18:56:28] Store: Ammunation [ID: 15]
+[18:56:28] Store: Ten Green Bottles [ID: 16]
+[18:56:28] Store: Centro Scommesse [ID: 17]
+[18:56:28] Store: Barbiere [ID: 18]
+[18:56:28] Store: Tattoo [ID: 19]
+[18:56:28] Store: Sexy Shop [ID: 20]
+[18:56:28] Store: Alhambra [ID: 21]
+[18:56:28] Store: Palestra [ID: 22]
+[18:56:28] Store: Burger Shot [ID: 23]
+[18:56:28] Store: Barbiere [ID: 24]
+[18:56:28] Store: Cluckin Bell [ID: 25]
+[18:56:28] Store: 24/7 [ID: 26]
+[18:56:28] Store: Liquor Bar [ID: 27]
+[18:56:28] Store: 98$ Store [ID: 28]
+[18:56:28] Store: Sexy Shop [ID: 29]
+[18:56:28] Store: Zip [ID: 30]
+[18:56:28] Store: 69$ Store [ID: 31]
+[18:56:28] Store: Bar [ID: 32]
+[18:56:28] Store: Sexy Shop [ID: 33]
+[18:56:28] Building Caricati: 34
+[18:56:29] 
+----------------------------------
+[18:56:29]  Los Santos Cops and Robbers by Code, Edit by Dave
+[18:56:29] ----------------------------------
+
+[18:56:29] Number of vehicle models: 34
+[18:56:29] Loaded 0 Houses
+[18:56:29] Loaded 0 showrooms
+[18:56:34] [connection] 192.168.1.105:52513 requests connection cookie.
+[18:56:35] [connection] incoming connection: 192.168.1.105:52513 id: 0
+[18:56:36] [join] Evad96 has joined the server (0:192.168.1.105)
+[18:56:37] 
+
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:57:08] filterscripts = ""  (string)
+[18:57:08] 
+[18:57:08] Server Plugins
+[18:57:08] --------------
+[18:57:08]  Loading plugin: tde
+[18:57:08] 
+TDEditor Plugin loaded, thank you for using.
+
+[18:57:08]   Loaded.
+[18:57:08]  Loading plugin: mysql
+[18:57:08]  >> plugin.mysql: R41-2 successfully loaded.
+[18:57:08]   Loaded.
+[18:57:08]  Loading plugin: sscanf
+[18:57:08] 
+
+[18:57:08]  ===============================
+
+[18:57:08]       sscanf plugin loaded.     
+
+[18:57:08]    (c) 2009 Alex "Y_Less" Cole
+
+[18:57:08]    0.3d-R2 500 Players "dnee"
+
+[18:57:08]  ===============================
+
+[18:57:08]   Loaded.
+[18:57:08]  Loading plugin: crashdetect
+[18:57:08]   CrashDetect v4.18.1 is OK.
+[18:57:08]   Loaded.
+[18:57:08]  Loading plugin: streamer
+[18:57:08] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[18:57:08]   Loaded.
+[18:57:08]  Loaded 5 plugins.
+
+[18:57:08] 
+[18:57:08] Filterscripts
+[18:57:08] ---------------
+[18:57:08]   Loaded 0 filterscripts.
+
+[18:57:08] Script[gamemodes/cnr.amx]: Run time error 17: "Invalid/unsupported P-code file format"
+[18:57:08] Failed to load 'gamemodes/cnr.amx' script.
+[18:57:08] Number of vehicle models: 0
+[18:57:09] --- Server Shutting Down.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:57:10] filterscripts = ""  (string)
+[18:57:10] 
+[18:57:10] Server Plugins
+[18:57:10] --------------
+[18:57:10]  Loading plugin: tde
+[18:57:10] 
+TDEditor Plugin loaded, thank you for using.
+
+[18:57:10]   Loaded.
+[18:57:10]  Loading plugin: mysql
+[18:57:10]  >> plugin.mysql: R41-2 successfully loaded.
+[18:57:10]   Loaded.
+[18:57:10]  Loading plugin: sscanf
+[18:57:10] 
+
+[18:57:10]  ===============================
+
+[18:57:10]       sscanf plugin loaded.     
+
+[18:57:10]    (c) 2009 Alex "Y_Less" Cole
+
+[18:57:10]    0.3d-R2 500 Players "dnee"
+
+[18:57:10]  ===============================
+
+[18:57:10]   Loaded.
+[18:57:10]  Loading plugin: crashdetect
+[18:57:10]   CrashDetect v4.18.1 is OK.
+[18:57:10]   Loaded.
+[18:57:10]  Loading plugin: streamer
+[18:57:10] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[18:57:10]   Loaded.
+[18:57:10]  Loaded 5 plugins.
+
+[18:57:10] 
+[18:57:10] Filterscripts
+[18:57:10] ---------------
+[18:57:10]   Loaded 0 filterscripts.
+
+[18:57:10]  
+[18:57:10]  
+[18:57:10]  
+[18:57:10]  ======================================= 
+[18:57:10]  |                                     | 
+[18:57:10]  |        YSI version 4.00.0001        | 
+[18:57:10]  |        By Alex "Y_Less" Cole        | 
+[18:57:10]  |                                     | 
+[18:57:10]  ======================================= 
+[18:57:10]  
+[18:57:17] Store: Well Stacked Pizza [ID: 0]
+[18:57:17] Store: Cluckin' Bell [ID: 1]
+[18:57:17] Store: Cluckin' Bell [ID: 2]
+[18:57:17] Store: Burger Shot [ID: 3]
+[18:57:17] Store: Ciambellaio [ID: 4]
+[18:57:17] Store: Prolaps [ID: 5]
+[18:57:17] Store: Victim [ID: 6]
+[18:57:17] Store: DS [ID: 7]
+[18:57:17] Store: Binco [ID: 8]
+[18:57:17] Store: Suburban [ID: 9]
+[18:57:17] Store: 24/7 [ID: 10]
+[18:57:17] Store: 24/7 [ID: 11]
+[18:57:17] Store: 24/7 [ID: 12]
+[18:57:17] Store: 24/7 [ID: 13]
+[18:57:17] Store: Ammunation [ID: 14]
+[18:57:17] Store: Ammunation [ID: 15]
+[18:57:17] Store: Ten Green Bottles [ID: 16]
+[18:57:17] Store: Centro Scommesse [ID: 17]
+[18:57:17] Store: Barbiere [ID: 18]
+[18:57:17] Store: Tattoo [ID: 19]
+[18:57:17] Store: Sexy Shop [ID: 20]
+[18:57:17] Store: Alhambra [ID: 21]
+[18:57:17] Store: Palestra [ID: 22]
+[18:57:17] Store: Burger Shot [ID: 23]
+[18:57:17] Store: Barbiere [ID: 24]
+[18:57:17] Store: Cluckin Bell [ID: 25]
+[18:57:17] Store: 24/7 [ID: 26]
+[18:57:17] Store: Liquor Bar [ID: 27]
+[18:57:17] Store: 98$ Store [ID: 28]
+[18:57:17] Store: Sexy Shop [ID: 29]
+[18:57:17] Store: Zip [ID: 30]
+[18:57:17] Store: 69$ Store [ID: 31]
+[18:57:17] Store: Bar [ID: 32]
+[18:57:17] Store: Sexy Shop [ID: 33]
+[18:57:17] Building Caricati: 34
+[18:57:17] 
+----------------------------------
+[18:57:17]  Los Santos Cops and Robbers by Code, Edit by Dave
+[18:57:17] ----------------------------------
+
+[18:57:17] Number of vehicle models: 33
+[18:57:17] Loaded 0 Houses
+[18:57:17] Loaded 0 showrooms
+[18:57:22] [connection] 192.168.1.105:52514 requests connection cookie.
+[18:57:23] [connection] incoming connection: 192.168.1.105:52514 id: 0
+[18:57:23] [join] Evad96 has joined the server (0:192.168.1.105)
+[18:57:24] 
+
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:58:34] filterscripts = ""  (string)
+[18:58:34] 
+[18:58:34] Server Plugins
+[18:58:34] --------------
+[18:58:34]  Loading plugin: tde
+[18:58:34] 
+TDEditor Plugin loaded, thank you for using.
+
+[18:58:34]   Loaded.
+[18:58:34]  Loading plugin: mysql
+[18:58:34]  >> plugin.mysql: R41-2 successfully loaded.
+[18:58:34]   Loaded.
+[18:58:34]  Loading plugin: sscanf
+[18:58:34] 
+
+[18:58:34]  ===============================
+
+[18:58:34]       sscanf plugin loaded.     
+
+[18:58:34]    (c) 2009 Alex "Y_Less" Cole
+
+[18:58:34]    0.3d-R2 500 Players "dnee"
+
+[18:58:34]  ===============================
+
+[18:58:34]   Loaded.
+[18:58:34]  Loading plugin: crashdetect
+[18:58:34]   CrashDetect v4.18.1 is OK.
+[18:58:34]   Loaded.
+[18:58:34]  Loading plugin: streamer
+[18:58:34] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[18:58:34]   Loaded.
+[18:58:34]  Loaded 5 plugins.
+
+[18:58:35] 
+[18:58:35] Filterscripts
+[18:58:35] ---------------
+[18:58:35]   Loaded 0 filterscripts.
+
+[18:58:35]  
+[18:58:35]  
+[18:58:35]  
+[18:58:35]  ======================================= 
+[18:58:35]  |                                     | 
+[18:58:35]  |        YSI version 4.00.0001        | 
+[18:58:35]  |        By Alex "Y_Less" Cole        | 
+[18:58:35]  |                                     | 
+[18:58:35]  ======================================= 
+[18:58:35]  
+[18:58:41] Store: Well Stacked Pizza [ID: 0]
+[18:58:41] Store: Cluckin' Bell [ID: 1]
+[18:58:41] Store: Cluckin' Bell [ID: 2]
+[18:58:41] Store: Burger Shot [ID: 3]
+[18:58:41] Store: Ciambellaio [ID: 4]
+[18:58:41] Store: Prolaps [ID: 5]
+[18:58:41] Store: Victim [ID: 6]
+[18:58:41] Store: DS [ID: 7]
+[18:58:41] Store: Binco [ID: 8]
+[18:58:41] Store: Suburban [ID: 9]
+[18:58:41] Store: 24/7 [ID: 10]
+[18:58:41] Store: 24/7 [ID: 11]
+[18:58:41] Store: 24/7 [ID: 12]
+[18:58:41] Store: 24/7 [ID: 13]
+[18:58:41] Store: Ammunation [ID: 14]
+[18:58:41] Store: Ammunation [ID: 15]
+[18:58:41] Store: Ten Green Bottles [ID: 16]
+[18:58:41] Store: Centro Scommesse [ID: 17]
+[18:58:41] Store: Barbiere [ID: 18]
+[18:58:41] Store: Tattoo [ID: 19]
+[18:58:41] Store: Sexy Shop [ID: 20]
+[18:58:41] Store: Alhambra [ID: 21]
+[18:58:41] Store: Palestra [ID: 22]
+[18:58:41] Store: Burger Shot [ID: 23]
+[18:58:41] Store: Barbiere [ID: 24]
+[18:58:41] Store: Cluckin Bell [ID: 25]
+[18:58:41] Store: 24/7 [ID: 26]
+[18:58:41] Store: Liquor Bar [ID: 27]
+[18:58:41] Store: 98$ Store [ID: 28]
+[18:58:41] Store: Sexy Shop [ID: 29]
+[18:58:41] Store: Zip [ID: 30]
+[18:58:41] Store: 69$ Store [ID: 31]
+[18:58:41] Store: Bar [ID: 32]
+[18:58:41] Store: Sexy Shop [ID: 33]
+[18:58:41] Building Caricati: 34
+[18:58:41] 
+----------------------------------
+[18:58:41]  Los Santos Cops and Robbers by Code, Edit by Dave
+[18:58:41] ----------------------------------
+
+[18:58:41] Number of vehicle models: 30
+[18:58:41] Loaded 0 Houses
+[18:58:41] Loaded 0 showrooms
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[10:17:32] filterscripts = ""  (string)
+[10:17:32] 
+[10:17:32] Server Plugins
+[10:17:32] --------------
+[10:17:32]  Loading plugin: tde
+[10:17:32] 
+TDEditor Plugin loaded, thank you for using.
+
+[10:17:32]   Loaded.
+[10:17:32]  Loading plugin: mysql
+[10:17:33]  >> plugin.mysql: R41-2 successfully loaded.
+[10:17:33]   Loaded.
+[10:17:33]  Loading plugin: sscanf
+[10:17:33] 
+
+[10:17:33]  ===============================
+
+[10:17:33]       sscanf plugin loaded.     
+
+[10:17:33]    (c) 2009 Alex "Y_Less" Cole
+
+[10:17:33]    0.3d-R2 500 Players "dnee"
+
+[10:17:33]  ===============================
+
+[10:17:33]   Loaded.
+[10:17:33]  Loading plugin: crashdetect
+[10:17:33]   CrashDetect v4.18.1 is OK.
+[10:17:33]   Loaded.
+[10:17:33]  Loading plugin: streamer
+[10:17:33] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[10:17:33]   Loaded.
+[10:17:33]  Loaded 5 plugins.
+
+[10:17:33] 
+[10:17:33] Filterscripts
+[10:17:33] ---------------
+[10:17:33]   Loaded 0 filterscripts.
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:35:59] filterscripts = ""  (string)
+[23:35:59] 
+[23:35:59] Server Plugins
+[23:35:59] --------------
+[23:35:59]  Loading plugin: tde
+[23:36:00] 
+TDEditor Plugin loaded, thank you for using.
+
+[23:36:00]   Loaded.
+[23:36:00]  Loading plugin: mysql
+[23:36:00]  >> plugin.mysql: R41-2 successfully loaded.
+[23:36:00]   Loaded.
+[23:36:00]  Loading plugin: sscanf
+[23:36:00] 
+
+[23:36:00]  ===============================
+
+[23:36:00]       sscanf plugin loaded.     
+
+[23:36:00]    (c) 2009 Alex "Y_Less" Cole
+
+[23:36:00]    0.3d-R2 500 Players "dnee"
+
+[23:36:00]  ===============================
+
+[23:36:00]   Loaded.
+[23:36:00]  Loading plugin: crashdetect
+[23:36:00]   CrashDetect v4.18.1 is OK.
+[23:36:00]   Loaded.
+[23:36:00]  Loading plugin: streamer
+[23:36:00] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[23:36:00]   Loaded.
+[23:36:00]  Loaded 5 plugins.
+
+[23:36:00] 
+[23:36:00] Filterscripts
+[23:36:00] ---------------
+[23:36:00]   Loaded 0 filterscripts.
+
+[23:36:03]  
+[23:36:03]  
+[23:36:03]  
+[23:36:03]  ======================================= 
+[23:36:03]  |                                     | 
+[23:36:03]  |        YSI version 4.00.0001        | 
+[23:36:03]  |        By Alex "Y_Less" Cole        | 
+[23:36:03]  |                                     | 
+[23:36:03]  ======================================= 
+[23:36:03]  
+[23:36:13] Store: Well Stacked Pizza [ID: 0]
+[23:36:13] Store: Cluckin' Bell [ID: 1]
+[23:36:13] Store: Cluckin' Bell [ID: 2]
+[23:36:13] Store: Burger Shot [ID: 3]
+[23:36:13] Store: Ciambellaio [ID: 4]
+[23:36:13] Store: Prolaps [ID: 5]
+[23:36:13] Store: Victim [ID: 6]
+[23:36:13] Store: DS [ID: 7]
+[23:36:13] Store: Binco [ID: 8]
+[23:36:13] Store: Suburban [ID: 9]
+[23:36:13] Store: 24/7 [ID: 10]
+[23:36:13] Store: 24/7 [ID: 11]
+[23:36:13] Store: 24/7 [ID: 12]
+[23:36:13] Store: 24/7 [ID: 13]
+[23:36:13] Store: Ammunation [ID: 14]
+[23:36:13] Store: Ammunation [ID: 15]
+[23:36:13] Store: Ten Green Bottles [ID: 16]
+[23:36:13] Store: Centro Scommesse [ID: 17]
+[23:36:13] Store: Barbiere [ID: 18]
+[23:36:13] Store: Tattoo [ID: 19]
+[23:36:13] Store: Sexy Shop [ID: 20]
+[23:36:13] Store: Alhambra [ID: 21]
+[23:36:13] Store: Palestra [ID: 22]
+[23:36:13] Store: Burger Shot [ID: 23]
+[23:36:13] Store: Barbiere [ID: 24]
+[23:36:13] Store: Cluckin Bell [ID: 25]
+[23:36:13] Store: 24/7 [ID: 26]
+[23:36:13] Store: Liquor Bar [ID: 27]
+[23:36:13] Store: 98$ Store [ID: 28]
+[23:36:13] Store: Sexy Shop [ID: 29]
+[23:36:13] Store: Zip [ID: 30]
+[23:36:13] Store: 69$ Store [ID: 31]
+[23:36:13] Store: Bar [ID: 32]
+[23:36:13] Store: Sexy Shop [ID: 33]
+[23:36:13] Building Caricati: 34
+[23:36:13] 
+----------------------------------
+[23:36:13]  Los Santos Cops and Robbers by Code, Edit by Dave
+[23:36:13] ----------------------------------
+
+[23:36:13] Number of vehicle models: 32
+[23:36:13] 
+CREATE TABLE IF NOT EXISTS `Players` (`ID` int(11) auto_increment PRIMARY KEY, `Name` varchar(30), `Password` varchar(128), `Money` int(11), `Bank` int(11), `Admin` int(11), `Skills` varchar(20), `JailTime` int(11), `PremiumTime` int(11), `Premium` int(11),`AccountBanned` int(11), `BanTime` int(11), `Rewards` int(11),`RewardMoney` int(11), `Drug` int(11), `Kills` int(11), `Deaths` int(11), `Gruppo` int(3), `Tickets` int(11),`RegisterDate` int(13),`LastLogin` int(13),`GainRobberies` int(11),`GainVehicleStolen` int(11),`GainWeaponsDealer` int(11))
+
+[23:36:13] 
+CREATE TABLE IF NOT EXISTS `houses` (`ID` int(11) PRIMARY KEY, `OwnerID` int(11), `OwnerName` varchar(26), `Closed` int(1), `X` float, `Y` float, `Z` float, `Xu` float, `Yu` float, `Zu` float, `Interior` int(11),`VirtualWorld` int(11), `Price` int(11))
+
+[23:36:13] 
+CREATE TABLE IF NOT EXISTS `playervehicle` (`ID` int(5) auto_increment PRIMARY KEY, `Slot` int(3), `OwnerID` int(11), `OwnerName` varchar(26), `Model` int(4), `X` float, `Y` float, `Z` float, `A` float, `Color1` int(11), `Color2` int(11), `Closed` int(11), `VehicleMod` varchar(256))
+
+[23:36:13] 
+CREATE TABLE IF NOT EXISTS `payspray` (`ID` int(3) auto_increment PRIMARY KEY , `OwnerID` int(21), `OwnerName` varchar(24), `X` float, `Y` float, `Z` float, `Price` int(11), `Money` int(11))
+
+[23:36:13] 
+CREATE TABLE IF NOT EXISTS `serialbans` (`SerialID` varchar(128) PRIMARY KEY, `AccountBanned` int(11))
+
+[23:36:13] 
+CREATE TABLE IF NOT EXISTS `PlayerStats` (`ID` int(11) PRIMARY KEY, `Name` varchar(24), `GainRobberies` int(11), `GainVehicleStolen` int(11), `GainWeaponsDealer` int(11), `GainDrugsDealer` int(11))
+
+[23:36:13] 
+SELECT * FROM `houses`
+
+[23:36:13] 
+SELECT * FROM `showrooms`
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:11:47] filterscripts = ""  (string)
+[00:11:48] 
+[00:11:48] Server Plugins
+[00:11:48] --------------
+[00:11:48]  Loading plugin: tde
+[00:11:48] 
+TDEditor Plugin loaded, thank you for using.
+
+[00:11:48]   Loaded.
+[00:11:48]  Loading plugin: mysql
+[00:11:48]  >> plugin.mysql: R41-2 successfully loaded.
+[00:11:48]   Loaded.
+[00:11:48]  Loading plugin: sscanf
+[00:11:48] 
+
+[00:11:48]  ===============================
+
+[00:11:48]       sscanf plugin loaded.     
+
+[00:11:48]    (c) 2009 Alex "Y_Less" Cole
+
+[00:11:48]    0.3d-R2 500 Players "dnee"
+
+[00:11:48]  ===============================
+
+[00:11:48]   Loaded.
+[00:11:48]  Loading plugin: crashdetect
+[00:11:48]   CrashDetect v4.18.1 is OK.
+[00:11:48]   Loaded.
+[00:11:48]  Loading plugin: streamer
+[00:11:48] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[00:11:48]   Loaded.
+[00:11:48]  Loaded 5 plugins.
+
+[00:11:48] 
+[00:11:48] Filterscripts
+[00:11:48] ---------------
+[00:11:48]   Loaded 0 filterscripts.
+
+[00:11:48]  
+[00:11:48]  
+[00:11:48]  
+[00:11:48]  ======================================= 
+[00:11:48]  |                                     | 
+[00:11:48]  |        YSI version 4.00.0001        | 
+[00:11:48]  |        By Alex "Y_Less" Cole        | 
+[00:11:48]  |                                     | 
+[00:11:48]  ======================================= 
+[00:11:48]  
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:44:39] filterscripts = ""  (string)
+[00:44:39] 
+[00:44:39] Server Plugins
+[00:44:39] --------------
+[00:44:39]  Loading plugin: tde
+[00:44:39] 
+TDEditor Plugin loaded, thank you for using.
+
+[00:44:39]   Loaded.
+[00:44:39]  Loading plugin: mysql
+[00:44:39]  >> plugin.mysql: R41-2 successfully loaded.
+[00:44:39]   Loaded.
+[00:44:39]  Loading plugin: sscanf
+[00:44:39] 
+
+[00:44:39]  ===============================
+
+[00:44:39]       sscanf plugin loaded.     
+
+[00:44:39]    (c) 2009 Alex "Y_Less" Cole
+
+[00:44:39]    0.3d-R2 500 Players "dnee"
+
+[00:44:39]  ===============================
+
+[00:44:39]   Loaded.
+[00:44:39]  Loading plugin: crashdetect
+[00:44:39]   CrashDetect v4.18.1 is OK.
+[00:44:39]   Loaded.
+[00:44:39]  Loading plugin: streamer
+[00:44:39] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[00:44:39]   Loaded.
+[00:44:39]  Loaded 5 plugins.
+
+[00:44:39] 
+[00:44:39] Filterscripts
+[00:44:39] ---------------
+[00:44:39]   Loaded 0 filterscripts.
+
+[00:44:39]  
+[00:44:39]  
+[00:44:39]  
+[00:44:39]  ======================================= 
+[00:44:39]  |                                     | 
+[00:44:39]  |        YSI version 4.00.0001        | 
+[00:44:39]  |        By Alex "Y_Less" Cole        | 
+[00:44:39]  |                                     | 
+[00:44:39]  ======================================= 
+[00:44:39]  
+[00:44:45] Store: Well Stacked Pizza [ID: 0]
+[00:44:45] Store: Cluckin' Bell [ID: 1]
+[00:44:45] Store: Cluckin' Bell [ID: 2]
+[00:44:45] Store: Burger Shot [ID: 3]
+[00:44:45] Store: Ciambellaio [ID: 4]
+[00:44:45] Store: Prolaps [ID: 5]
+[00:44:45] Store: Victim [ID: 6]
+[00:44:45] Store: DS [ID: 7]
+[00:44:45] Store: Binco [ID: 8]
+[00:44:45] Store: Suburban [ID: 9]
+[00:44:45] Store: 24/7 [ID: 10]
+[00:44:45] Store: 24/7 [ID: 11]
+[00:44:45] Store: 24/7 [ID: 12]
+[00:44:45] Store: 24/7 [ID: 13]
+[00:44:45] Store: Ammunation [ID: 14]
+[00:44:45] Store: Ammunation [ID: 15]
+[00:44:45] Store: Ten Green Bottles [ID: 16]
+[00:44:45] Store: Centro Scommesse [ID: 17]
+[00:44:45] Store: Barbiere [ID: 18]
+[00:44:45] Store: Tattoo [ID: 19]
+[00:44:45] Store: Sexy Shop [ID: 20]
+[00:44:45] Store: Alhambra [ID: 21]
+[00:44:45] Store: Palestra [ID: 22]
+[00:44:45] Store: Burger Shot [ID: 23]
+[00:44:45] Store: Barbiere [ID: 24]
+[00:44:45] Store: Cluckin Bell [ID: 25]
+[00:44:45] Store: 24/7 [ID: 26]
+[00:44:45] Store: Liquor Bar [ID: 27]
+[00:44:45] Store: 98$ Store [ID: 28]
+[00:44:45] Store: Sexy Shop [ID: 29]
+[00:44:45] Store: Zip [ID: 30]
+[00:44:45] Store: 69$ Store [ID: 31]
+[00:44:45] Store: Bar [ID: 32]
+[00:44:45] Store: Sexy Shop [ID: 33]
+[00:44:45] Building Caricati: 34
+[00:44:45] 
+----------------------------------
+[00:44:45]  Los Santos Cops and Robbers by Code, Edit by Dave
+[00:44:45] ----------------------------------
+
+[00:44:45] Number of vehicle models: 32
+[00:44:45] Loaded 0 Houses
+[00:44:45] Loaded 0 showrooms
+[00:45:02] [connection] 192.168.1.105:53434 requests connection cookie.
+[00:45:03] [connection] incoming connection: 192.168.1.105:53434 id: 0
+[00:45:03] [join] Evad96 has joined the server (0:192.168.1.105)
+[00:45:04] 
+
+
+[00:47:21] [part] Evad96 has left the server (0:1)
+[00:47:21] 
+UPDATE `accounts` SET Weapons = '' WHERE `Name` = 'Evad96'
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:21:20] filterscripts = ""  (string)
+[23:21:20] 
+[23:21:20] Server Plugins
+[23:21:20] --------------
+[23:21:20]  Loading plugin: tde
+[23:21:20] 
+TDEditor Plugin loaded, thank you for using.
+
+[23:21:20]   Loaded.
+[23:21:20]  Loading plugin: mysql
+[23:21:20]  >> plugin.mysql: R41-2 successfully loaded.
+[23:21:20]   Loaded.
+[23:21:20]  Loading plugin: sscanf
+[23:21:20] 
+
+[23:21:20]  ===============================
+
+[23:21:20]       sscanf plugin loaded.     
+
+[23:21:20]    (c) 2009 Alex "Y_Less" Cole
+
+[23:21:20]    0.3d-R2 500 Players "dnee"
+
+[23:21:20]  ===============================
+
+[23:21:20]   Loaded.
+[23:21:20]  Loading plugin: crashdetect
+[23:21:21]   CrashDetect v4.18.1 is OK.
+[23:21:21]   Loaded.
+[23:21:21]  Loading plugin: streamer
+[23:21:21] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[23:21:21]   Loaded.
+[23:21:21]  Loaded 5 plugins.
+
+[23:21:21] 
+[23:21:21] Filterscripts
+[23:21:21] ---------------
+[23:21:21]   Loaded 0 filterscripts.
+
+[23:21:22]  
+[23:21:22]  
+[23:21:22]  
+[23:21:22]  ======================================= 
+[23:21:22]  |                                     | 
+[23:21:22]  |        YSI version 4.00.0001        | 
+[23:21:22]  |        By Alex "Y_Less" Cole        | 
+[23:21:22]  |                                     | 
+[23:21:22]  ======================================= 
+[23:21:22]  
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[14:26:46] filterscripts = ""  (string)
+[14:26:46] 
+[14:26:46] Server Plugins
+[14:26:46] --------------
+[14:26:46]  Loading plugin: tde
+[14:26:46] 
+TDEditor Plugin loaded, thank you for using.
+
+[14:26:46]   Loaded.
+[14:26:46]  Loading plugin: mysql
+[14:26:46]  >> plugin.mysql: R41-2 successfully loaded.
+[14:26:46]   Loaded.
+[14:26:46]  Loading plugin: sscanf
+[14:26:46] 
+
+[14:26:46]  ===============================
+
+[14:26:46]       sscanf plugin loaded.     
+
+[14:26:46]    (c) 2009 Alex "Y_Less" Cole
+
+[14:26:46]    0.3d-R2 500 Players "dnee"
+
+[14:26:46]  ===============================
+
+[14:26:46]   Loaded.
+[14:26:46]  Loading plugin: crashdetect
+[14:26:46]   CrashDetect v4.18.1 is OK.
+[14:26:46]   Loaded.
+[14:26:46]  Loading plugin: streamer
+[14:26:46] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[14:26:46]   Loaded.
+[14:26:46]  Loaded 5 plugins.
+
+[14:26:47] 
+[14:26:47] Filterscripts
+[14:26:47] ---------------
+[14:26:47]   Loaded 0 filterscripts.
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[20:52:16] filterscripts = ""  (string)
+[20:52:16] 
+[20:52:16] Server Plugins
+[20:52:16] --------------
+[20:52:16]  Loading plugin: tde
+[20:52:16] 
+TDEditor Plugin loaded, thank you for using.
+
+[20:52:16]   Loaded.
+[20:52:16]  Loading plugin: mysql
+[20:52:16]  >> plugin.mysql: R41-2 successfully loaded.
+[20:52:16]   Loaded.
+[20:52:16]  Loading plugin: sscanf
+[20:52:16] 
+
+[20:52:16]  ===============================
+
+[20:52:16]       sscanf plugin loaded.     
+
+[20:52:16]    (c) 2009 Alex "Y_Less" Cole
+
+[20:52:16]    0.3d-R2 500 Players "dnee"
+
+[20:52:16]  ===============================
+
+[20:52:16]   Loaded.
+[20:52:16]  Loading plugin: crashdetect
+[20:52:16]   CrashDetect v4.18.1 is OK.
+[20:52:16]   Loaded.
+[20:52:16]  Loading plugin: streamer
+[20:52:16] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[20:52:16]   Loaded.
+[20:52:16]  Loaded 5 plugins.
+
+[20:52:16] 
+[20:52:16] Filterscripts
+[20:52:16] ---------------
+[20:52:16]   Loaded 0 filterscripts.
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:31:46] filterscripts = ""  (string)
+[22:31:46] 
+[22:31:46] Server Plugins
+[22:31:46] --------------
+[22:31:46]  Loading plugin: tde
+[22:31:46] 
+TDEditor Plugin loaded, thank you for using.
+
+[22:31:46]   Loaded.
+[22:31:46]  Loading plugin: mysql
+[22:31:47]  >> plugin.mysql: R41-2 successfully loaded.
+[22:31:47]   Loaded.
+[22:31:47]  Loading plugin: sscanf
+[22:31:47] 
+
+[22:31:47]  ===============================
+
+[22:31:47]       sscanf plugin loaded.     
+
+[22:31:47]    (c) 2009 Alex "Y_Less" Cole
+
+[22:31:47]    0.3d-R2 500 Players "dnee"
+
+[22:31:47]  ===============================
+
+[22:31:47]   Loaded.
+[22:31:47]  Loading plugin: crashdetect
+[22:31:48]   CrashDetect v4.18.1 is OK.
+[22:31:48]   Loaded.
+[22:31:48]  Loading plugin: streamer
+[22:31:48] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[22:31:48]   Loaded.
+[22:31:48]  Loaded 5 plugins.
+
+[22:31:49] 
+[22:31:49] Filterscripts
+[22:31:49] ---------------
+[22:31:49]   Loaded 0 filterscripts.
+
+[22:31:56]  
+[22:31:56]  
+[22:31:56]  
+[22:31:56]  ======================================= 
+[22:31:56]  |                                     | 
+[22:31:56]  |        YSI version 4.00.0001        | 
+[22:31:56]  |        By Alex "Y_Less" Cole        | 
+[22:31:56]  |                                     | 
+[22:31:56]  ======================================= 
+[22:31:56]  
+[22:32:07] Store: Well Stacked Pizza [ID: 0]
+[22:32:07] Store: Cluckin' Bell [ID: 1]
+[22:32:07] Store: Cluckin' Bell [ID: 2]
+[22:32:07] Store: Burger Shot [ID: 3]
+[22:32:07] Store: Ciambellaio [ID: 4]
+[22:32:07] Store: Prolaps [ID: 5]
+[22:32:07] Store: Victim [ID: 6]
+[22:32:07] Store: DS [ID: 7]
+[22:32:07] Store: Binco [ID: 8]
+[22:32:07] Store: Suburban [ID: 9]
+[22:32:07] Store: 24/7 [ID: 10]
+[22:32:07] Store: 24/7 [ID: 11]
+[22:32:07] Store: 24/7 [ID: 12]
+[22:32:07] Store: 24/7 [ID: 13]
+[22:32:07] Store: Ammunation [ID: 14]
+[22:32:07] Store: Ammunation [ID: 15]
+[22:32:07] Store: Ten Green Bottles [ID: 16]
+[22:32:07] Store: Centro Scommesse [ID: 17]
+[22:32:07] Store: Barbiere [ID: 18]
+[22:32:07] Store: Tattoo [ID: 19]
+[22:32:07] Store: Sexy Shop [ID: 20]
+[22:32:07] Store: Alhambra [ID: 21]
+[22:32:07] Store: Palestra [ID: 22]
+[22:32:07] Store: Burger Shot [ID: 23]
+[22:32:07] Store: Barbiere [ID: 24]
+[22:32:07] Store: Cluckin Bell [ID: 25]
+[22:32:07] Store: 24/7 [ID: 26]
+[22:32:07] Store: Liquor Bar [ID: 27]
+[22:32:07] Store: 98$ Store [ID: 28]
+[22:32:07] Store: Sexy Shop [ID: 29]
+[22:32:07] Store: Zip [ID: 30]
+[22:32:07] Store: 69$ Store [ID: 31]
+[22:32:07] Store: Bar [ID: 32]
+[22:32:07] Store: Sexy Shop [ID: 33]
+[22:32:07] Building Caricati: 34
+[22:32:07] 
+----------------------------------
+[22:32:07]  Los Santos Cops and Robbers by Code, Edit by Dave
+[22:32:07] ----------------------------------
+
+[22:32:07] Number of vehicle models: 32
+[22:32:07] 
+CREATE TABLE IF NOT EXISTS `Players` (`ID` int(11) auto_increment PRIMARY KEY, `Name` varchar(30), `Password` varchar(128), `Money` int(11), `Bank` int(11), `Admin` int(11), `Skills` varchar(20), `JailTime` int(11), `PremiumTime` int(11), `Premium` int(11),`AccountBanned` int(11), `BanTime` int(11), `Rewards` int(11),`RewardMoney` int(11), `Drug` int(11), `Kills` int(11), `Deaths` int(11), `Gruppo` int(3), `Tickets` int(11),`RegisterDate` int(13),`LastLogin` int(13),`GainRobberies` int(11),`GainVehicleStolen` int(11),`GainWeaponsDealer` int(11))
+
+[22:32:07] 
+CREATE TABLE IF NOT EXISTS `houses` (`ID` int(11) PRIMARY KEY, `OwnerID` int(11), `OwnerName` varchar(26), `Closed` int(1), `X` float, `Y` float, `Z` float, `Xu` float, `Yu` float, `Zu` float, `Interior` int(11),`VirtualWorld` int(11), `Price` int(11))
+
+[22:32:07] 
+CREATE TABLE IF NOT EXISTS `playervehicle` (`ID` int(5) auto_increment PRIMARY KEY, `Slot` int(3), `OwnerID` int(11), `OwnerName` varchar(26), `Model` int(4), `X` float, `Y` float, `Z` float, `A` float, `Color1` int(11), `Color2` int(11), `Closed` int(11), `VehicleMod` varchar(256))
+
+[22:32:07] 
+CREATE TABLE IF NOT EXISTS `payspray` (`ID` int(3) auto_increment PRIMARY KEY , `OwnerID` int(21), `OwnerName` varchar(24), `X` float, `Y` float, `Z` float, `Price` int(11), `Money` int(11))
+
+[22:32:07] 
+CREATE TABLE IF NOT EXISTS `serialbans` (`SerialID` varchar(128) PRIMARY KEY, `AccountBanned` int(11))
+
+[22:32:07] 
+CREATE TABLE IF NOT EXISTS `PlayerStats` (`ID` int(11) PRIMARY KEY, `Name` varchar(24), `GainRobberies` int(11), `GainVehicleStolen` int(11), `GainWeaponsDealer` int(11), `GainDrugsDealer` int(11))
+
+[22:32:07] 
+SELECT * FROM `houses`
+
+[22:32:07] 
+SELECT * FROM `showrooms`
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[11:14:23] 
+[11:14:23] Server Plugins
+[11:14:23] --------------
+[11:14:23]  Loading plugin: tde
+[11:14:23] 
+TDEditor Plugin loaded, thank you for using.
+
+[11:14:23]   Loaded.
+[11:14:23]  Loading plugin: mysql
+[11:14:23]  >> plugin.mysql: R41-2 successfully loaded.
+[11:14:23]   Loaded.
+[11:14:23]  Loading plugin: sscanf
+[11:14:23] 
+
+[11:14:23]  ===============================
+
+[11:14:23]       sscanf plugin loaded.     
+
+[11:14:23]    (c) 2009 Alex "Y_Less" Cole
+
+[11:14:23]    0.3d-R2 500 Players "dnee"
+
+[11:14:23]  ===============================
+
+[11:14:23]   Loaded.
+[11:14:23]  Loading plugin: crashdetect
+[11:14:24]   CrashDetect v4.18.1 is OK.
+[11:14:24]   Loaded.
+[11:14:24]  Loading plugin: streamer
+[11:14:24] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[11:14:24]   Loaded.
+[11:14:24]  Loaded 5 plugins.
+
+[11:14:24] 
+[11:14:24] Filterscripts
+[11:14:24] ---------------
+[11:14:24]   Loading filterscript 'tde.amx'...
+[11:14:26]  
+[11:14:26]  
+[11:14:26]  
+[11:14:26]  
+[11:14:26] ___ __  __
+[11:14:26]  | |  \|_  _|.|_ _  _		
+[11:14:26]  | |__/|__(_|||_(_)|			
+[11:14:26]  
+[11:14:26] TDEditor V1.17 by adri1
+[11:14:26] TDEditor loaded
+[11:14:26]  
+[11:14:26]   Loaded 1 filterscripts.
+
+[11:14:26] AllowAdminTeleport() : function is deprecated. Please see OnPlayerClickMap()
+[11:14:26] 
+----------------------------------
+[11:14:26]   Bare Script
+
+[11:14:26] ----------------------------------
+
+[11:14:26] Number of vehicle models: 0
+[11:15:43] [connection] 192.168.1.105:55864 requests connection cookie.
+[11:15:44] [connection] incoming connection: 192.168.1.105:55864 id: 0
+[11:15:44] [join] Evad96 has joined the server (0:192.168.1.105)
+[11:15:57] [part] Evad96 has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[11:16:10] 
+[11:16:10] Server Plugins
+[11:16:10] --------------
+[11:16:10]  Loading plugin: tde
+[11:16:10] 
+TDEditor Plugin loaded, thank you for using.
+
+[11:16:10]   Loaded.
+[11:16:10]  Loading plugin: mysql
+[11:16:10]  >> plugin.mysql: R41-2 successfully loaded.
+[11:16:10]   Loaded.
+[11:16:10]  Loading plugin: sscanf
+[11:16:10] 
+
+[11:16:10]  ===============================
+
+[11:16:10]       sscanf plugin loaded.     
+
+[11:16:10]    (c) 2009 Alex "Y_Less" Cole
+
+[11:16:10]    0.3d-R2 500 Players "dnee"
+
+[11:16:10]  ===============================
+
+[11:16:10]   Loaded.
+[11:16:10]  Loading plugin: crashdetect
+[11:16:10]   CrashDetect v4.18.1 is OK.
+[11:16:10]   Loaded.
+[11:16:10]  Loading plugin: streamer
+[11:16:10] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[11:16:10]   Loaded.
+[11:16:10]  Loaded 5 plugins.
+
+[11:16:10] 
+[11:16:10] Filterscripts
+[11:16:10] ---------------
+[11:16:10]   Loading filterscript 'tde.amx'...
+[11:16:10]  
+[11:16:10]  
+[11:16:10]  
+[11:16:10]  
+[11:16:10] ___ __  __
+[11:16:10]  | |  \|_  _|.|_ _  _		
+[11:16:10]  | |__/|__(_|||_(_)|			
+[11:16:10]  
+[11:16:10] TDEditor V1.17 by adri1
+[11:16:10] TDEditor loaded
+[11:16:10]  
+[11:16:10]   Loaded 1 filterscripts.
+
+[11:16:10] AllowAdminTeleport() : function is deprecated. Please see OnPlayerClickMap()
+[11:16:10] 
+----------------------------------
+[11:16:10]   MDC Script
+
+[11:16:10] ----------------------------------
+
+[11:16:10] Number of vehicle models: 0
+[11:16:28] [connection] 192.168.1.105:55865 requests connection cookie.
+[11:16:29] [connection] incoming connection: 192.168.1.105:55865 id: 0
+[11:16:29] [join] Evad96 has joined the server (0:192.168.1.105)
+[11:17:48] [part] Evad96 has left the server (0:0)
+[11:17:55] [connection] 192.168.1.105:57219 requests connection cookie.
+[11:17:57] [connection] incoming connection: 192.168.1.105:57219 id: 0
+[11:17:57] [join] Evad96 has joined the server (0:192.168.1.105)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[11:18:26] 
+[11:18:26] Server Plugins
+[11:18:26] --------------
+[11:18:26]  Loading plugin: tde
+[11:18:26] 
+TDEditor Plugin loaded, thank you for using.
+
+[11:18:26]   Loaded.
+[11:18:26]  Loading plugin: mysql
+[11:18:26]  >> plugin.mysql: R41-2 successfully loaded.
+[11:18:26]   Loaded.
+[11:18:26]  Loading plugin: sscanf
+[11:18:26] 
+
+[11:18:26]  ===============================
+
+[11:18:26]       sscanf plugin loaded.     
+
+[11:18:26]    (c) 2009 Alex "Y_Less" Cole
+
+[11:18:26]    0.3d-R2 500 Players "dnee"
+
+[11:18:26]  ===============================
+
+[11:18:26]   Loaded.
+[11:18:26]  Loading plugin: crashdetect
+[11:18:26]   CrashDetect v4.18.1 is OK.
+[11:18:26]   Loaded.
+[11:18:26]  Loading plugin: streamer
+[11:18:26] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[11:18:26]   Loaded.
+[11:18:26]  Loaded 5 plugins.
+
+[11:18:26] 
+[11:18:26] Filterscripts
+[11:18:26] ---------------
+[11:18:26]   Loading filterscript 'tde.amx'...
+[11:18:27]  
+[11:18:27]  
+[11:18:27]  
+[11:18:27]  
+[11:18:27] ___ __  __
+[11:18:27]  | |  \|_  _|.|_ _  _		
+[11:18:27]  | |__/|__(_|||_(_)|			
+[11:18:27]  
+[11:18:27] TDEditor V1.17 by adri1
+[11:18:27] TDEditor loaded
+[11:18:27]  
+[11:18:27]   Loaded 1 filterscripts.
+
+[11:18:27] AllowAdminTeleport() : function is deprecated. Please see OnPlayerClickMap()
+[11:18:27] 
+----------------------------------
+[11:18:27]   MDC Script
+
+[11:18:27] ----------------------------------
+
+[11:18:27] Number of vehicle models: 0
+[11:18:44] [connection] 192.168.1.105:57221 requests connection cookie.
+[11:18:45] [connection] incoming connection: 192.168.1.105:57221 id: 0
+[11:18:45] [join] Evad96 has joined the server (0:192.168.1.105)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[11:19:02] 
+[11:19:02] Server Plugins
+[11:19:02] --------------
+[11:19:02]  Loading plugin: tde
+[11:19:02] 
+TDEditor Plugin loaded, thank you for using.
+
+[11:19:02]   Loaded.
+[11:19:02]  Loading plugin: mysql
+[11:19:02]  >> plugin.mysql: R41-2 successfully loaded.
+[11:19:02]   Loaded.
+[11:19:02]  Loading plugin: sscanf
+[11:19:02] 
+
+[11:19:02]  ===============================
+
+[11:19:02]       sscanf plugin loaded.     
+
+[11:19:02]    (c) 2009 Alex "Y_Less" Cole
+
+[11:19:02]    0.3d-R2 500 Players "dnee"
+
+[11:19:02]  ===============================
+
+[11:19:02]   Loaded.
+[11:19:02]  Loading plugin: crashdetect
+[11:19:02]   CrashDetect v4.18.1 is OK.
+[11:19:02]   Loaded.
+[11:19:02]  Loading plugin: streamer
+[11:19:02] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[11:19:02]   Loaded.
+[11:19:02]  Loaded 5 plugins.
+
+[11:19:03] 
+[11:19:03] Filterscripts
+[11:19:03] ---------------
+[11:19:03]   Loading filterscript 'tde.amx'...
+[11:19:03]  
+[11:19:03]  
+[11:19:03]  
+[11:19:03]  
+[11:19:03] ___ __  __
+[11:19:03]  | |  \|_  _|.|_ _  _		
+[11:19:03]  | |__/|__(_|||_(_)|			
+[11:19:03]  
+[11:19:03] TDEditor V1.17 by adri1
+[11:19:03] TDEditor loaded
+[11:19:03]  
+[11:19:03]   Loaded 1 filterscripts.
+
+[11:19:03] AllowAdminTeleport() : function is deprecated. Please see OnPlayerClickMap()
+[11:19:03] 
+----------------------------------
+[11:19:03]   MDC Script
+
+[11:19:03] ----------------------------------
+
+[11:19:03] Number of vehicle models: 0
+[11:19:20] [connection] 192.168.1.105:57222 requests connection cookie.
+[11:19:21] [connection] incoming connection: 192.168.1.105:57222 id: 0
+[11:19:22] [join] Evad96 has joined the server (0:192.168.1.105)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[11:20:01] 
+[11:20:01] Server Plugins
+[11:20:01] --------------
+[11:20:01]  Loading plugin: tde
+[11:20:01] 
+TDEditor Plugin loaded, thank you for using.
+
+[11:20:01]   Loaded.
+[11:20:01]  Loading plugin: mysql
+[11:20:01]  >> plugin.mysql: R41-2 successfully loaded.
+[11:20:01]   Loaded.
+[11:20:01]  Loading plugin: sscanf
+[11:20:01] 
+
+[11:20:01]  ===============================
+
+[11:20:01]       sscanf plugin loaded.     
+
+[11:20:01]    (c) 2009 Alex "Y_Less" Cole
+
+[11:20:01]    0.3d-R2 500 Players "dnee"
+
+[11:20:01]  ===============================
+
+[11:20:01]   Loaded.
+[11:20:01]  Loading plugin: crashdetect
+[11:20:01]   CrashDetect v4.18.1 is OK.
+[11:20:01]   Loaded.
+[11:20:01]  Loading plugin: streamer
+[11:20:01] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[11:20:01]   Loaded.
+[11:20:01]  Loaded 5 plugins.
+
+[11:20:02] 
+[11:20:02] Filterscripts
+[11:20:02] ---------------
+[11:20:02]   Loading filterscript 'tde.amx'...
+[11:20:02]  
+[11:20:02]  
+[11:20:02]  
+[11:20:02]  
+[11:20:02] ___ __  __
+[11:20:02]  | |  \|_  _|.|_ _  _		
+[11:20:02]  | |__/|__(_|||_(_)|			
+[11:20:02]  
+[11:20:02] TDEditor V1.17 by adri1
+[11:20:02] TDEditor loaded
+[11:20:02]  
+[11:20:02]   Loaded 1 filterscripts.
+
+[11:20:02] AllowAdminTeleport() : function is deprecated. Please see OnPlayerClickMap()
+[11:20:02] 
+----------------------------------
+[11:20:02]   MDC Script
+
+[11:20:02] ----------------------------------
+
+[11:20:02] Number of vehicle models: 0
+[11:20:17] [connection] 192.168.1.105:58569 requests connection cookie.
+[11:20:18] [connection] incoming connection: 192.168.1.105:58569 id: 0
+[11:20:19] [join] Evad96 has joined the server (0:192.168.1.105)
+[11:35:51] [part] Evad96 has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:43:27] filterscripts = ""  (string)
+[18:43:27] 
+[18:43:27] Server Plugins
+[18:43:27] --------------
+[18:43:27]  Loading plugin: tde
+[18:43:27] 
+TDEditor Plugin loaded, thank you for using.
+
+[18:43:27]   Loaded.
+[18:43:27]  Loading plugin: mysql
+[18:43:27]  >> plugin.mysql: R41-2 successfully loaded.
+[18:43:27]   Loaded.
+[18:43:27]  Loading plugin: sscanf
+[18:43:27] 
+
+[18:43:27]  ===============================
+
+[18:43:27]       sscanf plugin loaded.     
+
+[18:43:27]    (c) 2009 Alex "Y_Less" Cole
+
+[18:43:27]    0.3d-R2 500 Players "dnee"
+
+[18:43:27]  ===============================
+
+[18:43:27]   Loaded.
+[18:43:27]  Loading plugin: crashdetect
+[18:43:27]   CrashDetect v4.18.1 is OK.
+[18:43:27]   Loaded.
+[18:43:27]  Loading plugin: streamer
+[18:43:28] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[18:43:28]   Loaded.
+[18:43:28]  Loaded 5 plugins.
+
+[18:43:28] 
+[18:43:28] Filterscripts
+[18:43:28] ---------------
+[18:43:28]   Loaded 0 filterscripts.
+
+[18:43:28]  
+[18:43:28]  
+[18:43:28]  
+[18:43:28]  ======================================= 
+[18:43:28]  |                                     | 
+[18:43:28]  |        YSI version 4.00.0001        | 
+[18:43:28]  |        By Alex "Y_Less" Cole        | 
+[18:43:28]  |                                     | 
+[18:43:28]  ======================================= 
+[18:43:28]  
+[18:43:29] 
+----------------------------------
+[18:43:29]   TPDA Script
+
+[18:43:29] ----------------------------------
+
+[18:43:29] Number of vehicle models: 0
+[18:43:56] [connection] 95.252.198.93:56340 requests connection cookie.
+[18:43:57] [connection] incoming connection: 95.252.198.93:56340 id: 0
+[18:43:57] [join] Evad96 has joined the server (0:95.252.198.93)
+[18:44:04] [connection] 151.73.104.43:53880 requests connection cookie.
+[18:44:05] RCON (In-Game): Player #0 (Evad96) has logged in.
+[18:44:05] [connection] incoming connection: 151.73.104.43:53880 id: 1
+[18:44:06] [join] [BoM]Bullock has joined the server (1:151.73.104.43)
+[18:44:12] RCON (In-Game): Player [Evad96] sent command: hostname Luca ha la mamma troia
+[18:44:20] [connection] 93.67.170.114:52317 requests connection cookie.
+[18:44:21] [connection] incoming connection: 93.67.170.114:52317 id: 2
+[18:44:21] [join] [BoM]Clemi2 has joined the server (2:93.67.170.114)
+[18:44:33] RCON (In-Game): Player [Evad96] sent command: loadfs fsdebug
+[18:44:33] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[18:44:33]   * By Simon Campbell *
+  *********************
+[18:44:33]   * Version: 0.5d      *
+  *********************
+[18:44:33]   * -- LOADED         *
+  *********************
+
+[18:44:33]   Filterscript 'fsdebug.amx' loaded.
+[18:56:32] [part] [BoM]Bullock has left the server (1:1)
+[18:58:40] [connection] 151.73.104.43:54141 requests connection cookie.
+[18:58:41] [connection] incoming connection: 151.73.104.43:54141 id: 1
+[18:58:42] [join] [BoM]Bullock has joined the server (1:151.73.104.43)
+[19:03:01] [part] [BoM]Bullock has left the server (1:1)
+[19:14:14] [part] [BoM]Clemi2 has left the server (2:1)
+[19:14:14] [part] Evad96 has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[13:06:31] filterscripts = ""  (string)
+[13:06:31] 
+[13:06:31] Server Plugins
+[13:06:31] --------------
+[13:06:31]  Loading plugin: tde
+[13:06:31] 
+TDEditor Plugin loaded, thank you for using.
+
+[13:06:31]   Loaded.
+[13:06:31]  Loading plugin: mysql
+[13:06:31]  >> plugin.mysql: R41-2 successfully loaded.
+[13:06:31]   Loaded.
+[13:06:31]  Loading plugin: sscanf
+[13:06:31] 
+
+[13:06:31]  ===============================
+
+[13:06:31]       sscanf plugin loaded.     
+
+[13:06:31]    (c) 2009 Alex "Y_Less" Cole
+
+[13:06:31]    0.3d-R2 500 Players "dnee"
+
+[13:06:31]  ===============================
+
+[13:06:31]   Loaded.
+[13:06:31]  Loading plugin: crashdetect
+[13:06:32]   CrashDetect v4.18.1 is OK.
+[13:06:32]   Loaded.
+[13:06:32]  Loading plugin: streamer
+[13:06:32] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[13:06:32]   Loaded.
+[13:06:32]  Loaded 5 plugins.
+
+[13:06:32] 
+[13:06:32] Filterscripts
+[13:06:32] ---------------
+[13:06:32]   Loaded 0 filterscripts.
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[20:03:48] filterscripts = ""  (string)
+[20:03:48] 
+[20:03:48] Server Plugins
+[20:03:48] --------------
+[20:03:48]  Loading plugin: tde
+[20:03:48] 
+TDEditor Plugin loaded, thank you for using.
+
+[20:03:48]   Loaded.
+[20:03:48]  Loading plugin: mysql
+[20:03:48]  >> plugin.mysql: R41-2 successfully loaded.
+[20:03:48]   Loaded.
+[20:03:48]  Loading plugin: sscanf
+[20:03:48] 
+
+[20:03:48]  ===============================
+
+[20:03:48]       sscanf plugin loaded.     
+
+[20:03:48]    (c) 2009 Alex "Y_Less" Cole
+
+[20:03:48]    0.3d-R2 500 Players "dnee"
+
+[20:03:48]  ===============================
+
+[20:03:48]   Loaded.
+[20:03:48]  Loading plugin: crashdetect
+[20:03:49]   CrashDetect v4.18.1 is OK.
+[20:03:49]   Loaded.
+[20:03:49]  Loading plugin: streamer
+[20:03:49] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[20:03:49]   Loaded.
+[20:03:49]  Loaded 5 plugins.
+
+[20:03:49] 
+[20:03:49] Filterscripts
+[20:03:49] ---------------
+[20:03:49]   Loaded 0 filterscripts.
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[20:40:31] filterscripts = ""  (string)
+[20:40:31] 
+[20:40:31] Server Plugins
+[20:40:31] --------------
+[20:40:31]  Loading plugin: tde
+[20:40:31] 
+TDEditor Plugin loaded, thank you for using.
+
+[20:40:31]   Loaded.
+[20:40:31]  Loading plugin: mysql
+[20:40:31]  >> plugin.mysql: R41-2 successfully loaded.
+[20:40:31]   Loaded.
+[20:40:31]  Loading plugin: sscanf
+[20:40:31] 
+
+[20:40:31]  ===============================
+
+[20:40:31]       sscanf plugin loaded.     
+
+[20:40:31]    (c) 2009 Alex "Y_Less" Cole
+
+[20:40:31]    0.3d-R2 500 Players "dnee"
+
+[20:40:31]  ===============================
+
+[20:40:31]   Loaded.
+[20:40:31]  Loading plugin: crashdetect
+[20:40:31]   CrashDetect v4.18.1 is OK.
+[20:40:31]   Loaded.
+[20:40:31]  Loading plugin: streamer
+[20:40:31] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[20:40:31]   Loaded.
+[20:40:31]  Loaded 5 plugins.
+
+[20:40:32] 
+[20:40:32] Filterscripts
+[20:40:32] ---------------
+[20:40:32]   Loaded 0 filterscripts.
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[01:54:29] filterscripts = ""  (string)
+[01:54:29] 
+[01:54:29] Server Plugins
+[01:54:29] --------------
+[01:54:29]  Loading plugin: tde
+[01:54:29] 
+TDEditor Plugin loaded, thank you for using.
+
+[01:54:29]   Loaded.
+[01:54:29]  Loading plugin: mysql
+[01:54:30]  >> plugin.mysql: R41-2 successfully loaded.
+[01:54:30]   Loaded.
+[01:54:30]  Loading plugin: sscanf
+[01:54:30] 
+
+[01:54:30]  ===============================
+
+[01:54:30]       sscanf plugin loaded.     
+
+[01:54:30]    (c) 2009 Alex "Y_Less" Cole
+
+[01:54:30]    0.3d-R2 500 Players "dnee"
+
+[01:54:30]  ===============================
+
+[01:54:30]   Loaded.
+[01:54:30]  Loading plugin: crashdetect
+[01:54:30]   CrashDetect v4.18.1 is OK.
+[01:54:30]   Loaded.
+[01:54:30]  Loading plugin: streamer
+[01:54:30] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[01:54:30]   Loaded.
+[01:54:30]  Loaded 5 plugins.
+
+[01:54:30] 
+[01:54:30] Filterscripts
+[01:54:30] ---------------
+[01:54:30]   Loaded 0 filterscripts.
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[12:42:51] filterscripts = ""  (string)
+[12:42:51] 
+[12:42:51] Server Plugins
+[12:42:51] --------------
+[12:42:51]  Loading plugin: tde
+[12:42:51] 
+TDEditor Plugin loaded, thank you for using.
+
+[12:42:51]   Loaded.
+[12:42:51]  Loading plugin: mysql
+[12:42:51]  >> plugin.mysql: R41-2 successfully loaded.
+[12:42:51]   Loaded.
+[12:42:51]  Loading plugin: sscanf
+[12:42:51] 
+
+[12:42:51]  ===============================
+
+[12:42:51]       sscanf plugin loaded.     
+
+[12:42:51]    (c) 2009 Alex "Y_Less" Cole
+
+[12:42:51]    0.3d-R2 500 Players "dnee"
+
+[12:42:51]  ===============================
+
+[12:42:51]   Loaded.
+[12:42:51]  Loading plugin: crashdetect
+[12:42:51]   CrashDetect v4.18.1 is OK.
+[12:42:51]   Loaded.
+[12:42:51]  Loading plugin: streamer
+[12:42:51] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[12:42:51]   Loaded.
+[12:42:51]  Loaded 5 plugins.
+
+[12:42:51] 
+[12:42:51] Filterscripts
+[12:42:51] ---------------
+[12:42:51]   Loaded 0 filterscripts.
+
+[12:42:54]  
+[12:42:54]  
+[12:42:54]  
+[12:42:54]  ======================================= 
+[12:42:54]  |                                     | 
+[12:42:54]  |        YSI version 4.00.0001        | 
+[12:42:54]  |        By Alex "Y_Less" Cole        | 
+[12:42:54]  |                                     | 
+[12:42:54]  ======================================= 
+[12:42:54]  
+[12:42:55] 
+----------------------------------
+[12:42:55]   TPDA Script
+
+[12:42:55] ----------------------------------
+
+[12:42:55] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[12:54:19] filterscripts = ""  (string)
+[12:54:19] 
+[12:54:19] Server Plugins
+[12:54:19] --------------
+[12:54:19]  Loading plugin: tde
+[12:54:19] 
+TDEditor Plugin loaded, thank you for using.
+
+[12:54:19]   Loaded.
+[12:54:19]  Loading plugin: mysql
+[12:54:19]  >> plugin.mysql: R41-2 successfully loaded.
+[12:54:19]   Loaded.
+[12:54:19]  Loading plugin: sscanf
+[12:54:19] 
+
+[12:54:19]  ===============================
+
+[12:54:19]       sscanf plugin loaded.     
+
+[12:54:19]    (c) 2009 Alex "Y_Less" Cole
+
+[12:54:19]    0.3d-R2 500 Players "dnee"
+
+[12:54:19]  ===============================
+
+[12:54:19]   Loaded.
+[12:54:19]  Loading plugin: crashdetect
+[12:54:19]   CrashDetect v4.18.1 is OK.
+[12:54:19]   Loaded.
+[12:54:19]  Loading plugin: streamer
+[12:54:19] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[12:54:19]   Loaded.
+[12:54:19]  Loaded 5 plugins.
+
+[12:54:19] 
+[12:54:19] Filterscripts
+[12:54:19] ---------------
+[12:54:19]   Loaded 0 filterscripts.
+
+[12:54:19]  
+[12:54:19]  
+[12:54:19]  
+[12:54:19]  ======================================= 
+[12:54:19]  |                                     | 
+[12:54:19]  |        YSI version 4.00.0001        | 
+[12:54:19]  |        By Alex "Y_Less" Cole        | 
+[12:54:19]  |                                     | 
+[12:54:19]  ======================================= 
+[12:54:19]  
+[12:54:20] 
+----------------------------------
+[12:54:20]   TPDA Script
+
+[12:54:20] ----------------------------------
+
+[12:54:20] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[16:09:29] filterscripts = ""  (string)
+[16:09:29] 
+[16:09:29] Server Plugins
+[16:09:29] --------------
+[16:09:29]  Loading plugin: tde
+[16:09:29] 
+TDEditor Plugin loaded, thank you for using.
+
+[16:09:29]   Loaded.
+[16:09:29]  Loading plugin: mysql
+[16:09:29]  >> plugin.mysql: R41-2 successfully loaded.
+[16:09:29]   Loaded.
+[16:09:29]  Loading plugin: sscanf
+[16:09:29] 
+
+[16:09:29]  ===============================
+
+[16:09:29]       sscanf plugin loaded.     
+
+[16:09:29]    (c) 2009 Alex "Y_Less" Cole
+
+[16:09:29]    0.3d-R2 500 Players "dnee"
+
+[16:09:29]  ===============================
+
+[16:09:29]   Loaded.
+[16:09:29]  Loading plugin: crashdetect
+[16:09:29]   CrashDetect v4.18.1 is OK.
+[16:09:29]   Loaded.
+[16:09:29]  Loading plugin: streamer
+[16:09:29] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[16:09:29]   Loaded.
+[16:09:29]  Loaded 5 plugins.
+
+[16:09:29] 
+[16:09:29] Filterscripts
+[16:09:29] ---------------
+[16:09:29]   Loaded 0 filterscripts.
+
+[16:09:30]  
+[16:09:30]  
+[16:09:30]  
+[16:09:30]  ======================================= 
+[16:09:30]  |                                     | 
+[16:09:30]  |        YSI version 4.00.0001        | 
+[16:09:30]  |        By Alex "Y_Less" Cole        | 
+[16:09:30]  |                                     | 
+[16:09:30]  ======================================= 
+[16:09:30]  
+[16:09:31] 
+----------------------------------
+[16:09:31]   TPDA Script
+
+[16:09:31] ----------------------------------
+
+[16:09:31] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:41:56] filterscripts = ""  (string)
+[23:41:56] 
+[23:41:56] Server Plugins
+[23:41:56] --------------
+[23:41:56]  Loading plugin: tde
+[23:41:56] 
+TDEditor Plugin loaded, thank you for using.
+
+[23:41:56]   Loaded.
+[23:41:56]  Loading plugin: mysql
+[23:41:56]  >> plugin.mysql: R41-2 successfully loaded.
+[23:41:56]   Loaded.
+[23:41:56]  Loading plugin: sscanf
+[23:41:56] 
+
+[23:41:56]  ===============================
+
+[23:41:56]       sscanf plugin loaded.     
+
+[23:41:56]    (c) 2009 Alex "Y_Less" Cole
+
+[23:41:56]    0.3d-R2 500 Players "dnee"
+
+[23:41:56]  ===============================
+
+[23:41:56]   Loaded.
+[23:41:56]  Loading plugin: crashdetect
+[23:41:56]   CrashDetect v4.18.1 is OK.
+[23:41:56]   Loaded.
+[23:41:56]  Loading plugin: streamer
+[23:41:56] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[23:41:56]   Loaded.
+[23:41:56]  Loaded 5 plugins.
+
+[23:41:56] 
+[23:41:56] Filterscripts
+[23:41:56] ---------------
+[23:41:56]   Loaded 0 filterscripts.
+
+[23:41:56] foreach called
+[23:42:00] 
+----------------------------------------------
+[23:42:00] [MySQL]: La connessione al database è avvenuta con successo.
+[23:42:00] ------------------------------------------------
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:42:21] filterscripts = ""  (string)
+[23:42:21] 
+[23:42:21] Server Plugins
+[23:42:21] --------------
+[23:42:21]  Loading plugin: tde
+[23:42:21] 
+TDEditor Plugin loaded, thank you for using.
+
+[23:42:21]   Loaded.
+[23:42:21]  Loading plugin: mysql
+[23:42:21]  >> plugin.mysql: R41-2 successfully loaded.
+[23:42:21]   Loaded.
+[23:42:21]  Loading plugin: sscanf
+[23:42:21] 
+
+[23:42:21]  ===============================
+
+[23:42:21]       sscanf plugin loaded.     
+
+[23:42:21]    (c) 2009 Alex "Y_Less" Cole
+
+[23:42:21]    0.3d-R2 500 Players "dnee"
+
+[23:42:21]  ===============================
+
+[23:42:21]   Loaded.
+[23:42:21]  Loading plugin: crashdetect
+[23:42:21]   CrashDetect v4.18.1 is OK.
+[23:42:21]   Loaded.
+[23:42:21]  Loading plugin: streamer
+[23:42:21] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[23:42:21]   Loaded.
+[23:42:21]  Loaded 5 plugins.
+
+[23:42:21] 
+[23:42:21] Filterscripts
+[23:42:21] ---------------
+[23:42:21]   Loaded 0 filterscripts.
+
+[23:42:21] foreach called
+[23:42:25] 
+----------------------------------------------
+[23:42:25] [MySQL]: La connessione al database è avvenuta con successo.
+[23:42:25] ------------------------------------------------
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:43:04] filterscripts = ""  (string)
+[23:43:04] 
+[23:43:04] Server Plugins
+[23:43:04] --------------
+[23:43:04]  Loading plugin: mysql
+[23:43:04]  >> plugin.mysql: R41-2 successfully loaded.
+[23:43:04]   Loaded.
+[23:43:04]  Loading plugin: sscanf
+[23:43:04] 
+
+[23:43:04]  ===============================
+
+[23:43:04]       sscanf plugin loaded.     
+
+[23:43:04]    (c) 2009 Alex "Y_Less" Cole
+
+[23:43:04]    0.3d-R2 500 Players "dnee"
+
+[23:43:04]  ===============================
+
+[23:43:04]   Loaded.
+[23:43:04]  Loading plugin: crashdetect
+[23:43:04]   CrashDetect v4.18.1 is OK.
+[23:43:04]   Loaded.
+[23:43:04]  Loading plugin: streamer
+[23:43:04] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[23:43:04]   Loaded.
+[23:43:04]  Loaded 4 plugins.
+
+[23:43:04] 
+[23:43:04] Filterscripts
+[23:43:04] ---------------
+[23:43:04]   Loaded 0 filterscripts.
+
+[23:43:04] foreach called
+[23:43:08] 
+----------------------------------------------
+[23:43:08] [MySQL]: La connessione al database è avvenuta con successo.
+[23:43:08] ------------------------------------------------

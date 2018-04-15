@@ -20,12 +20,11 @@ Inserire sistema Workshop -> Modifica del veicolo e riparazione
 #include <zcmd>
 #include <sscanf2>
 #include <streamer>
-//#include <mtime>
+#include <easyDialog>
 #include <a_mysql>
 #include <zones>
-#include <spikestrip>
 #include <mapandreas>
-#include <progress>
+#include <spikestrip>
 
 /*	MySql Info	*/
 
@@ -33,10 +32,10 @@ new MySQL:MySQLC;
 
 //ShowPlayerDialog(playerid, DIALOG_BUSINESS_247, DIALOG_STYLE_LIST, "24/7", "Motosega\nColtello\nTirapugni\nMazza da baseball\nPortafoglio", "", "");
 
-#define MySQL_Host "87.98.243.201"
-#define MySQL_User "samp6244"
-#define MySQL_Password "JP,nmBJA~m){m7VS"
-#define MySQL_Database "samp6244_dave"
+#define MySQL_Host "localhost"
+#define MySQL_User "root"
+#define MySQL_Password ""
+#define MySQL_Database "cnr"
 
 #define PRESSED(%0) \
 	(((newkeys & (%0)) == (%0)) && ((oldkeys & (%0)) != (%0)))
@@ -118,24 +117,6 @@ new PlayerBar:NoiseBar[MAX_PLAYERS];
 #define MAX_WALLET_CHANCE 3
 
 #define SERVER_NAME "Atlatis Cops'n'Robbers"
-
-/*			{Dialogs Config}			 */
-
-enum
-{
-	DIALOG_REG, DIALOG_LOGIN, //Reg & Login
-	DIALOG_HOUSE, DIALOG_HOUSE_WITHDRAW, DIALOG_HOUSE_DEPOSIT, //House
-	DIALOG_SHOWROOM, DIALOG_VMENU, DIALOG_VMENU_RESPONSE, DIALOG_VMENU_SELLTO, DIALOG_VMENU_SELLTO_PRICE, DIALOG_VMENU_SELLTO_FINISH, //Showroom & Vehicle
-	DIALOG_AMMU_BUY, DIALOG_AMMU_BUY_PISTOLS, DIALOG_AMMU_BUY_SMGUN, DIALOG_AMMU_BUY_SHOTGUNS, DIALOG_AMMU_BUY_ARMOUR, DIALOG_AMMU_BUY_ASSAULT, DIALOG_AMMU_BUY_UTILITY, //AMMUNATIONS
-	DIALOG_BANK, DIALOG_BANK_WITHDRAW, DIALOG_BANK_DEPOSIT,
-	DIALOG_BUY_DRUG,
-	DIALOG_POLICE_WEAPONS, DIALOG_POLICE_ELEVATOR, //Con Tickets
-	DIALOG_WEAPOND_SELL,
-	DIALOG_CHOOSE_WORK,
-	DIALOG_BUSINESS_247,
-	DIALOG_GPS,
-	DIALOG_DEALERBUY
-};
 
 /*	Checkpoint	*/
 new DrugDealerHouseEnter,
@@ -298,26 +279,6 @@ enum ENUM_SKILLS
 };
 new PlayerSkill[MAX_PLAYERS][ENUM_SKILLS];
 
-enum wType
-{
-	ID,
-	Ammo,
-	Price
-};
-
-new WeaponDealerArray[][wType] =
-{
-	{WEAPON_COLT45, 300, 500},
-	{WEAPON_SILENCED,  150, 750},
-	{WEAPON_DEAGLE,  150, 5000},
-	{WEAPON_UZI, 500, 15000},
-	{WEAPON_TEC9, 500, 15000},
-	{WEAPON_MP5, 300, 20000},
-	{WEAPON_AK47, 300, 45000},
-	{WEAPON_M4, 300, 50000},
-	{WEAPON_SATCHEL, 1, 300000}
-};
-
 /*	GlobalVar	*/
 new
 //Admin Vars
@@ -334,6 +295,7 @@ gPlayerAnimLibsPreloaded[MAX_PLAYERS] = false,
 playerLoggedFails[MAX_PLAYERS] = 0,
 bool:RobCommandUsed[MAX_PLAYERS] = false,
 bool:TogPM[MAX_PLAYERS] = false,
+bool:InTutorial[MAX_PLAYERS],
 BuyWeapons
 ;
 
@@ -540,30 +502,6 @@ new Float:RobberyHouseCP[][HOUSE_ROBBERY_INFO] =
 	{5, 1230.5186,-807.4849,1084.0078} //MadDog House
 };
 
-enum HOUSE_ROBBERY_OBJECT
-{
-	robberyHouseName[24],
-	robberyObjectID,
-	robberyHouseMoney
-};
-new HouseRobberyObjects[][HOUSE_ROBBERY_OBJECT] =
-{
-	{"Televisore", 1752, 3000},
-	{"Televisore", 1518, 2000},
-	{"Televisore", 1747, 1400},
-	{"Televisore", 1429, 1000},//Ghetto TV
-	{"Registratore", 1783, 2000},
-	{"Lettore DVD", 1785, 2000},
-	{"VHS Player", 1790, 3000},
-	{"Casse", 1840, 1000},
-	{"Impianto HiFi", 2103, 3200},
-	{"Vaso Antico", 14705, 1240},
-	{"Stereo", 2226, 952},
-	{"StopStation 2", 2028, 1200},
-	{"FakeBox 2", 2028, 1200},
-	{"Riviste", 2855, 100}
-
-};
 new BoxvilleCheckpoint[MAX_PLAYERS] = -1;
 new BoxvilleVehicle[3];
 new bool:PlayerRobbingHouse[MAX_PLAYERS] = false;
@@ -640,16 +578,20 @@ new publicVehicles[] =
 #define MAX_CARS 16
 
 new
-ShowroomPickup[MAX_SHOWROOM],
-ShowroomName[MAX_SHOWROOM][32],
-Float:ShowroomPickupPos[MAX_SHOWROOM][3],
-showroom_Car[MAX_PLAYERS],
-bool:playerBuyingVehicle[MAX_PLAYERS],
-vehicleColor1[MAX_PLAYERS],
-vehicleColor2[MAX_PLAYERS],
-createdShowrooms,
-showroomvehs[MAX_SHOWROOM]
-;
+	ShowroomPickup[MAX_SHOWROOM],
+	ShowroomName[MAX_SHOWROOM][32],
+	Float:ShowroomPickupPos[MAX_SHOWROOM][3],
+	Float:ShowroomVSpawn[MAX_SHOWROOM][4],
+	ShowroomOwner[MAX_SHOWROOM],
+	ShowroomPrice[MAX_SHOWROOM],
+	ShowroomOwnerID[MAX_SHOWROOM],
+	ShowroomMoney[MAX_SHOWROOM],
+	showroom_Car[MAX_PLAYERS],
+	bool:playerBuyingVehicle[MAX_PLAYERS],
+	vehicleColor1[MAX_PLAYERS],
+	vehicleColor2[MAX_PLAYERS],
+	createdShowrooms,
+	showroomvehs[MAX_SHOWROOM];
 
 enum sveh
 {
@@ -972,7 +914,7 @@ public Timer_OnPlayerConnect(playerid)
 	SendClientMessage(playerid, -1, string);
 	format(string, sizeof(string), "Righe Gamemode: %d - Creata da Coda, Edit by Dave", RIGHE_GAMEMODE);
 	SendClientMessage(playerid, -1, string);
-	mysql_format(MySQLC, query, sizeof query, "SELECT * FROM `Players` WHERE `Name` = '%e'", PlayerInfo[playerid][playerName]);
+	mysql_format(MySQLC, query, sizeof query, "SELECT * FROM `accounts` WHERE `Name` = '%e'", PlayerInfo[playerid][playerName]);
 	mysql_tquery(MySQLC, query, "FirstLoadPlayer","d",playerid);
 	PlayerInfo[playerid][playerWeapAllowed] = true;
 	return 1;
@@ -985,12 +927,12 @@ public FirstLoadPlayer(playerid)
 	if(cout)
 	{
 		format(string,sizeof(string), ""EMB_WHITE"Benvenuto su "EMB_GREEN"%s"EMB_WHITE"\nInserisci la tua password per loggarti",SERVER_NAME);
-		ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Login", string, "Login", "Annulla");
+		Dialog_Show(playerid, LoginDialog, DIALOG_STYLE_PASSWORD, "Login", string, "Login", "Annulla");
 	}
 	else
 	{
 		format(string,sizeof(string), ""EMB_WHITE"Benvenuto su "EMB_GREEN"%s"EMB_WHITE"\nInserisci la tua password per registrarti", SERVER_NAME);
-		ShowPlayerDialog(playerid, DIALOG_REG, DIALOG_STYLE_PASSWORD, "Registrazione", string, "Registrati", "Annulla");
+		Dialog_Show(playerid, RegisterDialog, DIALOG_STYLE_PASSWORD, "Registrazione", string, "Registrati", "Annulla");
 	}
 	return 1;
 }
@@ -1005,8 +947,9 @@ public OnQueryError(errorid, const error[], const callback[], const query[], MyS
 		}
 		case ER_SYNTAX_ERROR:
 		{
-			printf("Something is wrong in your syntax, query: %s",query);
+			printf("Something is wrong in your syntax, query: \n%s\n",query);
 		}
+		default: printf("\n%s\n",query);
 	}
 	return 1;
 }
@@ -1114,7 +1057,6 @@ public SetPlayerSpawn(playerid)
 		SetPlayerColor(playerid, COLOR_WHITE);
 		SetPlayerInterior(playerid, 0);
 		SetPlayerVirtualWorld(playerid, 0);
-		ShowPlayerDialog(playerid, DIALOG_CHOOSE_WORK, DIALOG_STYLE_LIST, "Lavori", "N/A\nTrafficante d'Armi\nSpacciatore di Droga\n", "Continua", "Annulla");
 	}
 	if(PlayerInfo[playerid][playerJailTime] > 0)
 	{
@@ -1143,9 +1085,17 @@ public SetPlayerSpawn(playerid)
 	SetPlayerHealth(playerid, 99.0);
 	PlayerInfo[playerid][playerDead] = false;
 	PlayerTextDrawHide(playerid, WantedLevelText[playerid]);
+	if(InTutorial[playerid])
+	{
+		SetupPlayerForTutorial(playerid);
+	}
 	return 1;
 }
 
+SetupPlayerForTutorial(playerid)
+{
+	return 1;
+}
 
 public OnPlayerDisconnect(playerid, reason)
 {
@@ -1176,11 +1126,11 @@ public OnPlayerDisconnect(playerid, reason)
 	reasonname[10];
 	switch(reason)
 	{
-		case 0: reasonname = "Crash";
-		case 1: reasonname = "Uscito";
-		case 2: reasonname = "Kick";
+		case 0: reasonname = " [Crash]";
+		case 1: reasonname = "";
+		case 2: reasonname = " [Kick]";
 	}
-	format(string, sizeof(string), "%s[%d] e' uscito dal server. [%s]", PlayerInfo[playerid][playerName], playerid, reasonname);
+	format(string, sizeof(string), "%s[%d] e' uscito dal server.%s", PlayerInfo[playerid][playerName], playerid, reasonname);
 	SendClientMessageToAll(COLOR_GREY, string);
 	PlayerInfo[playerid][playerLogged] = false;
 	ClearPlayerVariables(playerid);
@@ -1411,7 +1361,7 @@ CMD:pc(playerid, params[])
 		"EMB_DARKRED" ROSSO SCURO: L'attuale Most Wanted. All'uccisione di quest'ultimo si riceve un bonus in soldi (solo i poliziotti).\n\
 		"EMB_WHITE" Per maggiori informazioni visita il sito: lscnr.it");
 
-	ShowPlayerDialog(playerid, 999, DIALOG_STYLE_MSGBOX, "Colori", pcstring, "Chiudi", "");
+	Dialog_Show(playerid, DialogPCColors, DIALOG_STYLE_MSGBOX, "Colori", pcstring, "Chiudi", "");
 	return 1;
 }
 
@@ -1463,8 +1413,8 @@ CMD:taglie(playerid, params[])
 		strcat(finalstring, string, sizeof(finalstring));
 		count ++;
 	}
-	if(count == 0)return ShowPlayerDialog(playerid, 999, DIALOG_STYLE_MSGBOX, "Taglie", "Non ci sono taglie al momento!", "Chiudi", "");
-	ShowPlayerDialog(playerid, 999, DIALOG_STYLE_MSGBOX, "Taglie", finalstring, "Chiudi", "");
+	if(count == 0) return Dialog_Show(playerid, DialogBounty, DIALOG_STYLE_MSGBOX, "Taglie", "Non ci sono taglie al momento!", "Chiudi", "");
+	Dialog_Show(playerid, DialogBounty, DIALOG_STYLE_MSGBOX, "Taglie", finalstring, "Chiudi", "");
 	return 1;
 }
 
@@ -2091,7 +2041,7 @@ public OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)
 			if(GetVehicleModel(vehicleid) == ShowroomVehicle[sid][i][sModel]) cid = i;
 		}
 		format(string,sizeof(string), "Informazioni Veicolo:\n\nNome: %s \nCosto: %s\nVenditore: %s\n\nVuoi effettuare l'acquisto?", GetVehicleName(GetVehicleModel(vehicleid)), ConvertPrice(ShowroomVehicle[sid][cid][sPrice]), ShowroomName[sid]);
-		ShowPlayerDialog(playerid, DIALOG_DEALERBUY, DIALOG_STYLE_MSGBOX, "Acquisto", string, "Conferma", "Annulla");
+		Dialog_Show(playerid, DialogVehicleBuy, DIALOG_STYLE_MSGBOX, "Acquisto", string, "Conferma", "Annulla");
 		return 1;
 	}
 	return 1;
@@ -2240,7 +2190,7 @@ public OnPlayerEnterDynamicCP(playerid, checkpointid)
 				ARMOUR_TICKET, MEDIKIT_TICKET);
 			new ticks[20+12];
 			format(ticks, sizeof ticks, "Armeria (Ticket: %d)", PlayerInfo[playerid][playerTickets]);
-			ShowPlayerDialog(playerid, DIALOG_POLICE_WEAPONS, DIALOG_STYLE_LIST, ticks, ticketstring, "Compra", "Annulla");
+			Dialog_Show(playerid, DialogPoliceWeapons, DIALOG_STYLE_LIST, ticks, ticketstring, "Compra", "Annulla");
 			return 1;
 		}
 	}
@@ -2258,7 +2208,7 @@ public OnPlayerEnterDynamicCP(playerid, checkpointid)
 	{
 		if(!IsPlayerInAnyVehicle(playerid) && GetPlayerState(playerid) == PLAYER_STATE_ONFOOT)
 		{
-			ShowPlayerDialog(playerid, 999, DIALOG_STYLE_MSGBOX, "Sfascio", "Ricorda:\nPuoi rubare i veicoli dei giocatori per portarli qui guadagnando il 20% del costo del veicolo!", "Okay", "");
+			Dialog_Show(playerid, DialogRobberyCP, DIALOG_STYLE_MSGBOX, "Sfascio", "Ricorda:\nPuoi rubare i veicoli dei giocatori per portarli qui guadagnando il 20% del costo del veicolo!", "Okay", "");
 			return 1;
 		}
 		else if(IsPlayerInAnyVehicle(playerid) && GetPlayerState(playerid) == PLAYER_STATE_DRIVER)
@@ -2315,7 +2265,7 @@ public OnPlayerEnterDynamicCP(playerid, checkpointid)
 	}
 	if(checkpointid == DrugDealerHouseDrug)
 	{
-		return ShowPlayerDialog(playerid, DIALOG_BUY_DRUG, DIALOG_STYLE_LIST, "Droga", "1g		"EMB_DOLLARGREEN"$1.000"EMB_WHITE"\n10g		"EMB_DOLLARGREEN"$10.000"EMB_WHITE"\n15g		"EMB_DOLLARGREEN"$15.000"EMB_WHITE"\
+		return Dialog_Show(playerid, DialogBuyDrug, DIALOG_STYLE_LIST, "Droga", "1g		"EMB_DOLLARGREEN"$1.000"EMB_WHITE"\n10g		"EMB_DOLLARGREEN"$10.000"EMB_WHITE"\n15g		"EMB_DOLLARGREEN"$15.000"EMB_WHITE"\
 			\n20g		"EMB_DOLLARGREEN"$20.000"EMB_WHITE, "Avanti", "Esci");
 	}
 	if(checkpointid == BankEnter && !IsPlayerInAnyVehicle(playerid))
@@ -2346,11 +2296,11 @@ public OnPlayerEnterDynamicCP(playerid, checkpointid)
 	}
 	if(checkpointid == BankAction)
 	{
-		return ShowPlayerDialog(playerid, DIALOG_BANK, DIALOG_STYLE_LIST, "Banca","Ritira Soldi\nDeposita Soldi\nBilancio Bancario", "Continua","Chiudi");
+		return Dialog_Show(playerid, DialogBank, DIALOG_STYLE_LIST, "Banca","Ritira Soldi\nDeposita Soldi\nBilancio Bancario", "Continua","Chiudi");
 	}
 	if(checkpointid == BuyWeapons)
 	{
-		return ShowPlayerDialog(playerid, DIALOG_AMMU_BUY, DIALOG_STYLE_LIST, "Ammunation", "Pistole\nSMG\nShotguns\nArmatura\nAssalti\nUtilita'", "Avanti", "Chiudi");
+		return Dialog_Show(playerid, DialogAmmu, DIALOG_STYLE_LIST, "Ammunation", "Pistole\nSMG\nShotguns\nArmatura\nAssalti\nUtilita'", "Avanti", "Chiudi");
 	}
 	if(checkpointid == CS_PickMoneyCP)
 	{
@@ -2753,15 +2703,15 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 		{
 			if(IsPlayerInRangeOfPoint(playerid, 3.0, 1568.5887,-1689.9709+3,6.2188))
 			{
-				return ShowPlayerDialog(playerid, DIALOG_POLICE_ELEVATOR, DIALOG_STYLE_LIST, "Ascensore (Parcheggio)", EMB_YELLOW"Parcheggio\n"EMB_WHITE"Stazione di Polizia\nTetto", "Continua", "Annulla");
+				return Dialog_Show(playerid, DialogPDElevator, DIALOG_STYLE_LIST, "Ascensore (Parcheggio)", EMB_YELLOW"Parcheggio\n"EMB_WHITE"Stazione di Polizia\nTetto", "Continua", "Annulla");
 			}
 			if(IsPlayerInRangeOfPoint(playerid, 3.0, 1565.0767,-1667.0001+3,28.3956))
 			{
-				return ShowPlayerDialog(playerid, DIALOG_POLICE_ELEVATOR, DIALOG_STYLE_LIST, "Ascensore (Stazione di Polizia)", "Parcheggio\n"EMB_YELLOW"Stazione di Polizia\n"EMB_WHITE"Tetto", "Continua", "Annulla");
+				return Dialog_Show(playerid, DialogPDElevator, DIALOG_STYLE_LIST, "Ascensore (Stazione di Polizia)", "Parcheggio\n"EMB_YELLOW"Stazione di Polizia\n"EMB_WHITE"Tetto", "Continua", "Annulla");
 			}
 			if(IsPlayerInRangeOfPoint(playerid, 3.0, 242.2487,66.3135+3,1003.6406))
 			{
-				return ShowPlayerDialog(playerid, DIALOG_POLICE_ELEVATOR, DIALOG_STYLE_LIST, "Ascensore (Tetto)", "Parcheggio\nStazione di Polizia\n"EMB_YELLOW"Tetto", "Continua", "Annulla");
+				return Dialog_Show(playerid, DialogPDElevator, DIALOG_STYLE_LIST, "Ascensore (Tetto)", "Parcheggio\nStazione di Polizia\n"EMB_YELLOW"Tetto", "Continua", "Annulla");
 			}
 		}
 		if(IsPlayerInRangeOfPoint(playerid, 3.0, 1555.3945, -1675.6084, 16.1953))
@@ -2857,132 +2807,53 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				return 1;
 			}
 		}
-		/**/
-	}// End KEY_SECONDARY_ATTACK
-	if(PRESSED(KEY_YES) && !IsPlayerInAnyVehicle(playerid))
-	{
-		if(GetPlayerHouseID(playerid) != NO_HOUSE)
+		/*robberySystem*/
+		if(IsPlayerInDynamicCP(playerid, CS_CheckRobbery))
 		{
-			if(IsPlayerInDynamicCP(playerid, HouseInfo[GetPlayerHouseID(playerid)][hRobberyCP]))
+			if(PlayerInfo[playerid][playerTeam] == TEAM_POLICE)return SendClientMessage(playerid, COLOR_RED, "I poliziotti non possono rapinare!");
+			if(PlayerInfo[playerid][playerC4] < 2)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza cariche di C4! (Minimo 2 cariche)");
+			new bool:canRob = false, count = 0;
+			foreach(new i : Player)
 			{
-				if(HouseInfo[GetPlayerHouseID(playerid)][hRobbed] == true)return SendClientMessage(playerid, COLOR_RED, "Questa casa e' stata derubata recentemente!");
-				if(GetPlayerHouseID(playerid) == PlayerInfo[playerid][playerHouse])return SendClientMessage(playerid, COLOR_RED, "Non puoi derubare in casa tua!");
-				if(GetVehicleModel(playerLastVehicle[playerid]) != 498)return SendClientMessage(playerid, COLOR_RED, "L'ultimo veicolo utilizzato deve essere un Boxville!");
-				new Float: distance = GetVehicleDistanceFromPoint(playerLastVehicle[playerid], HouseInfo[GetPlayerHouseID(playerid)][hX], HouseInfo[GetPlayerHouseID(playerid)][hY],HouseInfo[GetPlayerHouseID(playerid)][hZ]);
-				if(distance > 35)return SendClientMessage(playerid, COLOR_RED, "Il Boxville e' troppo lontano dalla casa!");
-				HouseInfo[GetPlayerHouseID(playerid)][hRobbed] = true;
-				SetPlayerSpecialAction(playerid, 25);
-				new rdn = random(sizeof(HouseRobberyObjects)), string[128];
-				format(string, sizeof(string), "Hai derubato ''%s'' dal valore di "EMB_DOLLARGREEN"%s", HouseRobberyObjects[rdn][robberyHouseName], ConvertPrice(HouseRobberyObjects[rdn][robberyHouseMoney]));
-				SendClientMessage(playerid, -1, string);
-				SetPlayerAttachedObject(playerid, 0, HouseRobberyObjects[rdn][robberyObjectID], 3);
-				GivePlayerLootMoney(playerid, HouseRobberyObjects[rdn][robberyHouseMoney]);
-				PlayerRobbingHouse[playerid] = true;
-				new Float:X, Float:Y, Float:Z;
-				GetXYBehindOfVehicle(playerLastVehicle[playerid], X,Y, 4.0);
-				if(BoxvilleCheckpoint[playerid] != -1)
+				if(i == playerid)continue;
+				if(PlayerInfo[i][playerLogged] == false)continue;
+				if(PlayerInfo[i][playerTeam] == TEAM_POLICE)
 				{
-					DestroyDynamicCP(BoxvilleCheckpoint[playerid]);
-					BoxvilleCheckpoint[playerid] = -1;
-				}
-				BoxvilleCheckpoint[playerid] = CreateDynamicCP(X, Y, Z+14, 1.5, 0, 0, playerid, 100.0);
-				NoiseBar[playerid] = CreatePlayerProgressBar(playerid, 61.00, 329.00, 55.50, 7.19, -86, 100.0);
-				ShowPlayerProgressBar(playerid, NoiseBar[playerid]);
-				PlayerNoiseTimer[playerid] = SetTimerEx("PlayerNoise", 600, true, "i", playerid);
-				SetTimerEx("ResetHouseRobbable", 3*(60*1000), false, "i", GetPlayerHouseID(playerid));
-				return 1;
-			}
-		}
-		else if(GetPlayerBuildingID(playerid) != NO_BUILDING)
-		{
-			if(BuildingInfo[GetPlayerBuildingID(playerid)][bType] == BUILDING_TYPE_STORE ||BuildingInfo[GetPlayerBuildingID(playerid)][bType] == BUILDING_TYPE_STOREV2)
-			{
-				for(new i = 0; i < sizeof(buyPickupPosition); i++)
-				{
-					if(IsPlayerInRangeOfPoint(playerid, 1.5, buyPickupPosition[i][0], buyPickupPosition[i][1], buyPickupPosition[i][2]))
+					count ++;
+					if(count == 1)
 					{
-						ShowPlayerDialog(playerid, DIALOG_BUSINESS_247, DIALOG_STYLE_LIST, "24/7", "Motosega\nColtello\nTirapugni\nMazza da Baseball\nPortafoglio (Protezione da /ruba)", "Compra", "Annulla");
-						return 1;
+						count = 0;
+						canRob = true;
+						break;
 					}
 				}
 			}
+			if(canRob == false)return SendClientMessage(playerid, COLOR_RED, "Attualmente non ci sono poliziotti online!");
+			if(CS_Robbed == true)return SendClientMessage(playerid, COLOR_RED, "Il Centro Scommesse e' stato rapinato recentemente!");
+			new string[110];
+			format(string, sizeof(string), "Hai piazzato le bombe. Hai %d secondi per allontanarti o rimarrai coinvolto nell'esplosione!", CS_ROBBERY_TIME/1000);
+			SendClientMessage(playerid, COLOR_LIGHTRED, string);
+			Dynamite[0] = CreateDynamicObject(1654, 824.4000200, 9.6000000, 1004.7000100, 0.0000000, 224.0000000, 98.0000000); //object(dynamite) (1)
+			Dynamite[1] = CreateDynamicObject(1654, 824.4000200, 10.6000000, 1004.0999800, 0.0000000, 322.0000000, 85.9980000); //object(dynamite) (2)
+			SetTimer("ExplosionCS", CS_ROBBERY_TIME, false);
+			SetTimer("ResetCSRobbery", 1800000, false);
+			format(string, sizeof(string), "[ATTENZIONE] %s sta tentando di rapinare il Centro Scommesse!", PlayerInfo[playerid][playerName]);
+			SendClientMessageToAll(COLOR_LIGHTRED, string);
+			PlayerInfo[playerid][playerC4] -= 2;
+			GivePlayerWantedLevelEx(playerid, 9, "** Crimine Commesso: Rapina al Centro Scommesse **");
+			CS_Robbed = true;
+			return 1;
 		}
+		//withdraw money from Pay'n'Spray
 	}
-	if(PRESSED(KEY_YES)) //Start KEY_YES
-	{
-		if(!IsPlayerInAnyVehicle(playerid))
-		{
-			//(BuyHouse System)
-			for(new i = 0; i < MAX_HOUSES; i++)
-			{
-				if(HouseInfo[i][hCreated] == false)continue;
-				if(IsPlayerInRangeOfPoint(playerid, 1.5, HouseInfo[i][hX], HouseInfo[i][hY], HouseInfo[i][hZ]))
-				{
-					if(PlayerInfo[playerid][playerHouse] != NO_HOUSE)return SendClientMessage(playerid, COLOR_RED, "Possiedi gia' una casa!");
-					if(HouseInfo[i][hOwned] == true)return SendClientMessage(playerid, COLOR_RED, "Questa casa non e' in vendita!");
-					if(GetPlayerMoneyEx(playerid) < HouseInfo[i][hPrice])return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza soldi!");
-					GivePlayerMoneyEx(playerid, -HouseInfo[i][hPrice]);
-					HouseInfo[i][hOwnerID] = PlayerInfo[playerid][playerID];
-					PlayerInfo[playerid][playerHouse] = i;
-					HouseInfo[i][hOwned] = true;
-					strcpy(HouseInfo[i][OwnerName], PlayerInfo[playerid][playerName], MAX_PLAYER_NAME);
-					new string[128];
-					format(string, 128, "%s (%d)\nPropietario: %s\n%s", GetLocationNameFromCoord(HouseInfo[i][hX], HouseInfo[i][hY], HouseInfo[i][hZ]), i, HouseInfo[i][OwnerName], (HouseInfo[i][hClosed] == 1) ? (EMB_RED"Chiusa"EMB_WHITE):(EMB_GREEN"Aperta"EMB_WHITE));
-					UpdateDynamic3DTextLabelText(HouseInfo[i][hLabel], -1, string);
-					DestroyDynamicMapIcon(HouseInfo[i][hMapIcon]);
-					HouseInfo[i][hMapIcon] = CreateDynamicMapIcon(HouseInfo[i][hX], HouseInfo[i][hY], HouseInfo[i][hZ], 32, -1, -1, -1, -1, 20.0);
-					SaveHouse(i);
-					return 1;
-				}
-			}
-			/*robberySystem*/
-			if(IsPlayerInDynamicCP(playerid, CS_CheckRobbery))
-			{
-				if(PlayerInfo[playerid][playerTeam] == TEAM_POLICE)return SendClientMessage(playerid, COLOR_RED, "I poliziotti non possono rapinare!");
-				if(PlayerInfo[playerid][playerC4] < 2)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza cariche di C4! (Minimo 2 cariche)");
-				new bool:canRob = false, count = 0;
-				foreach(new i : Player)
-				{
-					if(i == playerid)continue;
-					if(PlayerInfo[i][playerLogged] == false)continue;
-					if(PlayerInfo[i][playerTeam] == TEAM_POLICE)
-					{
-						count ++;
-						if(count == 1)
-						{
-							count = 0;
-							canRob = true;
-							break;
-						}
-					}
-				}
-				if(canRob == false)return SendClientMessage(playerid, COLOR_RED, "Attualmente non ci sono poliziotti online!");
-				if(CS_Robbed == true)return SendClientMessage(playerid, COLOR_RED, "Il Centro Scommesse e' stato rapinato recentemente!");
-				new string[110];
-				format(string, sizeof(string), "Hai piazzato le bombe. Hai %d secondi per allontanarti o rimarrai coinvolto nell'esplosione!", CS_ROBBERY_TIME/1000);
-				SendClientMessage(playerid, COLOR_LIGHTRED, string);
-				Dynamite[0] = CreateDynamicObject(1654, 824.4000200, 9.6000000, 1004.7000100, 0.0000000, 224.0000000, 98.0000000); //object(dynamite) (1)
-				Dynamite[1] = CreateDynamicObject(1654, 824.4000200, 10.6000000, 1004.0999800, 0.0000000, 322.0000000, 85.9980000); //object(dynamite) (2)
-				SetTimer("ExplosionCS", CS_ROBBERY_TIME, false);
-				SetTimer("ResetCSRobbery", 1800000, false);
-				format(string, sizeof(string), "[ATTENZIONE] %s sta tentando di rapinare il Centro Scommesse!", PlayerInfo[playerid][playerName]);
-				SendClientMessageToAll(COLOR_LIGHTRED, string);
-				PlayerInfo[playerid][playerC4] -= 2;
-				GivePlayerWantedLevelEx(playerid, 9, "** Crimine Commesso: Rapina al Centro Scommesse **");
-				CS_Robbed = true;
-				return 1;
-			}
-			//withdraw money from Pay'n'Spray
-		}
-	}//End KEY_YES
 	if(PRESSED(KEY_WALK)) //Start KeyWalk
 	{
 		if(PlayerInfo[playerid][playerHouse] != NO_HOUSE && IsPlayerInRangeOfPoint(playerid, 1.0, HouseInfo[ PlayerInfo[playerid][playerHouse] ][hX], HouseInfo[ PlayerInfo[playerid][playerHouse] ][hY], HouseInfo[ PlayerInfo[playerid][playerHouse] ][hZ]))
 		{
-			return ShowPlayerDialog(playerid, DIALOG_HOUSE, DIALOG_STYLE_LIST, "Casa", "Apri/Chiudi Casa\nVendi Casa\nRitira Soldi\nDeposita Soldi", "Okay", "Annulla");
+			return Dialog_Show(playerid, DialogHouse, DIALOG_STYLE_LIST, "Casa", "Apri/Chiudi Casa\nVendi Casa\nRitira Soldi\nDeposita Soldi", "Okay", "Annulla");
 		}
 	}// END KEYWALK
-	/*		Robbery		*/
+		/*		Robbery		*/
 		/*	Buying Car System		*/
 	if(GetPlayerBuildingID(playerid) != NO_BUILDING)
 	{
@@ -3297,7 +3168,7 @@ CMD:gps(playerid, params[])
 		format(string, sizeof(string), "%s\n", GPS_POS[i][gName]);
 		strcat(fstring, string, sizeof(fstring));
 	}
-	ShowPlayerDialog(playerid, DIALOG_GPS, DIALOG_STYLE_LIST, "GPS", fstring, "Continua", "Chiudi");
+	Dialog_Show(playerid, DialogGPS, DIALOG_STYLE_LIST, "GPS", fstring, "Continua", "Chiudi");
 	return 1;
 }
 
@@ -3310,7 +3181,7 @@ CMD:cambiapass(playerid, params[])
 		if(strlen(psw) > 22)return SendClientMessage(playerid, COLOR_GREY, "Password troppo lunga!");
 		SendClientMessage(playerid, COLOR_GREY, "Password cambiata con successo!");
 		new query[128];
-		mysql_format(MySQLC, query, sizeof query, "UPDATE `Players` SET Password = md5('%s') WHERE `Name` = '%s' AND `ID` = '%d'", PlayerInfo[playerid][playerName], PlayerInfo[playerid][playerID]);
+		mysql_format(MySQLC, query, sizeof query, "UPDATE `accounts` SET Password = md5('%s') WHERE `Name` = '%s' AND `ID` = '%d'", PlayerInfo[playerid][playerName], PlayerInfo[playerid][playerID]);
 		mysql_tquery(MySQLC, query);
 	}
 	return 1;
@@ -3429,7 +3300,7 @@ CMD:vmenu(playerid, params[])
 			continue;
 		}
 	}
-	ShowPlayerDialog(playerid, DIALOG_VMENU, DIALOG_STYLE_LIST, "Veicoli", string2, "Seleziona", "Annulla");
+	Dialog_Show(playerid, DialogVMenu, DIALOG_STYLE_LIST, "Veicoli", string2, "Seleziona", "Annulla");
 	return 1;
 }
 
@@ -3566,46 +3437,6 @@ CMD:eject(playerid, params[])
 	return 1;
 }
 
-
-// Work System
-
-CMD:vendiarmi(playerid, params[])
-{
-	if(PlayerInfo[playerid][playerWork] != WORK_WEAPONSD)return SendClientMessage(playerid, COLOR_RED, "Per utilizzare questo comando devi essere un Trafficante d'Armi!");
-	new id;
-	if(sscanf(params, "u",id)) return SendClientMessage(playerid, COLOR_LIGHTRED, "|<  /vendiarmi <playerid/partofname> >|");
-	if(PlayerInfo[id][playerTeam] == TEAM_POLICE)return SendClientMessage(playerid, COLOR_RED, "Non puoi vendere armi ad un poliziotto!");
-	if(id == INVALID_PLAYER_ID)return SendClientMessage(playerid, COLOR_RED, "Il giocatore non e' connesso!");
-	new Float:Pos[3];
-	GetPlayerPos(id, Pos[0], Pos[1], Pos[2]);
-	if(!IsPlayerInRangeOfPoint(playerid, 6.0, Pos[0], Pos[1], Pos[2]))return SendClientMessage(playerid, COLOR_RED, "Il giocatore e' troppo lontano!");
-	new string[128];
-	format(string, sizeof(string), "** %s vuole venderti delle armi. Usa /armi per accettare **", PlayerInfo[playerid][playerName]);
-	SendClientMessage(id, COLOR_LIGHTBLUE, string);
-	format(string, sizeof(string), "** Richiesta inviata a %s **", PlayerInfo[id][playerName]);
-	SendClientMessage(playerid, COLOR_LIGHTBLUE, string);
-	WorkSellerID[id][WORK_WEAPONSD] = playerid;
-	BuyerID[playerid] = id;
-	return 1;
-}
-
-CMD:armi(playerid, params[])
-{
-	if(PlayerInfo[playerid][playerTeam] == TEAM_POLICE)return SendClientMessage(playerid, COLOR_RED, "Non puoi utilizzare questo comando se sei poliziotto!");
-	if(WorkSellerID[playerid][WORK_WEAPONSD] == INVALID_PLAYER_ID)return SendClientMessage(playerid, COLOR_RED, "Non hai nessuna richiesta per comprare armi!");
-	new Float:Pos[3];
-	GetPlayerPos(WorkSellerID[playerid][WORK_WEAPONSD], Pos[0], Pos[1], Pos[2]);
-	if(!IsPlayerInRangeOfPoint(playerid, 6.0, Pos[0], Pos[1], Pos[2]))return SendClientMessage(playerid, COLOR_RED, "Il giocatore e' troppo lontano!");
-	ShowDealerDialog(playerid);
-	new string[128];
-	format(string, sizeof(string), "** %s ha accettato la tua richiesta! **", PlayerInfo[playerid][playerName]);
-	SendClientMessage(WorkSellerID[playerid][WORK_WEAPONSD], COLOR_LIGHTBLUE, string);
-	PlayerSkill[WorkSellerID[playerid][WORK_WEAPONSD]][skillWeaponsD] ++;
-	SavePlayer(playerid);
-	SavePlayer(WorkSellerID[playerid][WORK_WEAPONSD]);
-	return 1;
-}
-
 /* =================================================================== */
 public OnPlayerUpdate(playerid)
 {
@@ -3658,7 +3489,7 @@ public OnPlayerUpdate(playerid)
 			SendClientMessage(playerid, COLOR_GREEN, "** Il tuo Premium e' scaduto! **");
 			DestroyDynamic3DTextLabel(playerPremiumLabel[playerid]);
 			PlayerInfo[playerid][playerPremium] = PLAYER_NO_PREMIUM;
-			mysql_format(MySQLC, string, sizeof(string), "UPDATE `Players` SET PremiumTime = '0', Premium = '0' WHERE `ID` = '%d' AND `Name` = '%s'", PlayerInfo[playerid][playerID], PlayerInfo[playerid][playerName]);
+			mysql_format(MySQLC, string, sizeof(string), "UPDATE `accounts` SET PremiumTime = '0', Premium = '0' WHERE `ID` = '%d' AND `Name` = '%s'", PlayerInfo[playerid][playerID], PlayerInfo[playerid][playerName]);
 			mysql_tquery(MySQLC, string);
 		}
 	}
@@ -3711,893 +3542,808 @@ public OnVehicleStreamOut(vehicleid, forplayerid)
 	return 1;
 }
 
-public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
+Dialog:Dialog247(playerid, response, listitem, inputtext[])
 {
-	switch(dialogid)
+	if(!response)return 0;
+	new string[80];
+	switch(listitem)
 	{
-		case DIALOG_VMENU_SELLTO_FINISH+999:
-		{
-			if(!response)return 0;
-			if(response)return 0;
-		}
-		case DIALOG_BUSINESS_247:
-		{
-			if(!response)return 0;
-			new string[80];
-			switch(listitem)
-			{
 
-				case 0: //Chainsaw
-				{
-					if(GetPlayerMoneyEx(playerid) < CHAINSAW_PRICE)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
-					GivePlayerMoneyEx(playerid, -CHAINSAW_PRICE);
-					format(string, sizeof(string), "Hai comprato una Motosega per %s", ConvertPrice(CHAINSAW_PRICE));
-					SendClientMessage(playerid, COLOR_GREEN, string);
-					GivePlayerWeaponEx(playerid, 9, 1);
-				}
-				case 1: //Knife
-				{
-					if(GetPlayerMoneyEx(playerid) < KNIFE_PRICE)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
-					GivePlayerMoneyEx(playerid, -KNIFE_PRICE);
-					format(string, sizeof(string), "Hai comprato un Coltello per %s", ConvertPrice(KNIFE_PRICE));
-					SendClientMessage(playerid, COLOR_GREEN, string);
-					GivePlayerWeaponEx(playerid, 4, 1);
-				}
-				case 2: //Kane
-				{
-					if(GetPlayerMoneyEx(playerid) < BRASS_PRICE)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
-					GivePlayerMoneyEx(playerid, -BRASS_PRICE);
-					format(string, sizeof(string), "Hai comprato un Tirapugni per %s", ConvertPrice(BRASS_PRICE));
-					SendClientMessage(playerid, COLOR_GREEN, string);
-					GivePlayerWeaponEx(playerid, 1, 1);
-				}
-				case  3: //Baseball
-				{
-					if(GetPlayerMoneyEx(playerid) < BASEBALL_PRICE)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
-					GivePlayerMoneyEx(playerid, -BASEBALL_PRICE);
-					format(string, sizeof(string), "Hai comprato una Mazza da Baseball per %s", ConvertPrice(BASEBALL_PRICE));
-					SendClientMessage(playerid, COLOR_GREEN, string);
-					GivePlayerWeaponEx(playerid, 5, 1);
-				}
-				case  4: //Wallet
-				{
-					if(GetPlayerMoneyEx(playerid) < WALLET_PRICE)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
-					if(PlayerInfo[playerid][playerWallet] == MAX_WALLET_CHANCE)return SendClientMessage(playerid, COLOR_LIGHTRED, "Hai gia' il portafoglio!");
-					GivePlayerMoneyEx(playerid, -WALLET_PRICE);
-					format(string, sizeof(string), "Hai comprato un Portafoglio per %s", ConvertPrice(WALLET_PRICE));
-					SendClientMessage(playerid, COLOR_GREEN, string);
-					PlayerInfo[playerid][playerWallet] = MAX_WALLET_CHANCE;
-				}
-			}
-		}
-		case DIALOG_CHOOSE_WORK:
+		case 0: //Chainsaw
 		{
-			if(!response)
-			{
-				PlayerInfo[playerid][playerWork] = WORK_NOWORK;
-				SendClientMessage(playerid, COLOR_GREEN, "> Non hai scelto nessun lavoro!");
-				return 1;
-			}
-			// ShowPlayerDialog(playerid, DIALOG_CHOOSE_WORK, DIALOG_STYLE_LIST, "Lavori", "N/A\nTrafficante d'Armi\nSpacciatore di Droga\n", "Continua", "Annulla");
-			switch(listitem)
-			{
-				case 0:// N/A
-				{
-					PlayerInfo[playerid][playerWork] = WORK_NOWORK;
-					SendClientMessage(playerid, COLOR_GREEN, "> Non hai scelto nessun lavoro!");
-					GivePlayerWeaponEx(playerid, 1, 1);//Tirapungi
-					GivePlayerWeaponEx(playerid, 22, 100);//9mm
-					GivePlayerWeaponEx(playerid, 25, 30);//Shotgun
-					GivePlayerWeaponEx(playerid, 30, 100);//AK
-
-				}
-				case 1:// Weapons Dealer
-				{
-					PlayerInfo[playerid][playerWork] = WORK_WEAPONSD;
-					SendClientMessage(playerid, COLOR_GREEN, "Lavoro scelto: ''Trafficante d'Armi''.");
-					GivePlayerWeaponEx(playerid, 5, 1);//Baseball
-					GivePlayerWeaponEx(playerid, 24, 50);//Deagle
-					GivePlayerWeaponEx(playerid, 26, 30);//Canne Mozze
-					GivePlayerWeaponEx(playerid, 32, 100);//Tec9
-
-				}
-				case 2://Drugs Dealer
-				{
-					PlayerInfo[playerid][playerWork] = WORK_DRUGSD;
-					SendClientMessage(playerid, COLOR_GREEN, "Lavoro scelto: ''Spacciatore di Droga''.");
-					GivePlayerWeaponEx(playerid, 1, 1);//Tirapungi
-					GivePlayerWeaponEx(playerid, 22, 100);//9mm
-					GivePlayerWeaponEx(playerid, 25, 30);//Shotgun
-					GivePlayerWeaponEx(playerid, 28, 130);//Uzi
-
-				}
-			}
-		}
-		case DIALOG_GPS:
-		{
-			if(!response)return 0;
-			DestroyDynamicRaceCP(gps_Checkpoint[playerid]);
-			gps_Checkpoint[playerid] = CreateDynamicRaceCP(1, GPS_POS[listitem][gX], GPS_POS[listitem][gY], GPS_POS[listitem][gZ], 0,0,0, 4.0, 0, 0, playerid, 99999999.0);
-			UsingGPS[playerid] = true;
-			SendClientMessage(playerid, COLOR_GREEN, "Destinazione impostata. Raggiungi il cerchio rosso!");
-			SendClientMessage(playerid, COLOR_GREEN, "Ricorda che puoi usare di nuovo /gps per rimuovere la destinazione attuale!");
-		}
-		case 999:return 0;
-		case DIALOG_REG:
-		{
-			if(!response)return Kick(playerid);
-			if(strlen(inputtext) < 3 || strlen(inputtext) > 24)return ShowPlayerDialog(playerid, DIALOG_REG, DIALOG_STYLE_PASSWORD, "Registrazione", "{FF0000}Password troppo corta o troppo lunga.\n{FFFFFF}Inserisci una password per registrarti", "Registrami!", "Esci");
-			new query[450], name[MAX_PLAYER_NAME];
-			GetPlayerName(playerid, name, MAX_PLAYER_NAME);
-			mysql_format(MySQLC, query, sizeof query, "INSERT INTO `Accounts` (`Name`, `Password`, `Money`, `Bank`, `Admin`, `JailTime`, `PremiumTime`, `AccountBanned`, `Skills`, `BanTime`, `Rewards`, `RewardMoney`, `Drug`, `Kills`, `Deaths`, `Premium`, `RegisterDate`, `LastLogin`) \
-				VALUES('%s',md5('%s'), 20000, 0, 0, 0, 0, 0, 'asd.', 0, 0, 0, 0, 0, 0, 0, '%s', '%s')",
-				name, inputtext, getdate(), gettime());
-			mysql_tquery(MySQLC, query, "RegisterPlayerAccount", "d", playerid);
-			ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Login", "Adesso che sei registrato inserisci la tua password per loggare!", "Login!", "Esci");
-		}
-		case DIALOG_LOGIN:
-		{
-			if(!response)return Kick(playerid);
-			new query[256];
-			mysql_format(MySQLC, query, sizeof(query), "SELECT * FROM `Players` WHERE `Name` = '%s' AND `Password` = md5('%s') LIMIT 2", PlayerInfo[playerid][playerName], inputtext);
-			mysql_tquery(MySQLC, query, "LoginPlayer","d",playerid);
-		}
-		case DIALOG_HOUSE:
-		{
-			if(!response)return 0;
-			switch(listitem)
-			{
-				case 0: //Apri/Chiudi
-				{
-					if(PlayerInfo[playerid][playerHouse] == NO_HOUSE)return 0;
-					new i = PlayerInfo[playerid][playerHouse];
-					if(HouseInfo[i][hClosed] == 0)
-					{
-						SendClientMessage(playerid, COLOR_GREEN, "Hai chiuso la casa!");
-						HouseInfo[i][hClosed] = 1;
-						new string[128];
-						format(string, 128, "%s (%d)\nProprietario: %s\n"EMB_RED"Chiusa", GetLocationNameFromCoord(HouseInfo[i][hX], HouseInfo[i][hY], HouseInfo[i][hZ]), i, HouseInfo[i][OwnerName]);
-						UpdateDynamic3DTextLabelText(HouseInfo[i][hLabel], -1, string);
-						SaveHouse(i);
-					}
-					else if(HouseInfo[i][hClosed] == 1)
-					{
-						SendClientMessage(playerid, COLOR_GREEN, "Hai aperto la casa!");
-						HouseInfo[i][hClosed] = 0;
-						new string[128];
-						format(string, 128, "%s (%d)\nProprietario: %s\n"EMB_GREEN"Aperta", GetLocationNameFromCoord(HouseInfo[i][hX], HouseInfo[i][hY], HouseInfo[i][hZ]), i, HouseInfo[i][OwnerName]);
-						UpdateDynamic3DTextLabelText(HouseInfo[i][hLabel], -1, string);
-						SaveHouse(i);
-					}
-					return 1;
-				}
-				case 1:// Vendi
-				{
-					new i = PlayerInfo[playerid][playerHouse], string[128];
-					format(string, sizeof(string), "Sei sicuro di voler vendere la tua casa per "EMB_DOLLARGREEN"%s"EMB_WHITE"", ConvertPrice(HouseInfo[i][hPrice]*75/100));
-					ShowPlayerDialog(playerid, DIALOG_HOUSE+999, DIALOG_STYLE_MSGBOX, "Vendita Casa", string, "Si", "No");
-					return 1;
-				}
-				case 2:// Ritira Soldi
-				{
-					if(PlayerInfo[playerid][playerHouse] == NO_HOUSE)return 0;
-					new string[200];
-					format(string,sizeof(string), "Inserisci la somma di denaro che vuoi ritirare dalla tua casa!\nBilancio: "EMB_DOLLARGREEN"%d$", HouseInfo[PlayerInfo[playerid][playerHouse]][hMoney]);
-					ShowPlayerDialog(playerid, DIALOG_HOUSE_WITHDRAW, DIALOG_STYLE_INPUT, "Ritira", string, "Ritira", "Annulla");
-					return 1;
-				}
-				case 3:// Deposita Soldi
-				{
-					if(PlayerInfo[playerid][playerHouse] == NO_HOUSE)return 0;
-					new string[200];
-					format(string,sizeof(string), "Inserisci la somma di denaro che vuoi depositare dalla tua casa!\nBilancio: "EMB_DOLLARGREEN"%d$", HouseInfo[PlayerInfo[playerid][playerHouse]][hMoney]);
-					ShowPlayerDialog(playerid, DIALOG_HOUSE_DEPOSIT, DIALOG_STYLE_INPUT, "Deposita", string, "Deposita", "Annulla");
-					return 1;
-				}
-			}
-		}
-		case DIALOG_HOUSE+999: //Sell House
-		{
-			if(!response)return 0;
-			if(PlayerInfo[playerid][playerHouse] == NO_HOUSE)return SendClientMessage(playerid, COLOR_RED, "Non possiedi una casa!");
-			new i = PlayerInfo[playerid][playerHouse], string[128];
-			GivePlayerMoneyEx(playerid, HouseInfo[i][hPrice]*75/100);
-			HouseInfo[i][hOwnerID] = NO_OWNER;
-			HouseInfo[i][hClosed] = 0;
-			HouseInfo[i][hOwned] = false;
-			PlayerInfo[playerid][playerHouse] = NO_HOUSE;
-			strcpy(HouseInfo[i][OwnerName], "NoOne", 24);
-			format(string, 128, "%s (%d)\nCasa in vendita!\nCosto: "EMB_DOLLARGREEN"%s"EMB_WHITE"\n"EMB_GREEN"Aperta", GetLocationNameFromCoord(HouseInfo[i][hX], HouseInfo[i][hY], HouseInfo[i][hZ]), i, ConvertPrice(HouseInfo[i][hPrice]));
-			UpdateDynamic3DTextLabelText(HouseInfo[i][hLabel], -1, string);
-			DestroyDynamicMapIcon(HouseInfo[i][hMapIcon]);
-			HouseInfo[i][hMapIcon] = CreateDynamicMapIcon(HouseInfo[i][hX], HouseInfo[i][hY], HouseInfo[i][hZ], 31, -1, -1, -1, -1, 20.0);
-			SaveHouse(i);
-			return 1;
-		}
-		case DIALOG_HOUSE_WITHDRAW:
-		{
-			if(!response) return 0;
-			new m = strval(inputtext);
-			new i = PlayerInfo[playerid][playerHouse];
-			if(m > HouseInfo[i][hMoney] || m < 1)return ShowPlayerDialog(playerid, DIALOG_HOUSE_WITHDRAW, DIALOG_STYLE_INPUT, "Ritira", EMB_RED"Non hai tutti questi soldi in casa!\n"EMB_WHITE"Inserisci la somma di denaro che vuoi ritirare dalla tua casa!", "Ritira", "Annulla");
-			HouseInfo[i][hMoney] -= m;
-			GivePlayerMoneyEx(playerid, m);
-			new string[120];
-			format(string, sizeof(string), "** Hai ritirato "EMB_DOLLARGREEN"%s"EMB_WHITE" dalla tua casa **", ConvertPrice(m));
-			SendClientMessage(playerid, -1, string);
-			SaveHouse(i);
-			return 1;
-		}
-		case DIALOG_HOUSE_DEPOSIT:
-		{
-			if(!response) return 0;
-			new m = strval(inputtext);
-			new i = PlayerInfo[playerid][playerHouse];
-			if(m > GetPlayerMoneyEx(playerid) || m < 1)return ShowPlayerDialog(playerid, DIALOG_HOUSE_DEPOSIT, DIALOG_STYLE_INPUT, "Deposita", EMB_RED"Non hai tutti questi soldi!\n"EMB_WHITE"Inserisci la somma di denaro che vuoi depositare in casa!", "Deposita", "Annulla");
-			HouseInfo[i][hMoney] += m;
-			GivePlayerMoneyEx(playerid, -m);
-			new string[120];
-			format(string, sizeof(string), "** Hai depositato "EMB_DOLLARGREEN"%s"EMB_WHITE" in casa **", ConvertPrice(m));
-			SendClientMessage(playerid, -1, string);
-			SaveHouse(i);
-			return 1;
-		}
-		case DIALOG_VMENU:
-		{
-			if(!response)return 0;
-			new string[60];
-			for(new i = 1; i < MAX_VEHICLE_SLOT; i++)
-			{
-				if(VmenuVehicles[playerid][i] != listitem+1)continue;
-				vehicleMenuChoosed[playerid] = i;
-			}
-			new slotid = vehicleMenuChoosed[playerid];
-			format(string, sizeof(string), "#%d %s (%d)", slotid, GetVehicleName(VehicleInfo[ PlayerVehicle[playerid][slotid][vID] ][vModel]), PlayerVehicle[playerid][slotid][vID]);
-			if(PlayerInfo[playerid][playerAdmin] > 0)
-			{
-
-				ShowPlayerDialog(playerid, DIALOG_VMENU_RESPONSE, DIALOG_STYLE_LIST, string, "Apri/Chiudi Veicolo\nParcheggia Veicolo\nTrova Veicolo\nVendi Veicolo\nVendi a Giocatore\nApri/Chiudi Cofano\nApri/Chiudi Bagagliaio\
-					\n"EMB_GOLD"Admin: "EMB_WHITE"Goto Vehicle\n"EMB_GOLD"Admin: "EMB_WHITE"Get Vehicle Here\n", "Seleziona", "Annulla");
-			}
-			else
-			{
-				ShowPlayerDialog(playerid, DIALOG_VMENU_RESPONSE, DIALOG_STYLE_LIST, string, "Apri/Chiudi Veicolo\nParcheggia Veicolo\nTrova Veicolo\nVendi Veicolo\nVendi a Giocatore\nApri/Chiudi Cofano\nApri/Chiudi Bagagliaio", "Seleziona", "Annulla");
-			}
-		}
-		case DIALOG_VMENU_RESPONSE:
-		{
-			if(!response)
-			{
-				vehicleMenuChoosed[playerid] = 0;
-				return 0;
-			}
-			switch(listitem)
-			{
-				case 0://Apri/Chiudi Veicolo
-				{
-					new vid = PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID];
-					new Float: Pos[3];
-					GetVehiclePos(vid, Pos[0], Pos[1], Pos[2]);
-					if(!IsPlayerInRangeOfPoint(playerid, 6.0, Pos[0], Pos[1], Pos[2]))return SendClientMessage(playerid, COLOR_RED, "Non sei vicino al veicolo!");
-					if(VehicleInfo[PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID]][vClosed] == 1)
-					{
-						SendClientMessage(playerid, COLOR_GREEN, "Hai aperto il tuo veicolo!");
-						VehicleInfo[PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID]][vClosed] = 0;
-						vehicleMenuChoosed[playerid] = 0;
-					}
-					else if(VehicleInfo[PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID]][vClosed] == 0)
-					{
-						SendClientMessage(playerid, COLOR_GREEN, "Hai chiuso il tuo veicolo!");
-						VehicleInfo[PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID]][vClosed] = 1;
-						vehicleMenuChoosed[playerid] = 0;
-						return 1;
-					}
-				}
-				case 1: //Parcheggia Veicolo
-				{
-					if(!IsPlayerInAnyVehicle(playerid))return SendClientMessage(playerid, COLOR_RED, "Non sei nel veicolo!");
-					if(GetPlayerVehicleID(playerid) != PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID])return SendClientMessage(playerid, COLOR_RED, "Non sei nel veicolo!");
-					SendClientMessage(playerid, COLOR_GREEN, "Hai parcheggiato qui il tuo veicolo");
-					new Float:X, Float:Y, Float:Z, Float:A;
-					GetVehiclePos(GetPlayerVehicleID(playerid), X, Y, Z);
-					GetVehicleZAngle(GetPlayerVehicleID(playerid), A);
-					new vid = PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID];
-					VehicleInfo[vid][vX] = X;
-					VehicleInfo[vid][vY] = Y;
-					VehicleInfo[vid][vZ] = Z;
-					VehicleInfo[vid][vA] = A;
-					SavePlayerVehicle(playerid);
-					vehicleMenuChoosed[playerid] = 0;
-					return 1;
-				}
-				case 2:
-				{
-					if(UsingGPS[playerid] == true)
-					{
-						SendClientMessage(playerid, COLOR_GREEN, "Destinazione modificata!");
-						DestroyDynamicRaceCP(gps_Checkpoint[playerid]);
-						UsingGPS[playerid] = true;
-					}
-					new Float:X, Float:Y, Float:Z;
-					GetVehiclePos(PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID], X, Y, Z);
-					gps_Checkpoint[playerid] = CreateDynamicRaceCP(1, X, Y, Z, 0, 0, 0, 4.0, 0, 0, playerid, 100000.0);
-					SendClientMessage(playerid, COLOR_GREEN, "L'auto e' segnata con un punto rosso sulla mappa!");
-					vehicleMenuChoosed[playerid] = 0;
-					UsingGPS[playerid] = true;
-					return 1;
-				}
-				case 3:
-				{
-					if(GetPlayerVehicleID(playerid) != PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID])return SendClientMessage(playerid, COLOR_GREEN, "Non ti trovi nel veicolo!");
-					RemovePlayerVehicle(playerid, PlayerInfo[playerid][playerID], vehicleMenuChoosed[playerid]);
-					vehicleMenuChoosed[playerid] = 0;
-					return 1;
-				}
-				case 4:
-				{
-					if(!response)return 0;
-					ShowPlayerDialog(playerid, DIALOG_VMENU_SELLTO, DIALOG_STYLE_INPUT, "Vendi veicolo", "Inserisci l'ID del player a cui vuoi vendere il veicolo!", "Ok", "Annulla");
-				}
-				case 5: //Apri/Chiudi Cofano
-				{
-					new engine, lightz, alarm, doors, bonnet, boot, objective, id = PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID];
-					GetVehicleParamsEx(id, engine, lightz, alarm, doors, bonnet, boot, objective);
-					if(bonnet == -1)SetVehicleParamsEx(id, engine, lightz, alarm, doors, false, boot, objective);
-					if(bonnet)//Chiudi
-					{
-						SetVehicleParamsEx(id, engine, lightz, alarm, doors, false, boot, objective);
-					}
-					else //Apri
-					{
-						SetVehicleParamsEx(id, engine, lightz, alarm, doors, true, boot, objective);
-					}
-					return 1;
-				}
-				case 6: //Apri/Chiudi Bagagliaio
-				{
-					new engine, lightz, alarm, doors, bonnet, boot, objective, id = PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID];
-					GetVehicleParamsEx(id, engine, lightz, alarm, doors, bonnet, boot, objective);
-					if(boot == -1)SetVehicleParamsEx(id, engine, lightz, alarm, doors, bonnet, false, objective);
-					if(boot)//Chiudi
-					{
-						SetVehicleParamsEx(id, engine, lightz, alarm, doors, bonnet, false, objective);
-					}
-					else //Apri
-					{
-						SetVehicleParamsEx(id, engine, lightz, alarm, doors, bonnet, true, objective);
-					}
-					return 1;
-				}
-				/*OtherHere*/
-				//
-				/*OtherHere*/
-				case 7: //Goto Vehicle
-				{
-					if(GetPlayerAdminLevel(playerid) >= 1)
-					{
-						new id = PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID];
-						//if(!IsValidVehicle(id))return SendClientMessage(playerid, COLOR_RED, "Il veicolo non esiste!");
-						SetPlayerVirtualWorld(playerid, GetVehicleVirtualWorld(id));
-						new Float:Pos[3];
-						GetVehiclePos(id, Pos[0], Pos[1], Pos[2]);
-						if(!IsPlayerInAnyVehicle(playerid))
-						{
-							SetPlayerPos(playerid, Pos[0], Pos[1]+3.0, Pos[2]);
-						}
-						else
-						{
-							SetVehiclePos(GetPlayerVehicleID(playerid), Pos[0]+1, Pos[1]+2.5, Pos[2]+3);
-						}
-						SendClientMessage(playerid, COLOR_GREY, "Ti sei gotato al veicolo!");
-					}
-				}
-				case 8: //Gethere Vehicle
-				{
-					if(GetPlayerAdminLevel(playerid) >= 1)
-					{
-						new id = PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID];
-					//	if(!IsValidVehicle(id))return SendClientMessage(playerid, COLOR_RED, "Il veicolo non esiste!");
-						SetVehicleVirtualWorld(id, GetPlayerVirtualWorld(playerid));
-						new Float:Pos[3];
-						GetPlayerPos(playerid, Pos[0], Pos[1], Pos[2]);
-						SetVehiclePos(id, Pos[0]+2, Pos[1]+1.5, Pos[2]+2);
-						SendClientMessage(playerid, COLOR_GREY, "Ti sei gotato il veicolo!");
-					}
-				}
-			}
-		}
-		case DIALOG_VMENU_SELLTO:
-		{
-			if(!response)
-			{
-				vehicleMenuChoosed[playerid] = 0;
-				return 0;
-			}
-			new id;
-			if(sscanf(inputtext, "u", id))return ShowPlayerDialog(playerid, DIALOG_VMENU_SELLTO, DIALOG_STYLE_INPUT, "Vendi veicolo", "Inserisci l'ID del player a cui vuoi vendere il veicolo!", "Ok", "Annulla");
-			if(id == INVALID_PLAYER_ID)return ShowPlayerDialog(playerid, DIALOG_VMENU_SELLTO, DIALOG_STYLE_INPUT, "Vendi veicolo", "Giocatore non connesso!\nInserisci l'ID del player a cui vuoi vendere il veicolo!", "Ok", "Annulla");
-			if(GetPlayerVehicleCount(id) == NORMAL_PLAYER_SLOT-1 && PlayerInfo[playerid][playerPremium] == PLAYER_NO_PREMIUM)
-			{
-				return SendClientMessage(playerid, COLOR_RED, "Il player possiede troppi veicoli!");
-			}
-			else if(GetPlayerVehicleCount(id) == PREMIUM_PLAYER_SLOT-1 && PlayerInfo[playerid][playerPremium] != PLAYER_NO_PREMIUM)
-			{
-				return SendClientMessage(playerid, COLOR_RED, "Il player possiede troppi veicoli!");
-			}
-			vmenu_SellerID[id] = -1;
-			vmenu_PlayerToSellVeh[playerid] = id;
-			ShowPlayerDialog(playerid, DIALOG_VMENU_SELLTO_PRICE, DIALOG_STYLE_INPUT, "Vendi veicolo", "Inserisci il prezzo del veicolo!", "Ok", "Annulla");
-		}
-		case DIALOG_VMENU_SELLTO_PRICE:
-		{
-			if(!response)
-			{
-				vehicleMenuChoosed[playerid] = 0;
-				vmenu_PlayerToSellVehPrice[playerid] = -1;
-				vmenu_PlayerToSellVeh{vmenu_SellerID[playerid]} = -1;
-				vmenu_SellerID[playerid] = -1;
-				vehicleMenuChoosed[vmenu_SellerID[playerid]] = 0;
-				return 0;
-			}
-			new price;
-			if(sscanf(inputtext, "d", price))return ShowPlayerDialog(playerid, DIALOG_VMENU_SELLTO_PRICE, DIALOG_STYLE_INPUT, "Vendi veicolo", "Inserisci il prezzo del veicolo!", "Ok", "Annulla");
-			new string[128];
-			vmenu_SellerID[vmenu_PlayerToSellVeh[playerid]] = playerid;
-			vmenu_PlayerToSellVehPrice[vmenu_PlayerToSellVeh[playerid]] = price;
-			format(string, 128, "%s vuole venderti un veicolo (%s) per "EMB_DOLLARGREEN"%s"EMB_WHITE"", PlayerInfo[playerid][playerName], GetVehicleName(GetVehicleModel(GetPlayerVehicleID(playerid))), ConvertPrice(price));
-			ShowPlayerDialog(vmenu_PlayerToSellVeh[playerid], DIALOG_VMENU_SELLTO_FINISH, DIALOG_STYLE_MSGBOX, "Richiesta", string, "Ok", "Annulla");
-		}
-		case DIALOG_VMENU_SELLTO_FINISH:
-		{
-			if(PlayerInfo[vmenu_SellerID[playerid]][playerLogged] == false)
-			{
-				SendClientMessage(playerid, -1, "Il giocatore non e' connesso!");
-				vmenu_PlayerToSellVehPrice[playerid] = -1;
-				vmenu_PlayerToSellVeh{vmenu_SellerID[playerid]} = -1;
-				vmenu_SellerID[playerid] = -1;
-				vehicleMenuChoosed[vmenu_SellerID[playerid]] = 0;
-				return 1;
-			}
-			if(!response)
-			{
-				new string[128];
-				format(string, 128, "%s non ha accettato il veicolo!", PlayerInfo[playerid][playerName]);
-				ShowPlayerDialog(vmenu_SellerID[playerid], DIALOG_VMENU_SELLTO_FINISH+999, DIALOG_STYLE_MSGBOX, "Richiesta", string, "Ok", "Annulla");
-				vmenu_PlayerToSellVehPrice[playerid] = -1;
-				vmenu_PlayerToSellVeh{vmenu_SellerID[playerid]} = -1;
-				vmenu_SellerID[playerid] = -1;
-				vehicleMenuChoosed[vmenu_SellerID[playerid]] = 0;
-				return 1;
-			}
-			else
-			{
-				new string[128];
-				format(string, 128, "%s ha comprato il tuo veicolo!", PlayerInfo[playerid][playerName]);
-				ShowPlayerDialog(vmenu_SellerID[playerid], DIALOG_VMENU_SELLTO_FINISH+999, DIALOG_STYLE_MSGBOX, "Richiesta", string, "Ok", "Annulla");
-				GivePlayerMoneyEx(playerid, -vmenu_PlayerToSellVehPrice[playerid]);
-				GivePlayerMoneyEx(vmenu_SellerID[playerid], vmenu_PlayerToSellVehPrice[playerid]);
-				SendPlayerVehicle(vmenu_SellerID[playerid], playerid, vehicleMenuChoosed[vmenu_SellerID[playerid]]);
-				vmenu_PlayerToSellVehPrice[playerid] = -1;
-				vmenu_PlayerToSellVeh[vmenu_SellerID[playerid]]= -1;
-				vmenu_SellerID[playerid] = -1;
-				vehicleMenuChoosed[vmenu_SellerID[playerid]] = 0;
-				return 1;
-			}
-		}
-		case DIALOG_AMMU_BUY:
-		{
-			if(!response)return 0;
-			switch(listitem)
-			{
-				case 0: ShowPlayerDialog(playerid, DIALOG_AMMU_BUY_PISTOLS, DIALOG_STYLE_LIST, "Pistole", 		"9mm			"EMB_DOLLARGREEN"$400\n"EMB_WHITE"9mm Silenced		"EMB_DOLLARGREEN"$500"EMB_WHITE"\nDesert Eagle		"EMB_DOLLARGREEN"$1.500"EMB_WHITE, "Compra", "Indietro");
-				case 1: ShowPlayerDialog(playerid, DIALOG_AMMU_BUY_SMGUN, DIALOG_STYLE_LIST, "SMG", 			"Tec 9			"EMB_DOLLARGREEN"$400\n"EMB_WHITE"Uzi		"EMB_DOLLARGREEN"$600"EMB_WHITE"\nMP5		"EMB_DOLLARGREEN"$2.500"EMB_WHITE, "Compra", "Indietro");
-				case 2: ShowPlayerDialog(playerid, DIALOG_AMMU_BUY_SHOTGUNS, DIALOG_STYLE_LIST, "Shotguns", 	"Shotgun		"EMB_DOLLARGREEN"$800\n"EMB_WHITE"Sawnoff Shotgun		"EMB_DOLLARGREEN"$1.200\nSpas 12		"EMB_DOLLARGREEN"$2.500"EMB_WHITE, "Compra", "Indietro");
-				case 3: ShowPlayerDialog(playerid, DIALOG_AMMU_BUY_ARMOUR, DIALOG_STYLE_LIST, "Armatura", 		"Armatura		"EMB_DOLLARGREEN"$10.000\n"EMB_WHITE, "Compra", "Indietro");
-				case 4: ShowPlayerDialog(playerid, DIALOG_AMMU_BUY_ASSAULT, DIALOG_STYLE_LIST, "Assalti", 		"AK-47			"EMB_DOLLARGREEN"$3.500\n"EMB_WHITE"M4		"EMB_DOLLARGREEN"$4.000"EMB_WHITE"\n", "Compra", "Indietro");
-				case 5: ShowPlayerDialog(playerid, DIALOG_AMMU_BUY_UTILITY, DIALOG_STYLE_LIST, "Utilita'", 		"C4(Rapine)x2	"EMB_DOLLARGREEN"$100.000"EMB_WHITE, "Compra", "Indietro");
-			}
-		}
-		case DIALOG_AMMU_BUY_UTILITY:
-		{
-			if(!response)return ShowPlayerDialog(playerid, DIALOG_AMMU_BUY, DIALOG_STYLE_LIST, "Ammunation", "Pistole\nSMG\nShotguns\nArmatura\nAssalti\nUtilita'", "Avanti", "Chiudi");
-			switch(listitem)
-			{
-				case 0:
-				{
-					if(GetPlayerMoneyEx(playerid) < 100000)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
-					PlayerInfo[playerid][playerC4] += 2;
-					GivePlayerMoneyEx(playerid, -100000);
-					new string[128];
-					format(string, 128, "Hai acquistato 2 cariche di C4 (%d cariche totali) che possono essere usate per le rapine (Centro Scommesse).", PlayerInfo[playerid][playerC4]);
-					SendClientMessage(playerid, COLOR_GREEN, string);
-					SendClientMessage(playerid, COLOR_GREEN, "Ricorda però che uscendo dal gioco perderai tutte le cariche attuali!");
-					ShowPlayerDialog(playerid, DIALOG_AMMU_BUY_UTILITY, DIALOG_STYLE_LIST, "Utilita'", "C4(Rapine)x2		"EMB_DOLLARGREEN"$100.000", "Compra", "Indietro");
-				}
-			}
-		}
-
-		case DIALOG_AMMU_BUY_ASSAULT:
-		{
-			if(!response)return ShowPlayerDialog(playerid, DIALOG_AMMU_BUY, DIALOG_STYLE_LIST, "Ammunation", "Pistole\nSMG\nShotguns\nArmatura\nAssalti\nUtilita'", "Avanti", "Chiudi");
-			switch(listitem)
-			{
-				case 0: //AK
-				{
-					if(GetPlayerMoneyEx(playerid) < 3500)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
-					GivePlayerMoneyEx(playerid, -3500);
-					GivePlayerWeaponEx(playerid, 30, 150);
-					ShowPlayerDialog(playerid, DIALOG_AMMU_BUY_ASSAULT, DIALOG_STYLE_LIST, "Assalti", "AK-47		"EMB_DOLLARGREEN"$3.500"EMB_WHITE"\nM4		"EMB_DOLLARGREEN"$4.000\n", "Compra", "Indietro");
-				}
-				case 1://M4
-				{
-					if(GetPlayerMoneyEx(playerid) < 4000)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
-					GivePlayerMoneyEx(playerid, -4000);
-					GivePlayerWeaponEx(playerid, 31, 150);
-					ShowPlayerDialog(playerid, DIALOG_AMMU_BUY_ASSAULT, DIALOG_STYLE_LIST, "Assalti", "AK-47		"EMB_DOLLARGREEN"$3.500"EMB_WHITE"\nM4		"EMB_DOLLARGREEN"$4.000\n", "Compra", "Indietro");
-				}
-			}
-		}
-		case DIALOG_AMMU_BUY_ARMOUR:
-		{
-			if(!response)return ShowPlayerDialog(playerid, DIALOG_AMMU_BUY, DIALOG_STYLE_LIST, "Ammunation", "Pistole\nSMG\nShotguns\nArmatura\nAssalti\nUtilita'", "Avanti", "Chiudi");
-			if(listitem == 0)//Armatura
-			{
-				if(GetPlayerMoneyEx(playerid) < 10000)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
-				GivePlayerMoneyEx(playerid, -10000);
-				SetPlayerArmour(playerid, 99.0);
-				ShowPlayerDialog(playerid, DIALOG_AMMU_BUY, DIALOG_STYLE_LIST, "Ammunation", "Pistole\nSMG\nShotguns\nArmatura\nAssalti\nUtilita'", "Avanti", "Chiudi");
-			}
-		}
-		case DIALOG_AMMU_BUY_PISTOLS:
-		{
-			if(!response)return ShowPlayerDialog(playerid, DIALOG_AMMU_BUY, DIALOG_STYLE_LIST, "Ammunation", "Pistole\nSMG\nShotguns\nArmatura\nAssalti\nUtilita'", "Avanti", "Chiudi");
-			switch(listitem)
-			{
-				case 0: //9mm
-				{
-					if(GetPlayerMoneyEx(playerid) < 400)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
-					GivePlayerMoneyEx(playerid, -400);
-					GivePlayerWeaponEx(playerid, 22, 50);
-				}
-				case 1://9mm Silenziata
-				{
-					if(GetPlayerMoneyEx(playerid) < 500)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
-					GivePlayerMoneyEx(playerid, -500);
-					GivePlayerWeaponEx(playerid, 23, 50);
-				}
-				case 2://Desert Eagle
-				{
-					if(GetPlayerMoneyEx(playerid) < 1500)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
-					GivePlayerMoneyEx(playerid, -1500);
-					GivePlayerWeaponEx(playerid, 24, 50);
-				}
-			}
-			ShowPlayerDialog(playerid, DIALOG_AMMU_BUY_PISTOLS, DIALOG_STYLE_LIST, "Pistole", "9mm		"EMB_DOLLARGREEN"$400"EMB_WHITE"\n9mm Silenziata		"EMB_DOLLARGREEN"$500"EMB_WHITE"\nDesert Eagle		"EMB_DOLLARGREEN"$1.500", "Compra", "Indietro");
-		}
-		case DIALOG_AMMU_BUY_SMGUN:
-		{
-			if(!response)return ShowPlayerDialog(playerid, DIALOG_AMMU_BUY, DIALOG_STYLE_LIST, "Ammunation", "Pistole\nSMG\nShotguns\nArmatura\nAssalti\nUtilita'", "Avanti", "Chiudi");
-			switch(listitem)
-			{
-				case 0: //Tec9
-				{
-					if(GetPlayerMoneyEx(playerid) < 400)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
-					GivePlayerMoneyEx(playerid, -400);
-					GivePlayerWeaponEx(playerid, 32, 100);
-				}
-				case 1://Uzi
-				{
-					if(GetPlayerMoneyEx(playerid) < 600)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
-					GivePlayerMoneyEx(playerid, -600);
-					GivePlayerWeaponEx(playerid, 28, 100);
-				}
-				case 2://MP5
-				{
-					if(GetPlayerMoneyEx(playerid) < 2500)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
-					GivePlayerMoneyEx(playerid, -2500);
-					GivePlayerWeaponEx(playerid, 29, 100);
-				}
-			}
-			ShowPlayerDialog(playerid, DIALOG_AMMU_BUY_SMGUN, DIALOG_STYLE_LIST, "SMG", "Tec 9		"EMB_DOLLARGREEN"$400"EMB_WHITE"\nUzi		"EMB_DOLLARGREEN"$600"EMB_WHITE"\nMP5		"EMB_DOLLARGREEN"$2.500", "Compra", "Indietro");
-		}
-		case DIALOG_AMMU_BUY_SHOTGUNS:
-		{
-			if(!response)return ShowPlayerDialog(playerid, DIALOG_AMMU_BUY, DIALOG_STYLE_LIST, "Ammunation", "Pistole\nSMG\nShotguns\nArmatura\nAssalti\nUtilita'", "Avanti", "Chiudi");
-			switch(listitem)
-			{
-				case 0: //Shotgun
-				{
-					if(GetPlayerMoneyEx(playerid) < 800)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
-					GivePlayerMoneyEx(playerid, -800);
-					GivePlayerWeaponEx(playerid, 25, 25);
-				}
-				case 1://Sawnoff Shotgun
-				{
-					if(GetPlayerMoneyEx(playerid) < 1200)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
-					GivePlayerMoneyEx(playerid, -1200);
-					GivePlayerWeaponEx(playerid, 26, 25);
-				}
-				case 2://SPAZZZZZZZZZZZ
-				{
-					if(GetPlayerMoneyEx(playerid) < 2500)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
-					GivePlayerMoneyEx(playerid, -2500);
-					GivePlayerWeaponEx(playerid, 27, 25);
-				}
-			}
-			ShowPlayerDialog(playerid, DIALOG_AMMU_BUY_SHOTGUNS, DIALOG_STYLE_LIST, "Shotguns", "Shotgun		"EMB_DOLLARGREEN"$800"EMB_WHITE"\nSawnoff Shotgun		"EMB_DOLLARGREEN"$1.200"EMB_WHITE"\nSpas 12		"EMB_DOLLARGREEN"$2.500"EMB_WHITE"", "Compra", "Indietro");
-		}
-		case DIALOG_BANK:
-		{
-			if(!response)return 0;
-			switch(listitem)
-			{
-				case 0: //Ritira Soldi
-				{
-					ShowPlayerDialog(playerid, DIALOG_BANK_WITHDRAW, DIALOG_STYLE_INPUT, "Ritira", "Inserisci la somma che vuoi ritirare!", "Ritira", "Chiudi");
-				}
-				case 1: // Deposita Soldi
-				{
-					ShowPlayerDialog(playerid, DIALOG_BANK_DEPOSIT, DIALOG_STYLE_INPUT, "Deposita", "Inserisci la somma che vuoi depositare nel tuo conto bancario!", "Deposita", "Chiudi");
-				}
-				case 2: //Bilancio Bancario
-				{
-					new string[60];
-					format(string, sizeof(string), "Bilancio Bancario: "EMB_DOLLARGREEN"%s"EMB_WHITE"", ConvertPrice(PlayerInfo[playerid][playerBank]));
-					SendClientMessage(playerid, COLOR_GREEN, string);
-				}
-			}
-		}
-		case DIALOG_BANK_WITHDRAW:
-		{
-			if(!response)return 0;
-			if(!IsNumeric(inputtext))return ShowPlayerDialog(playerid, DIALOG_BANK_WITHDRAW, DIALOG_STYLE_INPUT, "Ritira", "Non hai tutti questi soldi nel tuo conto bancario!\nInserisci la cifra che vuoi ritirare!", "Ritira", "Chiudi");
-			if(strval(inputtext) > PlayerInfo[playerid][playerBank])return ShowPlayerDialog(playerid, DIALOG_BANK_WITHDRAW, DIALOG_STYLE_INPUT, "Ritira", "Non hai tutti questi soldi nel tuo conto bancario!\nInserisci la cifra che vuoi ritirare!", "Ritira", "Chiudi");
-			if(strval(inputtext) < 1)return SendClientMessage(playerid, COLOR_RED, "Non possiedi questi soldi!");
-			new string[128];
-			format(string, sizeof(string), "Hai ritirato "EMB_DOLLARGREEN"%s"EMB_WHITE" dal tuo conto bancario. Nuovo bilancio: "EMB_DOLLARGREEN"%s"EMB_WHITE"", ConvertPrice(strval(inputtext)), ConvertPrice(PlayerInfo[playerid][playerBank]-strval(inputtext)));
-			SendClientMessage(playerid, -1, string);
-			PlayerInfo[playerid][playerBank] -= strval(inputtext);
-			GivePlayerMoneyEx(playerid, strval(inputtext));
-			SavePlayer(playerid);
-		}
-		case DIALOG_BANK_DEPOSIT:
-		{
-			if(!response)return 0;
-			if(!IsNumeric(inputtext))return ShowPlayerDialog(playerid, DIALOG_BANK_DEPOSIT, DIALOG_STYLE_INPUT, "Deposita", "Non hai tutti questi soldi!\nInserisci la cifra che vuoi ritirare!", "Ritira", "Chiudi");
-			if(strval(inputtext) > GetPlayerMoneyEx(playerid))return ShowPlayerDialog(playerid, DIALOG_BANK_DEPOSIT, DIALOG_STYLE_INPUT, "Deposita", "Non hai tutti questi soldi nel tuo conto bancario!\nInserisci la cifra che vuoi ritirare!", "Ritira", "Chiudi");
-			if(strval(inputtext) < 1)return ShowPlayerDialog(playerid, DIALOG_BANK_DEPOSIT, DIALOG_STYLE_INPUT, "Deposita", "Non hai tutti questi soldi nel tuo conto bancario!\nInserisci la cifra che vuoi ritirare!", "Ritira", "Chiudi");
-			new string[128];
-			format(string, sizeof(string), "Hai depositato "EMB_DOLLARGREEN"%s"EMB_WHITE" nel tuo conto bancario.", ConvertPrice(strval(inputtext)));
-			SendClientMessage(playerid, -1, string);
-			PlayerInfo[playerid][playerBank] += strval(inputtext);
-			format(string, sizeof(string), "Nuovo bilancio: "EMB_DOLLARGREEN"%s"EMB_WHITE"", ConvertPrice(PlayerInfo[playerid][playerBank]));
-			SendClientMessage(playerid, -1, string);
-			GivePlayerMoneyEx(playerid, -strval(inputtext));
-			SavePlayer(playerid);
-		}
-		case DIALOG_BUY_DRUG:
-		{
-			if(!response)return 0;
-			switch(listitem)
-			{
-				case 0: //1g		1000$
-				{
-					if(GetPlayerMoneyEx(playerid) < 1000)
-					{
-						SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza soldi!");
-						ShowPlayerDialog(playerid, DIALOG_BUY_DRUG, DIALOG_STYLE_LIST, "Droga", "1g		"EMB_DOLLARGREEN"$1.000"EMB_WHITE"\n10g		"EMB_DOLLARGREEN"$10.000"EMB_WHITE"\n15g		"EMB_DOLLARGREEN"$15.000"EMB_WHITE"\
-							\n20g		"EMB_DOLLARGREEN"$20.000"EMB_WHITE"", "Avanti", "Esci");
-						return 0;
-					}
-					PlayerInfo[playerid][playerDrug] += 1;
-					GivePlayerMoneyEx(playerid, -1000);
-					SendClientMessage(playerid, COLOR_GREEN, "Hai acquistato 1 grammo di droga per 1000$!");
-				}
-				case 1: //10g		10000$
-				{
-					if(GetPlayerMoneyEx(playerid) < 10000)
-					{
-						SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza soldi!");
-						ShowPlayerDialog(playerid, DIALOG_BUY_DRUG, DIALOG_STYLE_LIST, "Droga", "1g		"EMB_DOLLARGREEN"$1.000"EMB_WHITE"\n10g		"EMB_DOLLARGREEN"$10.000"EMB_WHITE"\n15g		"EMB_DOLLARGREEN"$15.000"EMB_WHITE"\
-							\n20g		"EMB_DOLLARGREEN"$20.000"EMB_WHITE"", "Avanti", "Esci");
-						return 0;
-					}
-					PlayerInfo[playerid][playerDrug] += 10;
-					GivePlayerMoneyEx(playerid, -10000);
-					SendClientMessage(playerid, COLOR_GREEN, "Hai acquistato 10 grammi di droga per 10000$!");
-				}
-				case 2: //15g		15000$
-				{
-					if(GetPlayerMoneyEx(playerid) < 15000)
-					{
-						SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza soldi!");
-						ShowPlayerDialog(playerid, DIALOG_BUY_DRUG, DIALOG_STYLE_LIST, "Droga", "1g		"EMB_DOLLARGREEN"$1.000"EMB_WHITE"\n10g		"EMB_DOLLARGREEN"$10.000"EMB_WHITE"\n15g		"EMB_DOLLARGREEN"$15.000"EMB_WHITE"\
-							\n20g		"EMB_DOLLARGREEN"$20.000"EMB_WHITE"", "Avanti", "Esci");
-						return 0;
-					}
-					PlayerInfo[playerid][playerDrug] += 15;
-					GivePlayerMoneyEx(playerid, -15000);
-					SendClientMessage(playerid, COLOR_GREEN, "Hai acquistato 15 grammi di droga per 15000$!");
-				}
-				case 3: //20g		20000$
-				{
-					if(GetPlayerMoneyEx(playerid) < 20000)
-					{
-						SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza soldi!");
-						ShowPlayerDialog(playerid, DIALOG_BUY_DRUG, DIALOG_STYLE_LIST, "Droga", "1g		"EMB_DOLLARGREEN"$1.000"EMB_WHITE"\n10g		"EMB_DOLLARGREEN"$10.000"EMB_WHITE"\n15g		"EMB_DOLLARGREEN"$15.000"EMB_WHITE"\
-							\n20g		"EMB_DOLLARGREEN"$20.000"EMB_WHITE"", "Avanti", "Esci");
-						return 0;
-					}
-					PlayerInfo[playerid][playerDrug] += 20;
-					GivePlayerMoneyEx(playerid, -20000);
-					SendClientMessage(playerid, COLOR_GREEN, "Hai acquistato 20 grammi di droga per "EMB_DOLLARGREEN"$20.000!");
-				}
-				case 4: //Importo Personalizzato
-				{
-
-				}
-			}
-		}
-		case DIALOG_POLICE_WEAPONS:
-		{
-			if(!response)return 0;
-			switch(listitem)
-			{
-				case 0://9mm
-				{
-					if(PlayerInfo[playerid][playerTickets] < COLT_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
-					GivePlayerWeaponEx(playerid, 22, 40);
-					PlayerInfo[playerid][playerTickets] -= COLT_TICKET;
-					return 1;
-				}
-				case 1: //D. Eagle
-				{
-					if(PlayerInfo[playerid][playerTickets] < DEAGLE_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
-					GivePlayerWeaponEx(playerid, 24, 50);
-					PlayerInfo[playerid][playerTickets] -= DEAGLE_TICKET;
-					return 1;
-				}
-				case 2: //Shotgun
-				{
-					if(PlayerInfo[playerid][playerTickets] < SHOTGUN_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
-					GivePlayerWeaponEx(playerid, 25, 30);
-					PlayerInfo[playerid][playerTickets] -= SHOTGUN_TICKET;
-					return 1;
-				}
-				case 3: //Shawnoff
-				{
-					if(PlayerInfo[playerid][playerTickets] < SHAWNOFF_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
-					GivePlayerWeaponEx(playerid, 26, 15);
-					PlayerInfo[playerid][playerTickets] -= SHAWNOFF_TICKET;
-					return 1;
-				}
-				case 4: //Spas
-				{
-					if(PlayerInfo[playerid][playerTickets] < SPAS_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
-					GivePlayerWeaponEx(playerid, 27, 10);
-					PlayerInfo[playerid][playerTickets] -= SPAS_TICKET;
-					return 1;
-				}
-				case 5: //Uzi
-				{
-					if(PlayerInfo[playerid][playerTickets] < UZI_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
-					GivePlayerWeaponEx(playerid, 28, 100);
-					PlayerInfo[playerid][playerTickets] -= UZI_TICKET;
-					return 1;
-				}
-				case 6: //Tec9
-				{
-					if(PlayerInfo[playerid][playerTickets] < TEC_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
-					GivePlayerWeaponEx(playerid, 32, 100);
-					PlayerInfo[playerid][playerTickets] -= TEC_TICKET;
-					return 1;
-				}
-				case 7: //MP5
-				{
-					if(PlayerInfo[playerid][playerTickets] < MP5_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
-					GivePlayerWeaponEx(playerid, 29, 150);
-					PlayerInfo[playerid][playerTickets] -= MP5_TICKET;
-					return 1;
-				}
-				case 8: //AK
-				{
-					if(PlayerInfo[playerid][playerTickets] < AK_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
-					GivePlayerWeaponEx(playerid, 30, 120);
-					PlayerInfo[playerid][playerTickets] -= AK_TICKET;
-					return 1;
-				}
-				case 9: //M4
-				{
-					if(PlayerInfo[playerid][playerTickets] < M4_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
-					GivePlayerWeaponEx(playerid, 31, 150);
-					PlayerInfo[playerid][playerTickets] -= M4_TICKET;
-					return 1;
-				}
-				case 10: //Armour
-				{
-					if(PlayerInfo[playerid][playerTickets] < ARMOUR_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
-					SetPlayerArmour(playerid, 99.0);
-					PlayerInfo[playerid][playerTickets] -= ARMOUR_TICKET;
-					return 1;
-				}
-				case 11: //Medikit
-				{
-					if(PlayerInfo[playerid][playerTickets] < MEDIKIT_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
-					SetPlayerHealth(playerid, 99.0);
-					PlayerInfo[playerid][playerTickets] -= MEDIKIT_TICKET;
-					return 1;
-				}
-			}
-		}
-		case DIALOG_POLICE_ELEVATOR:
-		{
-			if(!response)return 0;
-			switch(listitem)
-			{
-				case 0:
-				{
-					if(IsPlayerInRangeOfPoint(playerid, 3.0, 1568.5887,-1689.9709,6.2188))return SendClientMessage(playerid, -1, "Sei gia' al parcheggio!");
-					SetPlayerPos(playerid, 1568.5887,-1689.9709,6.2188);
-					SetPlayerInterior(playerid, 0);
-				}
-				case 1:
-				{
-					if(IsPlayerInRangeOfPoint(playerid, 3.0, 242.2487,66.3135,1003.6406))return SendClientMessage(playerid, -1, "Sei gia' alla Stazione di Polizia");
-					SetPlayerPos(playerid, 242.2487,66.3135,1003.6406);
-					SetPlayerInterior(playerid, 6);
-				}
-				case 2:
-				{
-					if(IsPlayerInRangeOfPoint(playerid, 3.0, 1565.0767,-1667.0001,28.3956))return SendClientMessage(playerid, -1, "Sei gia' sul tetto");
-					SetPlayerPos(playerid, 1565.0767,-1667.0001,28.3956);
-					SetPlayerInterior(playerid, 0);
-				}
-			}
-		}
-		case DIALOG_WEAPOND_SELL:
-		{
-			if(!response)
-			{
-				BuyerID[ WorkSellerID[playerid][WORK_WEAPONSD] ] = INVALID_PLAYER_ID;
-				WorkSellerID[playerid][WORK_WEAPONSD] = INVALID_PLAYER_ID;
-				return 0;
-			}
-			if(GetPlayerMoneyEx(playerid) < WeaponDealerArray[listitem][Price]) return SendClientMessage(playerid, COLOR_RED, "> Non hai abbastanza soldi!");
-			GivePlayerMoneyEx(WorkSellerID[playerid][WORK_WEAPONSD], WeaponDealerArray[listitem][Price]);
-			GivePlayerMoneyEx(playerid, -WeaponDealerArray[listitem][Price]);
-			GivePlayerWeaponEx(playerid, WeaponDealerArray[listitem][ID], WeaponDealerArray[listitem][Ammo]);
-			new string[76], wname[32];
-			GetWeaponName(WeaponDealerArray[listitem][ID], wname, sizeof(wname));
-			format(string,sizeof(string), "Hai acquistato %s da %s per il costo di "EMB_DOLLARGREEN"%s",wname, PlayerInfo[WorkSellerID[playerid][WORK_WEAPONSD]][playerName], ConvertPrice(WeaponDealerArray[listitem][Price]));
-			SendClientMessage(playerid, COLOR_LIGHTBLUE, string);
-			return ShowDealerDialog(playerid);
-		}
-		case DIALOG_DEALERBUY:
-		{
-			new sid = GetPlayerShowroomArea(playerid), cid;
-			for(new i = 0; i < MAX_CARS; i++)
-			{
-				if(GetVehicleModel(GetPlayerVehicleID(playerid)) == ShowroomVehicle[sid][i][sModel]) cid = i;
-			}
-			if(GetPlayerMoneyEx(playerid) < ShowroomVehicle[sid][cid][sPrice]) return SendClientMessage(playerid, COLOR_RED, "> Non hai abbastanza soldi!");
-			if(PlayerInfo[playerid][playerPremium] == PLAYER_NO_PREMIUM && GetPlayerVehicleCount(playerid) == NORMAL_PLAYER_SLOT-1)
-			{
-				return SendClientMessage(playerid, COLOR_RED, "Possiedi troppi veicoli!");
-			}
-			else if(PlayerInfo[playerid][playerPremium] != PLAYER_NO_PREMIUM && GetPlayerVehicleCount(playerid) == PREMIUM_PLAYER_SLOT-1)
-			{
-				return SendClientMessage(playerid, COLOR_RED, "Possiedi troppi veicoli!");
-			}
-			if(GetPlayerFreeSlot(playerid) == 0)return SendClientMessage(playerid, COLOR_RED, "Possiedi troppi veicoli!");
-			new id = CreatePlayerVehicle(playerid, GetVehicleModel(GetPlayerVehicleID(playerid)),ShowroomPickupPos[sid][0], ShowroomPickupPos[sid][1], ShowroomPickupPos[sid][2], 0.0, random(200), random(200));
-			new string[200];
-			format(string, sizeof(string), "Hai acquistato questo veicolo per %s!, Ricordati di parcheggiarlo tramite il /vmenu", ConvertPrice(ShowroomVehicle[sid][cid][sPrice]));
+			if(GetPlayerMoneyEx(playerid) < CHAINSAW_PRICE)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
+			GivePlayerMoneyEx(playerid, -CHAINSAW_PRICE);
+			format(string, sizeof(string), "Hai comprato una Motosega per %s", ConvertPrice(CHAINSAW_PRICE));
 			SendClientMessage(playerid, COLOR_GREEN, string);
-			PutPlayerInVehicle(playerid, id, 0);
-			GivePlayerMoneyEx(playerid, -ShowroomVehicle[sid][cid][sPrice]);
+			GivePlayerWeaponEx(playerid, 9, 1);
+		}
+		case 1: //Knife
+		{
+			if(GetPlayerMoneyEx(playerid) < KNIFE_PRICE)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
+			GivePlayerMoneyEx(playerid, -KNIFE_PRICE);
+			format(string, sizeof(string), "Hai comprato un Coltello per %s", ConvertPrice(KNIFE_PRICE));
+			SendClientMessage(playerid, COLOR_GREEN, string);
+			GivePlayerWeaponEx(playerid, 4, 1);
+		}
+		case 2: //Kane
+		{
+			if(GetPlayerMoneyEx(playerid) < BRASS_PRICE)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
+			GivePlayerMoneyEx(playerid, -BRASS_PRICE);
+			format(string, sizeof(string), "Hai comprato un Tirapugni per %s", ConvertPrice(BRASS_PRICE));
+			SendClientMessage(playerid, COLOR_GREEN, string);
+			GivePlayerWeaponEx(playerid, 1, 1);
+		}
+		case  3: //Baseball
+		{
+			if(GetPlayerMoneyEx(playerid) < BASEBALL_PRICE)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
+			GivePlayerMoneyEx(playerid, -BASEBALL_PRICE);
+			format(string, sizeof(string), "Hai comprato una Mazza da Baseball per %s", ConvertPrice(BASEBALL_PRICE));
+			SendClientMessage(playerid, COLOR_GREEN, string);
+			GivePlayerWeaponEx(playerid, 5, 1);
+		}
+		case  4: //Wallet
+		{
+			if(GetPlayerMoneyEx(playerid) < WALLET_PRICE)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
+			if(PlayerInfo[playerid][playerWallet] == MAX_WALLET_CHANCE)return SendClientMessage(playerid, COLOR_LIGHTRED, "Hai gia' il portafoglio!");
+			GivePlayerMoneyEx(playerid, -WALLET_PRICE);
+			format(string, sizeof(string), "Hai comprato un Portafoglio per %s", ConvertPrice(WALLET_PRICE));
+			SendClientMessage(playerid, COLOR_GREEN, string);
+			PlayerInfo[playerid][playerWallet] = MAX_WALLET_CHANCE;
+		}
+	}
+	return 1;
+}
+
+Dialog:DialogGPS(playerid, response, listitem, inputtext[])
+{
+	if(!response)return 0;
+	DestroyDynamicRaceCP(gps_Checkpoint[playerid]);
+	gps_Checkpoint[playerid] = CreateDynamicRaceCP(1, GPS_POS[listitem][gX], GPS_POS[listitem][gY], GPS_POS[listitem][gZ], 0,0,0, 4.0, 0, 0, playerid, 99999999.0);
+	UsingGPS[playerid] = true;
+	SendClientMessage(playerid, COLOR_GREEN, "Destinazione impostata. Raggiungi il cerchio rosso!");
+	SendClientMessage(playerid, COLOR_GREEN, "Ricorda che puoi usare di nuovo /gps per rimuovere la destinazione attuale!");
+	return 1;
+}
+
+Dialog:RegisterDialog(playerid, response, listitem, inputtext[])
+{
+	if(!response)return Kick(playerid);
+	if(strlen(inputtext) < 3 || strlen(inputtext) > 24)return Dialog_Show(playerid, RegisterDialog, DIALOG_STYLE_PASSWORD, "Registrazione", "{FF0000}Password troppo corta o troppo lunga.\n{FFFFFF}Inserisci una password per registrarti", "Registrami!", "Esci");
+	new query[450], name[MAX_PLAYER_NAME], year,month,day, date[15];
+	getdate(year, month, day);
+	format(date, sizeof(date), "%02d/%02d/%d", day, month, year);
+	GetPlayerName(playerid, name, MAX_PLAYER_NAME);
+	mysql_format(MySQLC, query, sizeof query, "INSERT INTO `accounts` (`Name`, `Password`, `Money`, `Bank`, `Admin`, `JailTime`, `PremiumTime`, `AccountBanned`, `Skills`, `BanTime`, `Rewards`, `RewardMoney`, `Drug`, `Kills`, `Deaths`, `Premium`, `RegisterDate`) \
+		VALUES('%s',md5('%s'), 20000, 0, 0, 0, 0, 0, 'asd.', 0, 0, 0, 0, 0, 0, 0, '%s')",
+		name, inputtext, getdate());
+	mysql_tquery(MySQLC, query, "RegisterPlayerAccount", "d", playerid);
+	Dialog_Show(playerid, LoginDialog, DIALOG_STYLE_PASSWORD, "Login", "Adesso che sei registrato inserisci la tua password per loggare!", "Login!", "Esci");
+	InTutorial[playerid] = true;
+	return 1;
+}
+
+Dialog:LoginDialog(playerid, response, listitem, inputtext[])
+{
+	if(!response)return Kick(playerid);
+	new query[256];
+	mysql_format(MySQLC, query, sizeof(query), "SELECT * FROM `accounts` WHERE `Name` = '%s' AND `Password` = md5('%s') LIMIT 2", PlayerInfo[playerid][playerName], inputtext);
+	mysql_tquery(MySQLC, query, "LoginPlayer","d",playerid);
+	return 1;
+}
+
+Dialog:DialogHouse(playerid, response, listitem, inputtext[])
+{
+	if(!response)return 0;
+	switch(listitem)
+	{
+		case 0: //Apri/Chiudi
+		{
+			if(PlayerInfo[playerid][playerHouse] == NO_HOUSE)return 0;
+			new i = PlayerInfo[playerid][playerHouse];
+			if(HouseInfo[i][hClosed] == 0)
+			{
+				SendClientMessage(playerid, COLOR_GREEN, "Hai chiuso la casa!");
+				HouseInfo[i][hClosed] = 1;
+				new string[128];
+				format(string, 128, "%s (%d)\nProprietario: %s\n"EMB_RED"Chiusa", GetLocationNameFromCoord(HouseInfo[i][hX], HouseInfo[i][hY], HouseInfo[i][hZ]), i, HouseInfo[i][OwnerName]);
+				UpdateDynamic3DTextLabelText(HouseInfo[i][hLabel], -1, string);
+				SaveHouse(i);
+			}
+			else if(HouseInfo[i][hClosed] == 1)
+			{
+				SendClientMessage(playerid, COLOR_GREEN, "Hai aperto la casa!");
+				HouseInfo[i][hClosed] = 0;
+				new string[128];
+				format(string, 128, "%s (%d)\nProprietario: %s\n"EMB_GREEN"Aperta", GetLocationNameFromCoord(HouseInfo[i][hX], HouseInfo[i][hY], HouseInfo[i][hZ]), i, HouseInfo[i][OwnerName]);
+				UpdateDynamic3DTextLabelText(HouseInfo[i][hLabel], -1, string);
+				SaveHouse(i);
+			}
+			return 1;
+		}
+		case 1:// Vendi
+		{
+			new i = PlayerInfo[playerid][playerHouse], string[128];
+			format(string, sizeof(string), "Sei sicuro di voler vendere la tua casa per "EMB_DOLLARGREEN"%s"EMB_WHITE"", ConvertPrice(HouseInfo[i][hPrice]*75/100));
+			Dialog_Show(playerid, DialogSellHouse, DIALOG_STYLE_MSGBOX, "Vendita Casa", string, "Si", "No");
+			return 1;
+		}
+		case 2:// Ritira Soldi
+		{
+			if(PlayerInfo[playerid][playerHouse] == NO_HOUSE)return 0;
+			new string[200];
+			format(string,sizeof(string), "Inserisci la somma di denaro che vuoi ritirare dalla tua casa!\nBilancio: "EMB_DOLLARGREEN"%d$", HouseInfo[PlayerInfo[playerid][playerHouse]][hMoney]);
+			Dialog_Show(playerid, DialogHouseWithdraw, DIALOG_STYLE_INPUT, "Ritira", string, "Ritira", "Annulla");
+			return 1;
+		}
+		case 3:// Deposita Soldi
+		{
+			if(PlayerInfo[playerid][playerHouse] == NO_HOUSE)return 0;
+			new string[200];
+			format(string,sizeof(string), "Inserisci la somma di denaro che vuoi depositare dalla tua casa!\nBilancio: "EMB_DOLLARGREEN"%d$", HouseInfo[PlayerInfo[playerid][playerHouse]][hMoney]);
+			Dialog_Show(playerid, DialogHouseDeposit, DIALOG_STYLE_INPUT, "Deposita", string, "Deposita", "Annulla");
 			return 1;
 		}
 	}
+	return 1;
+}
+
+Dialog:DialogSellHouse(playerid, response, listitem, inputtext[])
+{
+	if(!response)return 0;
+	if(PlayerInfo[playerid][playerHouse] == NO_HOUSE)return SendClientMessage(playerid, COLOR_RED, "Non possiedi una casa!");
+	new i = PlayerInfo[playerid][playerHouse], string[128];
+	GivePlayerMoneyEx(playerid, HouseInfo[i][hPrice]*75/100);
+	HouseInfo[i][hOwnerID] = NO_OWNER;
+	HouseInfo[i][hClosed] = 0;
+	HouseInfo[i][hOwned] = false;
+	PlayerInfo[playerid][playerHouse] = NO_HOUSE;
+	strcpy(HouseInfo[i][OwnerName], "NoOne", 24);
+	format(string, 128, "%s (%d)\nCasa in vendita!\nCosto: "EMB_DOLLARGREEN"%s"EMB_WHITE"\n"EMB_GREEN"Aperta", GetLocationNameFromCoord(HouseInfo[i][hX], HouseInfo[i][hY], HouseInfo[i][hZ]), i, ConvertPrice(HouseInfo[i][hPrice]));
+	UpdateDynamic3DTextLabelText(HouseInfo[i][hLabel], -1, string);
+	DestroyDynamicMapIcon(HouseInfo[i][hMapIcon]);
+	HouseInfo[i][hMapIcon] = CreateDynamicMapIcon(HouseInfo[i][hX], HouseInfo[i][hY], HouseInfo[i][hZ], 31, -1, -1, -1, -1, 20.0);
+	SaveHouse(i);
+	return 1;
+}
+
+Dialog:DialogHouseWithdraw(playerid, response, listitem, inputtext[])
+{
+	if(!response) return 0;
+	new m = strval(inputtext);
+	new i = PlayerInfo[playerid][playerHouse];
+	if(m > HouseInfo[i][hMoney] || m < 1)return Dialog_Show(playerid, DialogHouseWithdraw, DIALOG_STYLE_INPUT, "Ritira", EMB_RED"Non hai tutti questi soldi in casa!\n"EMB_WHITE"Inserisci la somma di denaro che vuoi ritirare dalla tua casa!", "Ritira", "Annulla");
+	HouseInfo[i][hMoney] -= m;
+	GivePlayerMoneyEx(playerid, m);
+	new string[120];
+	format(string, sizeof(string), "** Hai ritirato "EMB_DOLLARGREEN"%s"EMB_WHITE" dalla tua casa **", ConvertPrice(m));
+	SendClientMessage(playerid, -1, string);
+	SaveHouse(i);
+	return 1;
+}
+
+Dialog:DialogHouseDeposit(playerid, response, listitem, inputtext[])
+{
+	if(!response) return 0;
+	new m = strval(inputtext);
+	new i = PlayerInfo[playerid][playerHouse];
+	if(m > GetPlayerMoneyEx(playerid) || m < 1)return Dialog_Show(playerid, DialogHouseDeposit, DIALOG_STYLE_INPUT, "Deposita", EMB_RED"Non hai tutti questi soldi!\n"EMB_WHITE"Inserisci la somma di denaro che vuoi depositare in casa!", "Deposita", "Annulla");
+	HouseInfo[i][hMoney] += m;
+	GivePlayerMoneyEx(playerid, -m);
+	new string[120];
+	format(string, sizeof(string), "** Hai depositato "EMB_DOLLARGREEN"%s"EMB_WHITE" in casa **", ConvertPrice(m));
+	SendClientMessage(playerid, -1, string);
+	SaveHouse(i);
+	return 1;
+}
+
+Dialog:DialogVMenu(playerid, response, listitem, inputtext[])
+{
+	if(!response)return 0;
+	new string[60];
+	for(new i = 1; i < MAX_VEHICLE_SLOT; i++)
+	{
+		if(VmenuVehicles[playerid][i] != listitem+1)continue;
+		vehicleMenuChoosed[playerid] = i;
+	}
+	new slotid = vehicleMenuChoosed[playerid];
+	format(string, sizeof(string), "#%d %s (%d)", slotid, GetVehicleName(VehicleInfo[ PlayerVehicle[playerid][slotid][vID] ][vModel]), PlayerVehicle[playerid][slotid][vID]);
+	if(PlayerInfo[playerid][playerAdmin] > 0)
+	{
+
+		Dialog_Show(playerid, DialogVmenuResponse, DIALOG_STYLE_LIST, string, "Apri/Chiudi Veicolo\nParcheggia Veicolo\nTrova Veicolo\nVendi Veicolo\nVendi a Giocatore\nApri/Chiudi Cofano\nApri/Chiudi Bagagliaio\
+			\n"EMB_GOLD"Admin: "EMB_WHITE"Goto Vehicle\n"EMB_GOLD"Admin: "EMB_WHITE"Get Vehicle Here\n", "Seleziona", "Annulla");
+	}
+	else
+	{
+		Dialog_Show(playerid, DialogVmenuResponse, DIALOG_STYLE_LIST, string, "Apri/Chiudi Veicolo\nParcheggia Veicolo\nTrova Veicolo\nVendi Veicolo\nVendi a Giocatore\nApri/Chiudi Cofano\nApri/Chiudi Bagagliaio", "Seleziona", "Annulla");
+	}
+	return 1;
+}
+
+Dialog:DialogVmenuResponse(playerid, response, listitem, inputtext[])
+{
+	if(!response)
+	{
+		vehicleMenuChoosed[playerid] = 0;
+		return 0;
+	}
+	switch(listitem)
+	{
+		case 0://Apri/Chiudi Veicolo
+		{
+			new vid = PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID];
+			new Float: Pos[3];
+			GetVehiclePos(vid, Pos[0], Pos[1], Pos[2]);
+			if(!IsPlayerInRangeOfPoint(playerid, 6.0, Pos[0], Pos[1], Pos[2]))return SendClientMessage(playerid, COLOR_RED, "Non sei vicino al veicolo!");
+			if(VehicleInfo[PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID]][vClosed] == 1)
+			{
+				SendClientMessage(playerid, COLOR_GREEN, "Hai aperto il tuo veicolo!");
+				VehicleInfo[PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID]][vClosed] = 0;
+				vehicleMenuChoosed[playerid] = 0;
+			}
+			else if(VehicleInfo[PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID]][vClosed] == 0)
+			{
+				SendClientMessage(playerid, COLOR_GREEN, "Hai chiuso il tuo veicolo!");
+				VehicleInfo[PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID]][vClosed] = 1;
+				vehicleMenuChoosed[playerid] = 0;
+				return 1;
+			}
+		}
+		case 1: //Parcheggia Veicolo
+		{
+			if(!IsPlayerInAnyVehicle(playerid))return SendClientMessage(playerid, COLOR_RED, "Non sei nel veicolo!");
+			if(GetPlayerVehicleID(playerid) != PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID])return SendClientMessage(playerid, COLOR_RED, "Non sei nel veicolo!");
+			SendClientMessage(playerid, COLOR_GREEN, "Hai parcheggiato qui il tuo veicolo");
+			new Float:X, Float:Y, Float:Z, Float:A;
+			GetVehiclePos(GetPlayerVehicleID(playerid), X, Y, Z);
+			GetVehicleZAngle(GetPlayerVehicleID(playerid), A);
+			new vid = PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID];
+			VehicleInfo[vid][vX] = X;
+			VehicleInfo[vid][vY] = Y;
+			VehicleInfo[vid][vZ] = Z;
+			VehicleInfo[vid][vA] = A;
+			SavePlayerVehicle(playerid);
+			vehicleMenuChoosed[playerid] = 0;
+			return 1;
+		}
+		case 2:
+		{
+			if(UsingGPS[playerid] == true)
+			{
+				SendClientMessage(playerid, COLOR_GREEN, "Destinazione modificata!");
+				DestroyDynamicRaceCP(gps_Checkpoint[playerid]);
+				UsingGPS[playerid] = true;
+			}
+			new Float:X, Float:Y, Float:Z;
+			GetVehiclePos(PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID], X, Y, Z);
+			gps_Checkpoint[playerid] = CreateDynamicRaceCP(1, X, Y, Z, 0, 0, 0, 4.0, 0, 0, playerid, 100000.0);
+			SendClientMessage(playerid, COLOR_GREEN, "L'auto e' segnata con un punto rosso sulla mappa!");
+			vehicleMenuChoosed[playerid] = 0;
+			UsingGPS[playerid] = true;
+			return 1;
+		}
+		case 3:
+		{
+			if(GetPlayerVehicleID(playerid) != PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID])return SendClientMessage(playerid, COLOR_GREEN, "Non ti trovi nel veicolo!");
+			RemovePlayerVehicle(playerid, PlayerInfo[playerid][playerID], vehicleMenuChoosed[playerid]);
+			vehicleMenuChoosed[playerid] = 0;
+			return 1;
+		}
+		case 4:
+		{
+			if(!response)return 0;
+			Dialog_Show(playerid, DialogVmenuSellTo, DIALOG_STYLE_INPUT, "Vendi veicolo", "Inserisci l'ID del player a cui vuoi vendere il veicolo!", "Ok", "Annulla");
+		}
+		case 5: //Apri/Chiudi Cofano
+		{
+			new engine, lightz, alarm, doors, bonnet, boot, objective, id = PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID];
+			GetVehicleParamsEx(id, engine, lightz, alarm, doors, bonnet, boot, objective);
+			if(bonnet == -1)SetVehicleParamsEx(id, engine, lightz, alarm, doors, false, boot, objective);
+			if(bonnet)//Chiudi
+			{
+				SetVehicleParamsEx(id, engine, lightz, alarm, doors, false, boot, objective);
+			}
+			else //Apri
+			{
+				SetVehicleParamsEx(id, engine, lightz, alarm, doors, true, boot, objective);
+			}
+			return 1;
+		}
+		case 6: //Apri/Chiudi Bagagliaio
+		{
+			new engine, lightz, alarm, doors, bonnet, boot, objective, id = PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID];
+			GetVehicleParamsEx(id, engine, lightz, alarm, doors, bonnet, boot, objective);
+			if(boot == -1)SetVehicleParamsEx(id, engine, lightz, alarm, doors, bonnet, false, objective);
+			if(boot)//Chiudi
+			{
+				SetVehicleParamsEx(id, engine, lightz, alarm, doors, bonnet, false, objective);
+			}
+			else //Apri
+			{
+				SetVehicleParamsEx(id, engine, lightz, alarm, doors, bonnet, true, objective);
+			}
+			return 1;
+		}
+		/*OtherHere*/
+		//
+		/*OtherHere*/
+		case 7: //Goto Vehicle
+		{
+			if(GetPlayerAdminLevel(playerid) >= 1)
+			{
+				new id = PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID];
+				//if(!IsValidVehicle(id))return SendClientMessage(playerid, COLOR_RED, "Il veicolo non esiste!");
+				SetPlayerVirtualWorld(playerid, GetVehicleVirtualWorld(id));
+				new Float:Pos[3];
+				GetVehiclePos(id, Pos[0], Pos[1], Pos[2]);
+				if(!IsPlayerInAnyVehicle(playerid))
+				{
+					SetPlayerPos(playerid, Pos[0], Pos[1]+3.0, Pos[2]);
+				}
+				else
+				{
+					SetVehiclePos(GetPlayerVehicleID(playerid), Pos[0]+1, Pos[1]+2.5, Pos[2]+3);
+				}
+				SendClientMessage(playerid, COLOR_GREY, "Ti sei gotato al veicolo!");
+			}
+		}
+		case 8: //Gethere Vehicle
+		{
+			if(GetPlayerAdminLevel(playerid) >= 1)
+			{
+				new id = PlayerVehicle[playerid][vehicleMenuChoosed[playerid]][vID];
+			//	if(!IsValidVehicle(id))return SendClientMessage(playerid, COLOR_RED, "Il veicolo non esiste!");
+				SetVehicleVirtualWorld(id, GetPlayerVirtualWorld(playerid));
+				new Float:Pos[3];
+				GetPlayerPos(playerid, Pos[0], Pos[1], Pos[2]);
+				SetVehiclePos(id, Pos[0]+2, Pos[1]+1.5, Pos[2]+2);
+				SendClientMessage(playerid, COLOR_GREY, "Ti sei gotato il veicolo!");
+			}
+		}
+	}
+	return 1;
+}
+
+Dialog:DialogVmenuSellTo(playerid, response, listitem, inputtext[])
+{
+	if(!response)
+	{
+		vehicleMenuChoosed[playerid] = 0;
+		return 0;
+	}
+	new id;
+	if(sscanf(inputtext, "u", id))return Dialog_Show(playerid, DialogVmenuSellTo, DIALOG_STYLE_INPUT, "Vendi veicolo", "Inserisci l'ID del player a cui vuoi vendere il veicolo!", "Ok", "Annulla");
+	if(id == INVALID_PLAYER_ID)return Dialog_Show(playerid, DialogVmenuSellTo, DIALOG_STYLE_INPUT, "Vendi veicolo", "Giocatore non connesso!\nInserisci l'ID del player a cui vuoi vendere il veicolo!", "Ok", "Annulla");
+	if(GetPlayerVehicleCount(id) == NORMAL_PLAYER_SLOT-1 && PlayerInfo[playerid][playerPremium] == PLAYER_NO_PREMIUM)
+	{
+		return SendClientMessage(playerid, COLOR_RED, "Il player possiede troppi veicoli!");
+	}
+	else if(GetPlayerVehicleCount(id) == PREMIUM_PLAYER_SLOT-1 && PlayerInfo[playerid][playerPremium] != PLAYER_NO_PREMIUM)
+	{
+		return SendClientMessage(playerid, COLOR_RED, "Il player possiede troppi veicoli!");
+	}
+	vmenu_SellerID[id] = -1;
+	vmenu_PlayerToSellVeh[playerid] = id;
+	Dialog_Show(playerid, DialogVmenuSellToPrice, DIALOG_STYLE_INPUT, "Vendi veicolo", "Inserisci il prezzo del veicolo!", "Ok", "Annulla");
+	return 1;
+}
+
+Dialog:DialogVmenuSellToPrice(playerid, response, listitem, inputtext[])
+{
+	if(!response)
+	{
+		vehicleMenuChoosed[playerid] = 0;
+		vmenu_PlayerToSellVehPrice[playerid] = -1;
+		vmenu_PlayerToSellVeh{vmenu_SellerID[playerid]} = -1;
+		vmenu_SellerID[playerid] = -1;
+		vehicleMenuChoosed[vmenu_SellerID[playerid]] = 0;
+		return 0;
+	}
+	new price;
+	if(sscanf(inputtext, "d", price))return Dialog_Show(playerid, DialogVmenuSellToPrice, DIALOG_STYLE_INPUT, "Vendi veicolo", "Inserisci il prezzo del veicolo!", "Ok", "Annulla");
+	new string[128];
+	vmenu_SellerID[vmenu_PlayerToSellVeh[playerid]] = playerid;
+	vmenu_PlayerToSellVehPrice[vmenu_PlayerToSellVeh[playerid]] = price;
+	format(string, 128, "%s vuole venderti un veicolo (%s) per "EMB_DOLLARGREEN"%s"EMB_WHITE"", PlayerInfo[playerid][playerName], GetVehicleName(GetVehicleModel(GetPlayerVehicleID(playerid))), ConvertPrice(price));
+	Dialog_Show(vmenu_PlayerToSellVeh[playerid], DialogVmenuSellToFinish, DIALOG_STYLE_MSGBOX, "Richiesta", string, "Ok", "Annulla");
+	return 1;
+}
+
+Dialog:DialogVmenuSellToFinish(playerid, response, listitem, inputtext[])
+{
+	if(PlayerInfo[vmenu_SellerID[playerid]][playerLogged] == false)
+	{
+		SendClientMessage(playerid, -1, "Il giocatore non e' connesso!");
+		vmenu_PlayerToSellVehPrice[playerid] = -1;
+		vmenu_PlayerToSellVeh{vmenu_SellerID[playerid]} = -1;
+		vmenu_SellerID[playerid] = -1;
+		vehicleMenuChoosed[vmenu_SellerID[playerid]] = 0;
+		return 1;
+	}
+	if(!response)
+	{
+		new string[128];
+		format(string, 128, "%s non ha accettato il veicolo!", PlayerInfo[playerid][playerName]);
+		Dialog_Show(vmenu_SellerID[playerid], DialogVmenuSellToFinish2, DIALOG_STYLE_MSGBOX, "Richiesta", string, "Ok", "Annulla");
+		vmenu_PlayerToSellVehPrice[playerid] = -1;
+		vmenu_PlayerToSellVeh{vmenu_SellerID[playerid]} = -1;
+		vmenu_SellerID[playerid] = -1;
+		vehicleMenuChoosed[vmenu_SellerID[playerid]] = 0;
+		return 1;
+	}
+	else
+	{
+		new string[128];
+		format(string, 128, "%s ha comprato il tuo veicolo!", PlayerInfo[playerid][playerName]);
+		Dialog_Show(vmenu_SellerID[playerid], DialogVmenuSellToFinish2, DIALOG_STYLE_MSGBOX, "Richiesta", string, "Ok", "Annulla");
+		GivePlayerMoneyEx(playerid, -vmenu_PlayerToSellVehPrice[playerid]);
+		GivePlayerMoneyEx(vmenu_SellerID[playerid], vmenu_PlayerToSellVehPrice[playerid]);
+		SendPlayerVehicle(vmenu_SellerID[playerid], playerid, vehicleMenuChoosed[vmenu_SellerID[playerid]]);
+		vmenu_PlayerToSellVehPrice[playerid] = -1;
+		vmenu_PlayerToSellVeh[vmenu_SellerID[playerid]]= -1;
+		vmenu_SellerID[playerid] = -1;
+		vehicleMenuChoosed[vmenu_SellerID[playerid]] = 0;
+	}
+	return 1;
+}
+
+Dialog:DialogAmmu(playerid, response, listitem, inputtext[])
+{
+	if(!response)return 0;
+	switch(listitem)
+	{
+		case 0: Dialog_Show(playerid, DialogAmmuHandgun, DIALOG_STYLE_LIST, "Pistole", 		"9mm			"EMB_DOLLARGREEN"$400\n"EMB_WHITE"9mm Silenced		"EMB_DOLLARGREEN"$500"EMB_WHITE"\nDesert Eagle		"EMB_DOLLARGREEN"$1.500"EMB_WHITE, "Compra", "Indietro");
+		case 1: Dialog_Show(playerid, DialogAmmuSmg, DIALOG_STYLE_LIST, "SMG", 			"Tec 9			"EMB_DOLLARGREEN"$400\n"EMB_WHITE"Uzi		"EMB_DOLLARGREEN"$600"EMB_WHITE"\nMP5		"EMB_DOLLARGREEN"$2.500"EMB_WHITE, "Compra", "Indietro");
+		case 2: Dialog_Show(playerid, DialogAmmuShotgun, DIALOG_STYLE_LIST, "Shotguns", 	"Shotgun		"EMB_DOLLARGREEN"$800\n"EMB_WHITE"Sawnoff Shotgun		"EMB_DOLLARGREEN"$1.200\nSpas 12		"EMB_DOLLARGREEN"$2.500"EMB_WHITE, "Compra", "Indietro");
+		case 3: Dialog_Show(playerid, DialogAmmuArmor, DIALOG_STYLE_LIST, "Armatura", 		"Armatura		"EMB_DOLLARGREEN"$10.000\n"EMB_WHITE, "Compra", "Indietro");
+		case 4: Dialog_Show(playerid, DialogAmmuAssault, DIALOG_STYLE_LIST, "Assalti", 		"AK-47			"EMB_DOLLARGREEN"$3.500\n"EMB_WHITE"M4		"EMB_DOLLARGREEN"$4.000"EMB_WHITE"\n", "Compra", "Indietro");
+		case 5: Dialog_Show(playerid, DialogAmmuUtility, DIALOG_STYLE_LIST, "Utilita'", 		"C4(Rapine)x2	"EMB_DOLLARGREEN"$100.000"EMB_WHITE, "Compra", "Indietro");
+	}
+	return 1;
+}
+
+Dialog:DialogAmmuUtility(playerid, response, listitem, inputtext[])
+{
+	if(!response)return Dialog_Show(playerid, DialogAmmu, DIALOG_STYLE_LIST, "Ammunation", "Pistole\nSMG\nShotguns\nArmatura\nAssalti\nUtilita'", "Avanti", "Chiudi");
+	switch(listitem)
+	{
+		case 0:
+		{
+			if(GetPlayerMoneyEx(playerid) < 100000)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
+			PlayerInfo[playerid][playerC4] += 2;
+			GivePlayerMoneyEx(playerid, -100000);
+			new string[128];
+			format(string, 128, "Hai acquistato 2 cariche di C4 (%d cariche totali) che possono essere usate per le rapine (Centro Scommesse).", PlayerInfo[playerid][playerC4]);
+			SendClientMessage(playerid, COLOR_GREEN, string);
+			SendClientMessage(playerid, COLOR_GREEN, "Ricorda però che uscendo dal gioco perderai tutte le cariche attuali!");
+			Dialog_Show(playerid, DialogAmmuUtility, DIALOG_STYLE_LIST, "Utilita'", "C4(Rapine)x2		"EMB_DOLLARGREEN"$100.000", "Compra", "Indietro");
+		}
+	}
+	return 1;
+}
+
+Dialog:DialogAmmuAssault(playerid, response, listitem, inputtext[])
+{
+	if(!response)return Dialog_Show(playerid, DialogAmmu, DIALOG_STYLE_LIST, "Ammunation", "Pistole\nSMG\nShotguns\nArmatura\nAssalti\nUtilita'", "Avanti", "Chiudi");
+	switch(listitem)
+	{
+		case 0: //AK
+		{
+			if(GetPlayerMoneyEx(playerid) < 3500)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
+			GivePlayerMoneyEx(playerid, -3500);
+			GivePlayerWeaponEx(playerid, 30, 150);
+			Dialog_Show(playerid, DialogAmmuAssault, DIALOG_STYLE_LIST, "Assalti", "AK-47		"EMB_DOLLARGREEN"$3.500"EMB_WHITE"\nM4		"EMB_DOLLARGREEN"$4.000\n", "Compra", "Indietro");
+		}
+		case 1://M4
+		{
+			if(GetPlayerMoneyEx(playerid) < 4000)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
+			GivePlayerMoneyEx(playerid, -4000);
+			GivePlayerWeaponEx(playerid, 31, 150);
+			Dialog_Show(playerid, DialogAmmuAssault, DIALOG_STYLE_LIST, "Assalti", "AK-47		"EMB_DOLLARGREEN"$3.500"EMB_WHITE"\nM4		"EMB_DOLLARGREEN"$4.000\n", "Compra", "Indietro");
+		}
+	}
+	return 1;
+}
+
+Dialog:DialogAmmuArmor(playerid, response, listitem, inputtext[])
+{
+	if(!response) return Dialog_Show(playerid, DialogAmmu, DIALOG_STYLE_LIST, "Ammunation", "Pistole\nSMG\nShotguns\nArmatura\nAssalti\nUtilita'", "Avanti", "Chiudi");
+	if(listitem == 0)//Armatura
+	{
+		if(GetPlayerMoneyEx(playerid) < 10000)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
+		GivePlayerMoneyEx(playerid, -10000);
+		SetPlayerArmour(playerid, 99.0);
+		Dialog_Show(playerid, DialogAmmu, DIALOG_STYLE_LIST, "Ammunation", "Pistole\nSMG\nShotguns\nArmatura\nAssalti\nUtilita'", "Avanti", "Chiudi");
+	}
+	return 1;
+}
+
+Dialog:DialogAmmuHandgun(playerid, response, listitem, inputtext[])
+{
+	if(!response)return Dialog_Show(playerid, DialogAmmu, DIALOG_STYLE_LIST, "Ammunation", "Pistole\nSMG\nShotguns\nArmatura\nAssalti\nUtilita'", "Avanti", "Chiudi");
+	switch(listitem)
+	{
+		case 0: //9mm
+		{
+			if(GetPlayerMoneyEx(playerid) < 400)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
+			GivePlayerMoneyEx(playerid, -400);
+			GivePlayerWeaponEx(playerid, 22, 50);
+		}
+		case 1://9mm Silenziata
+		{
+			if(GetPlayerMoneyEx(playerid) < 500)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
+			GivePlayerMoneyEx(playerid, -500);
+			GivePlayerWeaponEx(playerid, 23, 50);
+		}
+		case 2://Desert Eagle
+		{
+			if(GetPlayerMoneyEx(playerid) < 1500)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
+			GivePlayerMoneyEx(playerid, -1500);
+			GivePlayerWeaponEx(playerid, 24, 50);
+		}
+	}
+	Dialog_Show(playerid, DialogAmmuHandgun, DIALOG_STYLE_LIST, "Pistole", "9mm		"EMB_DOLLARGREEN"$400"EMB_WHITE"\n9mm Silenziata		"EMB_DOLLARGREEN"$500"EMB_WHITE"\nDesert Eagle		"EMB_DOLLARGREEN"$1.500", "Compra", "Indietro");
+	return 1;
+}
+
+Dialog:DialogAmmuSmg(playerid, response, listitem, inputtext[])
+{
+	if(!response)return Dialog_Show(playerid, DialogAmmu, DIALOG_STYLE_LIST, "Ammunation", "Pistole\nSMG\nShotguns\nArmatura\nAssalti\nUtilita'", "Avanti", "Chiudi");
+	switch(listitem)
+	{
+		case 0: //Tec9
+		{
+			if(GetPlayerMoneyEx(playerid) < 400)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
+			GivePlayerMoneyEx(playerid, -400);
+			GivePlayerWeaponEx(playerid, 32, 100);
+		}
+		case 1://Uzi
+		{
+			if(GetPlayerMoneyEx(playerid) < 600)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
+			GivePlayerMoneyEx(playerid, -600);
+			GivePlayerWeaponEx(playerid, 28, 100);
+		}
+		case 2://MP5
+		{
+			if(GetPlayerMoneyEx(playerid) < 2500)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
+			GivePlayerMoneyEx(playerid, -2500);
+			GivePlayerWeaponEx(playerid, 29, 100);
+		}
+	}
+	Dialog_Show(playerid, DialogAmmuSmg, DIALOG_STYLE_LIST, "SMG", "Tec 9		"EMB_DOLLARGREEN"$400"EMB_WHITE"\nUzi		"EMB_DOLLARGREEN"$600"EMB_WHITE"\nMP5		"EMB_DOLLARGREEN"$2.500", "Compra", "Indietro");
+	return 1;
+}
+
+Dialog:DialogAmmuShotgun(playerid, response, listitem, inputtext[])
+{
+	if(!response)return Dialog_Show(playerid, DialogAmmu, DIALOG_STYLE_LIST, "Ammunation", "Pistole\nSMG\nShotguns\nArmatura\nAssalti\nUtilita'", "Avanti", "Chiudi");
+	switch(listitem)
+	{
+		case 0: //Shotgun
+		{
+			if(GetPlayerMoneyEx(playerid) < 800)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
+			GivePlayerMoneyEx(playerid, -800);
+			GivePlayerWeaponEx(playerid, 25, 25);
+		}
+		case 1://Sawnoff Shotgun
+		{
+			if(GetPlayerMoneyEx(playerid) < 1200)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
+			GivePlayerMoneyEx(playerid, -1200);
+			GivePlayerWeaponEx(playerid, 26, 25);
+		}
+		case 2://SPAZZZZZZZZZZZ
+		{
+			if(GetPlayerMoneyEx(playerid) < 2500)return SendClientMessage(playerid, COLOR_LIGHTRED, "Non hai abbastanza soldi!");
+			GivePlayerMoneyEx(playerid, -2500);
+			GivePlayerWeaponEx(playerid, 27, 25);
+		}
+	}
+	Dialog_Show(playerid, DialogAmmuShotgun, DIALOG_STYLE_LIST, "Shotguns", "Shotgun		"EMB_DOLLARGREEN"$800"EMB_WHITE"\nSawnoff Shotgun		"EMB_DOLLARGREEN"$1.200"EMB_WHITE"\nSpas 12		"EMB_DOLLARGREEN"$2.500"EMB_WHITE"", "Compra", "Indietro");
+	return 1;
+}
+
+Dialog:DialogBank(playerid, response, listitem, inputtext[])
+{
+	if(!response)return 0;
+	switch(listitem)
+	{
+		case 0: //Ritira Soldi
+		{
+			Dialog_Show(playerid, DialogBankWithdraw, DIALOG_STYLE_INPUT, "Ritira", "Inserisci la somma che vuoi ritirare!", "Ritira", "Chiudi");
+		}
+		case 1: // Deposita Soldi
+		{
+			Dialog_Show(playerid, DialogBankDeposit, DIALOG_STYLE_INPUT, "Deposita", "Inserisci la somma che vuoi depositare nel tuo conto bancario!", "Deposita", "Chiudi");
+		}
+		case 2: //Bilancio Bancario
+		{
+			new string[60];
+			format(string, sizeof(string), "Bilancio Bancario: "EMB_DOLLARGREEN"%s"EMB_WHITE"", ConvertPrice(PlayerInfo[playerid][playerBank]));
+			SendClientMessage(playerid, COLOR_GREEN, string);
+		}
+	}
+	return 1;
+}
+
+Dialog:DialogBankWithdraw(playerid, response, listitem, inputtext[])
+{
+	if(!response)return 0;
+	if(!IsNumeric(inputtext))return Dialog_Show(playerid, DialogBankWithdraw, DIALOG_STYLE_INPUT, "Ritira", "Non hai tutti questi soldi nel tuo conto bancario!\nInserisci la cifra che vuoi ritirare!", "Ritira", "Chiudi");
+	if(strval(inputtext) > PlayerInfo[playerid][playerBank])return Dialog_Show(playerid, DialogBankWithdraw, DIALOG_STYLE_INPUT, "Ritira", "Non hai tutti questi soldi nel tuo conto bancario!\nInserisci la cifra che vuoi ritirare!", "Ritira", "Chiudi");
+	if(strval(inputtext) < 1)return SendClientMessage(playerid, COLOR_RED, "Non possiedi questi soldi!");
+	new string[128];
+	format(string, sizeof(string), "Hai ritirato "EMB_DOLLARGREEN"%s"EMB_WHITE" dal tuo conto bancario. Nuovo bilancio: "EMB_DOLLARGREEN"%s"EMB_WHITE"", ConvertPrice(strval(inputtext)), ConvertPrice(PlayerInfo[playerid][playerBank]-strval(inputtext)));
+	SendClientMessage(playerid, -1, string);
+	PlayerInfo[playerid][playerBank] -= strval(inputtext);
+	GivePlayerMoneyEx(playerid, strval(inputtext));
+	SavePlayer(playerid);
+	return 1;
+}
+
+Dialog:DialogBankDeposit(playerid, response, listitem, inputtext[])
+{
+	if(!response)return 0;
+	if(!IsNumeric(inputtext))return Dialog_Show(playerid, DialogBankDeposit, DIALOG_STYLE_INPUT, "Deposita", "Non hai tutti questi soldi!\nInserisci la cifra che vuoi ritirare!", "Ritira", "Chiudi");
+	if(strval(inputtext) > GetPlayerMoneyEx(playerid))return Dialog_Show(playerid, DialogBankDeposit, DIALOG_STYLE_INPUT, "Deposita", "Non hai tutti questi soldi nel tuo conto bancario!\nInserisci la cifra che vuoi ritirare!", "Ritira", "Chiudi");
+	if(strval(inputtext) < 1)return Dialog_Show(playerid, DialogBankDeposit, DIALOG_STYLE_INPUT, "Deposita", "Non hai tutti questi soldi nel tuo conto bancario!\nInserisci la cifra che vuoi ritirare!", "Ritira", "Chiudi");
+	new string[128];
+	format(string, sizeof(string), "Hai depositato "EMB_DOLLARGREEN"%s"EMB_WHITE" nel tuo conto bancario.", ConvertPrice(strval(inputtext)));
+	SendClientMessage(playerid, -1, string);
+	PlayerInfo[playerid][playerBank] += strval(inputtext);
+	format(string, sizeof(string), "Nuovo bilancio: "EMB_DOLLARGREEN"%s"EMB_WHITE"", ConvertPrice(PlayerInfo[playerid][playerBank]));
+	SendClientMessage(playerid, -1, string);
+	GivePlayerMoneyEx(playerid, -strval(inputtext));
+	SavePlayer(playerid);
+	return 1;
+}
+
+Dialog:DialogPoliceWeapons(playerid, response, listitem, inputtext[])
+{
+	if(!response)return 0;
+	switch(listitem)
+	{
+		case 0://9mm
+		{
+			if(PlayerInfo[playerid][playerTickets] < COLT_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
+			GivePlayerWeaponEx(playerid, 22, 40);
+			PlayerInfo[playerid][playerTickets] -= COLT_TICKET;
+			return 1;
+		}
+		case 1: //D. Eagle
+		{
+			if(PlayerInfo[playerid][playerTickets] < DEAGLE_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
+			GivePlayerWeaponEx(playerid, 24, 50);
+			PlayerInfo[playerid][playerTickets] -= DEAGLE_TICKET;
+			return 1;
+		}
+		case 2: //Shotgun
+		{
+			if(PlayerInfo[playerid][playerTickets] < SHOTGUN_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
+			GivePlayerWeaponEx(playerid, 25, 30);
+			PlayerInfo[playerid][playerTickets] -= SHOTGUN_TICKET;
+			return 1;
+		}
+		case 3: //Shawnoff
+		{
+			if(PlayerInfo[playerid][playerTickets] < SHAWNOFF_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
+			GivePlayerWeaponEx(playerid, 26, 15);
+			PlayerInfo[playerid][playerTickets] -= SHAWNOFF_TICKET;
+			return 1;
+		}
+		case 4: //Spas
+		{
+			if(PlayerInfo[playerid][playerTickets] < SPAS_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
+			GivePlayerWeaponEx(playerid, 27, 10);
+			PlayerInfo[playerid][playerTickets] -= SPAS_TICKET;
+			return 1;
+		}
+		case 5: //Uzi
+		{
+			if(PlayerInfo[playerid][playerTickets] < UZI_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
+			GivePlayerWeaponEx(playerid, 28, 100);
+			PlayerInfo[playerid][playerTickets] -= UZI_TICKET;
+			return 1;
+		}
+		case 6: //Tec9
+		{
+			if(PlayerInfo[playerid][playerTickets] < TEC_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
+			GivePlayerWeaponEx(playerid, 32, 100);
+			PlayerInfo[playerid][playerTickets] -= TEC_TICKET;
+			return 1;
+		}
+		case 7: //MP5
+		{
+			if(PlayerInfo[playerid][playerTickets] < MP5_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
+			GivePlayerWeaponEx(playerid, 29, 150);
+			PlayerInfo[playerid][playerTickets] -= MP5_TICKET;
+			return 1;
+		}
+		case 8: //AK
+		{
+			if(PlayerInfo[playerid][playerTickets] < AK_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
+			GivePlayerWeaponEx(playerid, 30, 120);
+			PlayerInfo[playerid][playerTickets] -= AK_TICKET;
+			return 1;
+		}
+		case 9: //M4
+		{
+			if(PlayerInfo[playerid][playerTickets] < M4_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
+			GivePlayerWeaponEx(playerid, 31, 150);
+			PlayerInfo[playerid][playerTickets] -= M4_TICKET;
+			return 1;
+		}
+		case 10: //Armour
+		{
+			if(PlayerInfo[playerid][playerTickets] < ARMOUR_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
+			SetPlayerArmour(playerid, 99.0);
+			PlayerInfo[playerid][playerTickets] -= ARMOUR_TICKET;
+			return 1;
+		}
+		case 11: //Medikit
+		{
+			if(PlayerInfo[playerid][playerTickets] < MEDIKIT_TICKET)return SendClientMessage(playerid, COLOR_RED, "Non hai abbastanza tickets!");
+			SetPlayerHealth(playerid, 99.0);
+			PlayerInfo[playerid][playerTickets] -= MEDIKIT_TICKET;
+		}
+	}
+	return 1;
+}
+
+Dialog:DialogPDElevator(playerid, response, listitem, inputtext[])
+{
+	if(!response)return 0;
+	switch(listitem)
+	{
+		case 0:
+		{
+			if(IsPlayerInRangeOfPoint(playerid, 3.0, 1568.5887,-1689.9709,6.2188))return SendClientMessage(playerid, -1, "Sei gia' al parcheggio!");
+			SetPlayerPos(playerid, 1568.5887,-1689.9709,6.2188);
+			SetPlayerInterior(playerid, 0);
+		}
+		case 1:
+		{
+			if(IsPlayerInRangeOfPoint(playerid, 3.0, 242.2487,66.3135,1003.6406))return SendClientMessage(playerid, -1, "Sei gia' alla Stazione di Polizia");
+			SetPlayerPos(playerid, 242.2487,66.3135,1003.6406);
+			SetPlayerInterior(playerid, 6);
+		}
+		case 2:
+		{
+			if(IsPlayerInRangeOfPoint(playerid, 3.0, 1565.0767,-1667.0001,28.3956))return SendClientMessage(playerid, -1, "Sei gia' sul tetto");
+			SetPlayerPos(playerid, 1565.0767,-1667.0001,28.3956);
+			SetPlayerInterior(playerid, 0);
+		}
+	}
+	return 1;
+}
+
+Dialog:DialogDealerBuy(playerid, response, listitem, inputtext[])
+{
+	new sid = GetPlayerShowroomArea(playerid), cid;
+	for(new i = 0; i < MAX_CARS; i++)
+	{
+		if(GetVehicleModel(GetPlayerVehicleID(playerid)) == ShowroomVehicle[sid][i][sModel]) cid = i;
+	}
+	if(GetPlayerMoneyEx(playerid) < ShowroomVehicle[sid][cid][sPrice]) return SendClientMessage(playerid, COLOR_RED, "> Non hai abbastanza soldi!");
+	if(PlayerInfo[playerid][playerPremium] == PLAYER_NO_PREMIUM && GetPlayerVehicleCount(playerid) == NORMAL_PLAYER_SLOT-1)
+	{
+		return SendClientMessage(playerid, COLOR_RED, "Possiedi troppi veicoli!");
+	}
+	else if(PlayerInfo[playerid][playerPremium] != PLAYER_NO_PREMIUM && GetPlayerVehicleCount(playerid) == PREMIUM_PLAYER_SLOT-1)
+	{
+		return SendClientMessage(playerid, COLOR_RED, "Possiedi troppi veicoli!");
+	}
+	if(GetPlayerFreeSlot(playerid) == 0)return SendClientMessage(playerid, COLOR_RED, "Possiedi troppi veicoli!");
+	new id = CreatePlayerVehicle(playerid, GetVehicleModel(GetPlayerVehicleID(playerid)),ShowroomPickupPos[sid][0], ShowroomPickupPos[sid][1], ShowroomPickupPos[sid][2], 0.0, random(200), random(200));
+	new string[200];
+	format(string, sizeof(string), "Hai acquistato questo veicolo per %s!, Ricordati di parcheggiarlo tramite il /vmenu", ConvertPrice(ShowroomVehicle[sid][cid][sPrice]));
+	SendClientMessage(playerid, COLOR_GREEN, string);
+	PutPlayerInVehicle(playerid, id, 0);
+	GivePlayerMoneyEx(playerid, -ShowroomVehicle[sid][cid][sPrice]);
+	return 1;
+}
+
+public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
+{
 	return 1;
 }
 
@@ -4627,7 +4373,7 @@ public LoginPlayer(playerid)
 			SendClientMessage(playerid, COLOR_RED, "Sei stato kickato perche' hai sbagliato password 3 volte!");
 			return Kick(playerid);
 		}
-		ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Login", "{FF0000}Password errata.\n{FFFFFF}Inserisci la tua password per loggare!", "Login!", "Esci");
+		Dialog_Show(playerid, LoginDialog, DIALOG_STYLE_PASSWORD, "Login", "{FF0000}Password errata.\n{FFFFFF}Inserisci la tua password per loggare!", "Login!", "Esci");
 	}
 	return 1;
 }
@@ -4786,7 +4532,7 @@ public LoadPlayer(playerid)
 				PlayerInfo[playerid][playerPremium] = PLAYER_NO_PREMIUM;
 				PlayerInfo[playerid][playerPremiumTime] = 0;
 				new string[140];
-				mysql_format(MySQLC, string, sizeof(string), "UPDATE `Players` SET PremiumTime = '0', Premium = '0' WHERE `ID` = '%d' AND `Name` = '%s'", PlayerInfo[playerid][playerID], PlayerInfo[playerid][playerName]);
+				mysql_format(MySQLC, string, sizeof(string), "UPDATE `accounts` SET PremiumTime = '0', Premium = '0' WHERE `ID` = '%d' AND `Name` = '%s'", PlayerInfo[playerid][playerID], PlayerInfo[playerid][playerName]);
 				mysql_tquery(MySQLC, string);
 			}
 		}
@@ -4796,7 +4542,7 @@ public LoadPlayer(playerid)
 	{
 		new string[128];
 		format(string, 128, "Questo account (%s) risulta bannato.", PlayerInfo[playerid][playerName]);
-		ShowPlayerDialog(playerid, 999, DIALOG_STYLE_MSGBOX, "Account Bannato", string, "...", "...");
+		Dialog_Show(playerid, Void, DIALOG_STYLE_MSGBOX, "Account Bannato", string, "...", "...");
 		KickPlayer(playerid);
 		return 0;
 	}
@@ -4805,7 +4551,7 @@ public LoadPlayer(playerid)
 		new string[100];
 		//  mtime_UnixToDate(string, strval(field), DATE_LITTLEENDIAN, CLOCK_EUROPEAN);
 		format(string, 128, "Il ban scade il %s.", string);
-		ShowPlayerDialog(playerid, 999, DIALOG_STYLE_MSGBOX, "Account Bannato", string, "...", "...");
+		Dialog_Show(playerid, Void, DIALOG_STYLE_MSGBOX, "Account Bannato", string, "...", "...");
 		KickPlayer(playerid);
 		return 0;
 	}
@@ -4835,7 +4581,7 @@ public LoadPlayer(playerid)
 	new string[128];
 	format(string, sizeof(string), "%s[%d] e' entrato nel server!", PlayerInfo[playerid][playerName], playerid);
 	SendClientMessageToAll(COLOR_GREY, string);
-	new query[124];
+	new query[128];
 	mysql_format(MySQLC, query, sizeof(query), "SELECT * FROM `PlayerStats` WHERE `Name` = '%e' AND `ID` = '%d'", PlayerInfo[playerid][playerName], PlayerInfo[playerid][playerID]);
 	mysql_tquery(MySQLC, query, "LoadPlayerStats", "d", playerid);
 	mysql_format(MySQLC, query, sizeof(query), "SELECT * FROM `playervehicle` WHERE `OwnerID` = '%d'", PlayerInfo[playerid][playerID]);
@@ -4961,7 +4707,7 @@ stock SavePlayer(playerid)
 		format(string2, sizeof(string2), "%d,", PlayerSkill[playerid][ENUM_SKILLS: skill]);
 		strcat(finalstring, string2);
 	}
-	mysql_format(MySQLC, query, sizeof query, "UPDATE `Players` SET Money = '%d', Bank = '%d', Admin = '%d', Skills = '%s', JailTime = '%d', Drug = '%d', RewardMoney = '%d', Rewards = '%d', Kills = '%d', Deaths = '%d', Tickets = '%d', LastLogin = '%d' WHERE `Name` = '%e' AND `ID` = '%d'",
+	mysql_format(MySQLC, query, sizeof query, "UPDATE `accounts` SET Money = '%d', Bank = '%d', Admin = '%d', Skills = '%s', JailTime = '%d', Drug = '%d', RewardMoney = '%d', Rewards = '%d', Kills = '%d', Deaths = '%d', Tickets = '%d', LastLogin = '%d' WHERE `Name` = '%e' AND `ID` = '%d'",
 		PlayerInfo[playerid][playerMoney],
 		PlayerInfo[playerid][playerBank],
 		PlayerInfo[playerid][playerAdmin],
@@ -4990,7 +4736,7 @@ stock SavePlayer(playerid)
 
 		}
 	}
-	mysql_format(MySQLC, query,sizeof(query), "UPDATE `Players` SET Weapons = '%s' WHERE `Name` = '%s'", weapstring, PlayerInfo[playerid][playerName]);
+	mysql_format(MySQLC, query,sizeof(query), "UPDATE `accounts` SET Weapons = '%s' WHERE `Name` = '%s'", weapstring, PlayerInfo[playerid][playerName]);
 	mysql_tquery(MySQLC, query);
 	return 1;
 }
@@ -6226,7 +5972,7 @@ CMD:setadmin(playerid, params[])
 		format(string, 128, "%s e' stato settato admin livello %d", PlayerInfo[id][playerName], level);
 		SendClientMessage(playerid, COLOR_GREEN, string);
 		PlayerInfo[id][playerAdmin] = level;
-		mysql_format(MySQLC, string, sizeof(string), "UPDATE `Players` SET `Admin` = '%d' WHERE `ID` = '%d' AND `Name` = '%s'", level, PlayerInfo[id][playerID], PlayerInfo[id][playerName]);
+		mysql_format(MySQLC, string, sizeof(string), "UPDATE `accounts` SET `Admin` = '%d' WHERE `ID` = '%d' AND `Name` = '%s'", level, PlayerInfo[id][playerID], PlayerInfo[id][playerName]);
 		mysql_tquery(MySQLC, string);
 	}
 	return 1;
@@ -6693,7 +6439,7 @@ CMD:banaccount(playerid, params[])
 		new string[256];
 		format(string, 128, " %s ha bannato l'account di %s. Motivo: %s ", PlayerInfo[playerid][playerName], PlayerInfo[id][playerName], reason);
 		SendClientMessageToAll(-1, string);
-		mysql_format(MySQLC, string, sizeof(string), "UPDATE `Players` SET AccountBanned = '1' WHERE `ID` = '%d' AND `Name` = '%s'", PlayerInfo[id][playerID], PlayerInfo[id][playerName]);
+		mysql_format(MySQLC, string, sizeof(string), "UPDATE `accounts` SET AccountBanned = '1' WHERE `ID` = '%d' AND `Name` = '%s'", PlayerInfo[id][playerID], PlayerInfo[id][playerName]);
 		mysql_tquery(MySQLC, string);
 		KickPlayer(id);
 	}
@@ -6712,7 +6458,7 @@ CMD:permaban(playerid, params[])
 		new string[256];
 		format(string, 128, " %s ha bannato permanentemente %s. Motivo: %s ", PlayerInfo[playerid][playerName], PlayerInfo[id][playerName], reason);
 		SendClientMessageToAll(-1, string);
-		mysql_format(MySQLC, string, sizeof(string), "UPDATE `Players` SET AccountBanned = '1' WHERE `ID` = '%d' AND `Name` = '%s'", PlayerInfo[id][playerID], PlayerInfo[id][playerName]);
+		mysql_format(MySQLC, string, sizeof(string), "UPDATE `accounts` SET AccountBanned = '1' WHERE `ID` = '%d' AND `Name` = '%s'", PlayerInfo[id][playerID], PlayerInfo[id][playerName]);
 		mysql_tquery(MySQLC, string);
 		BanPlayer(id);
 	}
@@ -7037,16 +6783,32 @@ stock CreateShowroomVehicle(ShowroomID, vehicleModel, price, Float:X, Float:Y, F
 forward LoadShowrooms();
 public LoadShowrooms()
 {
-	new cout, field[30], query[300];
+	new cout, query[64], string[128];
 	cache_get_row_count(cout);
 	for(new i = 0; i < cout; i++)
 	{
-		cache_get_value_index(i, 1, field);
-		strcpy(ShowroomName[i], field, 32);
+		cache_get_value_index(i, 1, ShowroomName[i]);
 		cache_get_value_index_float(i, 2, 	ShowroomPickupPos[i][0]);
 		cache_get_value_index_float(i, 3, 	ShowroomPickupPos[i][1]);
 		cache_get_value_index_float(i, 4, 	ShowroomPickupPos[i][2]);
-		CreateDynamic3DTextLabel(field, -1, ShowroomPickupPos[i][0], ShowroomPickupPos[i][1], ShowroomPickupPos[i][2]+0.5, 20.0, INVALID_PLAYER_ID, INVALID_VEHICLE_ID, 1, -1, -1, -1, 50.0);
+		cache_get_value_index_float(i, 5, ShowroomVSpawn[i][0]);
+		cache_get_value_index_float(i, 6, ShowroomVSpawn[i][1]);
+		cache_get_value_index_float(i, 7, ShowroomVSpawn[i][2]);
+		cache_get_value_index_float(i, 8, ShowroomVSpawn[i][3]);
+		cache_get_value_index(i, 9, ShowroomOwner[i]);
+		cache_get_value_index_int(i, 10, ShowroomPrice[i]);
+		cache_get_value_index_int(i, 11, ShowroomMoney[i]);
+		cache_get_value_index_int(i, 12, ShowroomOwnerID[i]);
+		if(ShowroomOwner[i])
+		{
+			format(string,sizeof(string), "Concessionario %s\nProprietario: %s", ShowroomName[i], ShowroomOwner[i]);
+			CreateDynamic3DTextLabel(string, -1, ShowroomPickupPos[i][0], ShowroomPickupPos[i][1], ShowroomPickupPos[i][2]+0.5, 20.0, INVALID_PLAYER_ID, INVALID_VEHICLE_ID, 1, -1, -1, -1, 50.0);
+		}
+		else
+		{
+			format(string,sizeof(string), "Concessionario %s\nIn Vendit� per: %s", ShowroomName[i], ConvertPrice(ShowroomPrice[i]));
+			CreateDynamic3DTextLabel(string, -1, ShowroomPickupPos[i][0], ShowroomPickupPos[i][1], ShowroomPickupPos[i][2]+0.5, 20.0, INVALID_PLAYER_ID, INVALID_VEHICLE_ID, 1, -1, -1, -1, 50.0);
+		}
 		ShowroomPickup[i] = CreateDynamicPickup(1239, 1, ShowroomPickupPos[i][0], ShowroomPickupPos[i][1], ShowroomPickupPos[i][2], 0, 0);
 		CreateDynamicMapIcon(ShowroomPickupPos[i][0], ShowroomPickupPos[i][1], ShowroomPickupPos[i][2], 55, -1, -1, -1, -1, 9999.0);
 		createdShowrooms++;
@@ -7782,9 +7544,10 @@ stock uDate(time, &e, &h, &n, &o, &p, &mp, hGMT = 0, mGMT = 0)
 stock CheckMySQLTable()
 {
 
-	//new thisstring[900];
+	new thisstring[900];
 	//Player
-	/*strcat(thisstring, "CREATE TABLE IF NOT EXISTS `Players`", sizeof(thisstring));
+
+	strcat(thisstring, "CREATE TABLE IF NOT EXISTS `Players` ", sizeof(thisstring));
 	strcat(thisstring, "(`ID` int(11) auto_increment PRIMARY KEY, \
 	`Name` varchar(30), `Password` varchar(128), `Money` int(11), `Bank` int(11), \
 	`Admin` int(11), `Skills` varchar(20), `JailTime` int(11), `PremiumTime` int(11), \
@@ -7799,22 +7562,24 @@ stock CheckMySQLTable()
 	`LastLogin` int(13),\
 	`GainRobberies` int(11),\
 	`GainVehicleStolen` int(11),\
-	`GainWeaponsDealer` int(11))", sizeof(thisstring));*/
+	`GainWeaponsDealer` int(11))", sizeof(thisstring));
 
-
+	mysql_tquery(MySQLC, thisstring);
 	//HOUSE
 
-	/*mysql_query("CREATE TABLE IF NOT EXISTS `houses` \
-	(`ID` int(11) PRIMARY KEY, `OwnerID` int(11), `OwnerName` varchar(26),\
-	`Closed` int(1), `X` float, `Y` float, `Z` float,\
+	mysql_tquery(MySQLC, "CREATE TABLE IF NOT EXISTS `houses` \
+	(`ID` int(11) PRIMARY KEY, `OwnerID` int(11), `OwnerName` varchar(26), \
+	`Closed` int(1), `X` float, `Y` float, `Z` float, \
 	`Xu` float, `Yu` float, `Zu` float, \
-	`Interior` int(11),`VirtualWorld` int(11), `Price` int(11))");*/
+	`Interior` int(11),`VirtualWorld` int(11), `Price` int(11))");
 	//Playervehicle
-	/*mysql_query("CREATE TABLE IF NOT EXISTS `playervehicle` (`ID` int(5) auto_increment PRIMARY KEY, `Slot` int(3), `OwnerID` int(11), `OwnerName` varchar(26), `Model` int(4), \
-	`X` float, `Y` float, `Z` float, `A` float, `Color1` int(11), `Color2` int(11), `Closed` int(11), `VehicleMod` varchar(256))");*/
+	mysql_tquery(MySQLC, "CREATE TABLE IF NOT EXISTS `playervehicle` (`ID` int(5) auto_increment PRIMARY KEY, `Slot` int(3), `OwnerID` int(11), `OwnerName` varchar(26), `Model` int(4), \
+	`X` float, `Y` float, `Z` float, `A` float, `Color1` int(11), `Color2` int(11), `Closed` int(11), `VehicleMod` varchar(256))");
 
 	//PayNSpray
-	/*strcat(thisstring, "CREATE TABLE IF NOT EXISTS `payspray`", sizeof(thisstring));
+	strdel(thisstring, 0, sizeof(thisstring));
+
+	strcat(thisstring, "CREATE TABLE IF NOT EXISTS `payspray` ", sizeof(thisstring));
 	strcat(thisstring, "(`ID` int(3) auto_increment PRIMARY KEY , \
 	`OwnerID` int(21), \
 	`OwnerName` varchar(24), \
@@ -7823,22 +7588,25 @@ stock CheckMySQLTable()
 	`Z` float, \
 	`Price` int(11), \
 	`Money` int(11))", sizeof(thisstring));
-	mysql_query(thisstring);*/
+	mysql_tquery(MySQLC, thisstring);
 
 	//SerialBan
-	/*strcat(thisstring, "CREATE TABLE IF NOT EXISTS `serialbans`", sizeof(thisstring));
+	strdel(thisstring, 0, sizeof(thisstring));
+	strcat(thisstring, "CREATE TABLE IF NOT EXISTS `serialbans` ", sizeof(thisstring));
 	strcat(thisstring, "(`SerialID` varchar(128) PRIMARY KEY, \
 	`AccountBanned` int(11))", sizeof(thisstring));
-	mysql_query(thisstring);*/
+	mysql_tquery(MySQLC, thisstring);
+
 	//PlayerStats
-	/*strcat(thisstring, "CREATE TABLE IF NOT EXISTS `PlayerStats`", sizeof(thisstring));
+	strdel(thisstring, 0, sizeof(thisstring));
+	strcat(thisstring, "CREATE TABLE IF NOT EXISTS `PlayerStats` ", sizeof(thisstring));
 	strcat(thisstring, "(`ID` int(11) PRIMARY KEY, \
 	`Name` varchar(24), \
 	`GainRobberies` int(11), \
 	`GainVehicleStolen` int(11), \
 	`GainWeaponsDealer` int(11), \
 	`GainDrugsDealer` int(11))", sizeof(thisstring));
-	mysql_query(thisstring);*/
+	mysql_tquery(MySQLC, thisstring);
 	//	UPDATE `PlayerStats` SET GainRobberies = '%d', GainVehicleStolen = '%d', GainWeaponsDealer = '%d', GainDrugsDealer = '%d' WHERE `ID` = '%d' AND `Name`
 }
 
@@ -7856,18 +7624,6 @@ stock SendMessageToWork(workid, color, text[])
 		if(PlayerInfo[i][playerWork] != workid)continue;
 		SendClientMessage(i, color, text);
 	}
-}
-
-stock ShowDealerDialog(playerid)
-{
-	new string[350] = "Arma\tColpi\tPrezzo\n";
-	new wname[32];
-	for(new i = 0; i < sizeof(WeaponDealerArray); i++)
-	{
-		GetWeaponName(WeaponDealerArray[i][ID], wname, sizeof(wname));
-		format(string,sizeof(string), ""EMB_WHITE"%s%s\t%d\t"EMB_DOLLARGREEN"%s\n",string, wname, WeaponDealerArray[i][Ammo], ConvertPrice(WeaponDealerArray[i][Price]));
-	}
-	return ShowPlayerDialog(playerid, DIALOG_WEAPOND_SELL, DIALOG_STYLE_TABLIST_HEADERS, "Armi", string, "Compra", "Annulla");
 }
 
 stock GetPlayerRangedHouse(playerid)
@@ -7898,15 +7654,6 @@ public ResetHouseRobbable(houseid)
 }
 
 //OTHER
-
-GetXYBehindOfVehicle(vehicleid, &Float:x, &Float:y, Float:distance)
-{
-	new Float:a;
-	GetVehiclePos(vehicleid, x, y, a);
-	GetVehicleZAngle(vehicleid, a);
-	x -= (distance * floatsin(-a, degrees));
-	y -= (distance * floatcos(-a, degrees));
-}
 
 stock IsVehicleComponentLegal(vehicleid, componentid) {
 	new s_LegalMods[][] = {
