@@ -120919,3 +120919,567 @@ v0.3.7-R2, (C)2005-2015 SA-MP Team
 ----------------------------------------------
 [23:43:08] [MySQL]: La connessione al database è avvenuta con successo.
 [23:43:08] ------------------------------------------------
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[10:56:22] plugins = ""  (string)
+[10:56:22] password = ""  (string)
+
+Server Plugins
+--------------
+ Loaded 0 plugins.
+
+
+Filterscripts
+---------------
+  Loading filterscript 'fsdebug.amx'...
+
+  *********************
+  * SA:MP DEBUG 0.2   *
+  * By Simon Campbell *
+  *********************
+  * Version: 0.5d      *
+  *********************
+  * -- LOADED         *
+  *********************
+
+  Loaded 1 filterscripts.
+
+Script[gamemodes/tpda.amx]: Run time error 19: "File or function is not found"
+Number of vehicle models: 0
+--- Server Shutting Down.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[10:56:42] password = ""  (string)
+
+Server Plugins
+--------------
+ Loading plugin: crashdetect
+  CrashDetect v4.18.1 is OK.
+  Loaded.
+ Loading plugin: nativechecker
+  Loaded.
+ Loaded 2 plugins.
+
+
+Filterscripts
+---------------
+  Loading filterscript 'fsdebug.amx'...
+
+  *********************
+  * SA:MP DEBUG 0.2   *
+  * By Simon Campbell *
+  *********************
+  * Version: 0.5d      *
+  *********************
+  * -- LOADED         *
+  *********************
+
+  Loaded 1 filterscripts.
+
+   Error: Function not registered: 'SSCANF_Init'
+   Error: Function not registered: 'SSCANF_Join'
+   Error: Function not registered: 'SSCANF_Leave'
+   Error: Function not registered: 'sscanf'
+[debug] Run time error 19: "File or function is not found"
+[debug]  SSCANF_Init
+[debug]  SSCANF_Join
+[debug]  SSCANF_Leave
+[debug]  sscanf
+[debug] Run time error 19: "File or function is not found"
+[debug]  SSCANF_Init
+[debug]  SSCANF_Join
+[debug]  SSCANF_Leave
+[debug]  sscanf
+Script[gamemodes/tpda.amx]: Run time error 19: "File or function is not found"
+Number of vehicle models: 0
+--- Server Shutting Down.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[10:56:52] password = ""  (string)
+
+Server Plugins
+--------------
+ Loading plugin: crashdetect
+  CrashDetect v4.18.1 is OK.
+  Loaded.
+ Loading plugin: nativechecker
+  Loaded.
+ Loading plugin: sscanf
+
+
+ ===============================
+
+      sscanf plugin loaded.     
+
+   (c) 2009 Alex "Y_Less" Cole
+
+   0.3d-R2 500 Players "dnee"
+
+ ===============================
+
+  Loaded.
+ Loaded 3 plugins.
+
+
+Filterscripts
+---------------
+  Loading filterscript 'fsdebug.amx'...
+
+  *********************
+  * SA:MP DEBUG 0.2   *
+  * By Simon Campbell *
+  *********************
+  * Version: 0.5d      *
+  *********************
+  * -- LOADED         *
+  *********************
+
+  Loaded 1 filterscripts.
+
+   Error: Function not registered: 'SSCANF_Init'
+   Error: Function not registered: 'SSCANF_Join'
+   Error: Function not registered: 'SSCANF_Leave'
+   Error: Function not registered: 'sscanf'
+ 
+ 
+ 
+ ======================================= 
+ |                                     | 
+ |        YSI version 4.00.0001        | 
+ |        By Alex "Y_Less" Cole        | 
+ |                                     | 
+ ======================================= 
+ 
+
+----------------------------------
+  TPDA Script
+
+----------------------------------
+
+Number of vehicle models: 0
+--- Server Shutting Down.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[11:02:17] password = ""  (string)
+
+Server Plugins
+--------------
+ Loading plugin: crashdetect
+  CrashDetect v4.18.1 is OK.
+  Loaded.
+ Loading plugin: nativechecker
+  Loaded.
+ Loading plugin: sscanf
+
+
+ ===============================
+
+      sscanf plugin loaded.     
+
+   (c) 2009 Alex "Y_Less" Cole
+
+   0.3d-R2 500 Players "dnee"
+
+ ===============================
+
+  Loaded.
+ Loaded 3 plugins.
+
+
+Filterscripts
+---------------
+  Loading filterscript 'fsdebug.amx'...
+
+  *********************
+  * SA:MP DEBUG 0.2   *
+  * By Simon Campbell *
+  *********************
+  * Version: 0.5d      *
+  *********************
+  * -- LOADED         *
+  *********************
+
+  Loaded 1 filterscripts.
+
+   Error: Function not registered: 'SSCANF_Init'
+   Error: Function not registered: 'SSCANF_Join'
+   Error: Function not registered: 'SSCANF_Leave'
+   Error: Function not registered: 'sscanf'
+ 
+ 
+ 
+ ======================================= 
+ |                                     | 
+ |        YSI version 4.00.0001        | 
+ |        By Alex "Y_Less" Cole        | 
+ |                                     | 
+ ======================================= 
+ 
+
+----------------------------------
+  TPDA Script
+
+----------------------------------
+
+Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[11:03:04] password = ""  (string)
+
+Server Plugins
+--------------
+ Loading plugin: sscanf
+
+
+ ===============================
+
+      sscanf plugin loaded.     
+
+   (c) 2009 Alex "Y_Less" Cole
+
+   0.3d-R2 500 Players "dnee"
+
+ ===============================
+
+  Loaded.
+ Loading plugin: crashdetect
+  CrashDetect v4.18.1 is OK.
+  Loaded.
+ Loading plugin: nativechecker
+  Loaded.
+ Loaded 3 plugins.
+
+
+Filterscripts
+---------------
+  Loading filterscript 'fsdebug.amx'...
+
+  *********************
+  * SA:MP DEBUG 0.2   *
+  * By Simon Campbell *
+  *********************
+  * Version: 0.5d      *
+  *********************
+  * -- LOADED         *
+  *********************
+
+  Loaded 1 filterscripts.
+
+ 
+ 
+ 
+ ======================================= 
+ |                                     | 
+ |        YSI version 4.00.0001        | 
+ |        By Alex "Y_Less" Cole        | 
+ |                                     | 
+ ======================================= 
+ 
+
+----------------------------------
+  TPDA Script
+
+----------------------------------
+
+Number of vehicle models: 0
+Console input: hostname PORCODIO
+[connection] incoming connection: 127.0.0.1:62552 id: 0
+[connection] incoming connection: 127.0.0.1:59154 id: 0
+--- Server Shutting Down.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[11:04:25] password = ""  (string)
+
+Server Plugins
+--------------
+ Loading plugin: crashdetect
+  CrashDetect v4.18.1 is OK.
+  Loaded.
+ Loading plugin: nativechecker
+  Loaded.
+ Loading plugin: sscanf
+
+
+ ===============================
+
+      sscanf plugin loaded.     
+
+   (c) 2009 Alex "Y_Less" Cole
+
+   0.3d-R2 500 Players "dnee"
+
+ ===============================
+
+  Loaded.
+ Loaded 3 plugins.
+
+
+Filterscripts
+---------------
+  Loading filterscript 'fsdebug.amx'...
+
+  *********************
+  * SA:MP DEBUG 0.2   *
+  * By Simon Campbell *
+  *********************
+  * Version: 0.5d      *
+  *********************
+  * -- LOADED         *
+  *********************
+
+  Loaded 1 filterscripts.
+
+   Error: Function not registered: 'SSCANF_Init'
+   Error: Function not registered: 'SSCANF_Join'
+   Error: Function not registered: 'SSCANF_Leave'
+   Error: Function not registered: 'sscanf'
+ 
+ 
+ 
+ ======================================= 
+ |                                     | 
+ |        YSI version 4.00.0001        | 
+ |        By Alex "Y_Less" Cole        | 
+ |                                     | 
+ ======================================= 
+ 
+
+----------------------------------
+  TPDA Script
+
+----------------------------------
+
+Number of vehicle models: 0
+Console input: exit
+--- Server Shutting Down.
+
+  *********************
+  * SA:MP DEBUG 0.2   *
+  * -- SHUTDOWN       *
+  *********************
+
+
+
+ ===============================
+
+     sscanf plugin unloaded.    
+
+ ===============================
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[11:04:39] password = ""  (string)
+
+Server Plugins
+--------------
+ Loading plugin: crashdetect
+  CrashDetect v4.18.1 is OK.
+  Loaded.
+ Loading plugin: nativechecker
+  Loaded.
+ Loading plugin: sscanf
+
+
+ ===============================
+
+      sscanf plugin loaded.     
+
+   (c) 2009 Alex "Y_Less" Cole
+
+   0.3d-R2 500 Players "dnee"
+
+ ===============================
+
+  Loaded.
+ Loaded 3 plugins.
+
+
+Filterscripts
+---------------
+  Loading filterscript 'fsdebug.amx'...
+
+  *********************
+  * SA:MP DEBUG 0.2   *
+  * By Simon Campbell *
+  *********************
+  * Version: 0.5d      *
+  *********************
+  * -- LOADED         *
+  *********************
+
+  Loaded 1 filterscripts.
+
+   Error: Function not registered: 'SSCANF_Init'
+   Error: Function not registered: 'SSCANF_Join'
+   Error: Function not registered: 'SSCANF_Leave'
+   Error: Function not registered: 'sscanf'
+ 
+ 
+ 
+ ======================================= 
+ |                                     | 
+ |        YSI version 4.00.0001        | 
+ |        By Alex "Y_Less" Cole        | 
+ |                                     | 
+ ======================================= 
+ 
+
+----------------------------------
+  TPDA Script
+
+----------------------------------
+
+Number of vehicle models: 0
+--- Server Shutting Down.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[11:06:12] 
+[11:06:12] Server Plugins
+[11:06:12] --------------
+[11:06:12]  Loading plugin: sscanf
+[11:06:12] 
+
+[11:06:12]  ===============================
+
+[11:06:12]       sscanf plugin loaded.     
+
+[11:06:12]    (c) 2009 Alex "Y_Less" Cole
+
+[11:06:12]    0.3d-R2 500 Players "dnee"
+
+[11:06:12]  ===============================
+
+[11:06:12]   Loaded.
+[11:06:12]  Loading plugin: crashdetect
+[11:06:12]   CrashDetect v4.18.1 is OK.
+[11:06:12]   Loaded.
+[11:06:12]  Loading plugin: nativechecker
+[11:06:12]   Loaded.
+[11:06:12]  Loaded 3 plugins.
+
+[11:06:12] 
+[11:06:12] Filterscripts
+[11:06:12] ---------------
+[11:06:12]   Loading filterscript 'fsdebug.amx'...
+[11:06:12] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[11:06:12]   * By Simon Campbell *
+  *********************
+[11:06:12]   * Version: 0.5d      *
+  *********************
+[11:06:12]   * -- LOADED         *
+  *********************
+
+[11:06:12]   Loaded 1 filterscripts.
+
+[11:06:12]  
+[11:06:12]  
+[11:06:12]  
+[11:06:12]  ======================================= 
+[11:06:12]  |                                     | 
+[11:06:12]  |        YSI version 4.00.0001        | 
+[11:06:12]  |        By Alex "Y_Less" Cole        | 
+[11:06:12]  |                                     | 
+[11:06:12]  ======================================= 
+[11:06:12]  
+[11:06:13] 
+----------------------------------
+[11:06:13]   TPDA Script
+
+[11:06:13] ----------------------------------
+
+[11:06:13] Number of vehicle models: 0
+[11:06:33] [connection] incoming connection: 127.0.0.1:57800 id: 0
+[11:06:33] [join] Dave has joined the server (0:127.0.0.1)
+[11:06:47] [chat] [Dave]: diocane2
+[11:07:08] [connection] incoming connection: 95.245.243.244:50951 id: 1
+[11:07:08] [join] Marshall has joined the server (1:95.245.243.244)
+[11:07:51] [connection] incoming connection: 151.45.230.19:12281 id: 2
+[11:08:40] [chat] [Dave]:  /togtpdar
+[11:08:56] [chat] [Dave]: ciao questo è la radio del veicolo
+[11:09:24] [chat] [Marshall]: o
+[11:09:32] [chat] [Dave]: Questa è la chat di chiunque sta guidando un camion
+[11:09:32] [chat] [Dave]: Yep
+[11:09:44] [chat] [Marshall]: we collega n'do stai andando ohhhhhh
+[11:09:53] [chat] [Dave]: Aspetto l'SMS porcoddio
+[11:09:55] [chat] [Marshall]: o
+[11:10:00] [chat] [Marshall]: o
+[11:10:04] [connection] incoming connection: 151.45.230.19:12355 id: 2
+[11:10:05] [join] kys has joined the server (2:151.45.230.19)
+[11:10:07] [chat] [Marshall]: bravo scriptar
+[11:10:53] [chat] [Dave]:  /togtpdar
+[11:10:58] [chat] [Dave]:  /togtpdar
+[11:11:19] [chat] [Marshall]: we kys t'appost
+[11:11:21] [chat] [Dave]: e poi fai /tpda
+[11:11:22] [chat] [kys]: asa
+[11:20:29] [chat] [Dave]:  /annullatpda
+[11:23:11] [chat] [Dave]: DIOCANE OH
+[11:23:15] [chat] [Dave]: COME CAZZO GUIDI
+[11:23:17] [chat] [Marshall]: o
+[11:23:23] [chat] [Marshall]: mi ferma la stradale
+[11:27:45] [death] Dave died 255
+[11:36:27] [death] kys died 54
+[11:36:36] [death] kys died 54
+[11:46:02] [part] Marshall has left the server (1:1)
+[11:46:37] [chat] [kys]: AIUTOOO!
+[11:47:18] [chat] [Dave]: asd
+[11:53:56] [kill] Dave killed kys Minigun
+[11:53:59] [part] Dave has left the server (0:1)
+[11:54:03] [part] kys has left the server (2:1)
